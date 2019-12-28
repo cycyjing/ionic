@@ -1,0 +1,25 @@
+<ion-app>
+  <ion-split-pane contentId="menu-content" when="xs" [disabled]="false">
+    <ion-menu contentId="menu-content" menuId="menu-content" side="start" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>App</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+          <ion-item routerLink='/home'>
+            <ion-label>home</ion-label>
+          </ion-item>
+          <ion-item routerLink='/event'>
+            <ion-label>event</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="menu-content" ></ion-router-outlet>
+  </ion-split-pane>
+
+
+</ion-app>

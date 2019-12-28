@@ -1,0 +1,7 @@
+<div *ngIf="messageService.messages.length" class='msg'>
+  <h2>Messages</h2>
+  <ion-button (click)="messageService.clear()">
+    Clear
+  </ion-button>
+  <div *ngFor="let msg of messageService.messages">{{msg}}</div>
+</div>

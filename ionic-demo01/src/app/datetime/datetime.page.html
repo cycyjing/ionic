@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>datetime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime display-format="YYYY-MM-DD HH:mm" [(ngModel)]="nowDate" (ionChange)="datetimeChange($event)" [pickerOptions]='customPickerOptions'></ion-datetime>
+  </ion-item>
+</ion-content>

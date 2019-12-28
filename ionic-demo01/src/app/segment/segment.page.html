@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>segment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="tab">
+    <ion-segment-button value='1'>
+      <ion-label>Pizza</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value='2'>
+      <ion-label>Pasta</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="1">Pizza</div>
+    <div *ngSwitchCase="2">Pasta</div>
+    <div *ngSwitchDefault>Default</div>
+  </div>
+</ion-content>

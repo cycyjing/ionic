@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tab">
+      <ion-segment-button value='tab1'>
+        <ion-label>Pizza</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value='tab2'>
+        <ion-label>Pasta</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-slide></app-slide>
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="'tab1'">Pizza--!!!double quotes</div>
+    <div *ngSwitchCase="'tab2'">Pasta</div>
+  </div>
+</ion-content>

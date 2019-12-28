@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>gestures</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (tap)="onTap()">
+    Tap
+  </ion-button>
+  <ion-button (press)="onPress()">
+    Press
+  </ion-button>
+
+  <ion-list>
+    <ion-item>
+      <ion-label (press)="onPress()">aaaa</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label (press)="onPress()">bbbb</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label (press)="onPress()">cccc</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

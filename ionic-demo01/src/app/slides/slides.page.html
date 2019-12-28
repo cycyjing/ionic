@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1" text='Return'></ion-back-button>
+    </ion-buttons>
+    <ion-title>slides</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides mode="ios" pager="true" scrollbar="ios" [options]='slidesOpts' #slides1>
+    <ion-slide>
+      <ion-img src="assets/images/avatar1.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="assets/images/avatar2.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="assets/images/avatar3.jpg"></ion-img>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

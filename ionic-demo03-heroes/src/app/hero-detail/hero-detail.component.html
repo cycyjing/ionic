@@ -1,0 +1,15 @@
+<div *ngIf="hero">
+  <h1>Details</h1>
+  <div>
+    id:
+    {{hero.id}}
+  </div>
+  <div>
+    name:
+    <input [(ngModel)]="hero.name" placeholder="name" />
+  </div>
+  <ion-item class="input">
+    <ion-label position="floating">Floating Label</ion-label>
+    <ion-input [(ngModel)]="hero.name"></ion-input>
+  </ion-item>
+</div>

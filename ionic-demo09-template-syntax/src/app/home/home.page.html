@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Template Syntax
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <dl>
+    <dt><a href="#interpolation">Interpolation</a></dt>
+    <dt><a href="#expressions">Template expressions</a></dt>
+    <dt><a href="#statements">Template statements</a></dt>
+  </dl>
+
+
+
+  <hr>
+  <h2 id='interpolation'>Interpolation</h2>
+  <p>Current customer: {{currentCustomer}}</p>
+  <p>{{title}}</p>
+  <div><img src="{{itemImageUrl}}" alt=""></div>
+  <div><img src="{{itemImageUrl}}" alt=""></div>
+  <div><img src="{{itemImageUrl}}" alt=""></div>
+  <div><img src="{{itemImageUrl}}" alt=""></div>
+  <p>the sum of 1+1 is {{1+1}}.</p>
+  <p>the sum of 1+1 is not {{1+1+getVal()}}.</p>
+
+  <hr>
+  <h2 id='expressions'>Template expressions</h2>
+  <label for="">Type something:
+    <input type="text" #customerInput>{{customerInput.value}}
+  </label>
+
+  <hr>
+  <h2 id='statements'>Template statements</h2>
+  <ion-button (click)='deleteHero()'>Delete hero</ion-button>
+  <p prefix='You are my ' [innerHTML]='currentCustomer'></p>
+
+</ion-content>

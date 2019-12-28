@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClose()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="doRegister()">
+    Register
+  </ion-button>
+</ion-content>

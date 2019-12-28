@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>heroes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="heroes">
+    <ion-list-header>
+      <ion-label>
+        <h1>My Heroes</h1>
+      </ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of heroes" (click)="onSelect(item)" [class.selected]="item === selectedHero">
+      <ion-label>
+        {{item.name}}
+      </ion-label>
+      <ion-note slot="end" color="success">{{item.id}}</ion-note>
+    </ion-item>
+  </ion-list>
+  
+  <app-hero-detail [hero]='selectedHero'></app-hero-detail>
+  <app-messages></app-messages>
+</ion-content>

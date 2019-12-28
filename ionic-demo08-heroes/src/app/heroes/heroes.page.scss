@@ -1,0 +1,17 @@
+.add {
+  margin-left: 16px;
+}
+button {
+  background-color: rgb(182, 219, 214);
+  border: none;
+  padding: 8px 12px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: Arial;
+
+  &:hover {
+    background-color: #949a9c;
+  }
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>
+      Tab One
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button color="tertiary" [routerLink]="['/news']" routerLinkActive="router-link-active">
+    Click me to news page
+  </ion-button>
+  <ion-button [routerLink]="[ '/button' ]">
+    Click me to button page
+  </ion-button>
+  <ion-button color="success" [routerLink]="[ '/home' ]">
+    Click me to home page
+  </ion-button>
+  <!-- module 共有模块 -->
+  <app-slide></app-slide>
+  <ion-button color="secondary" routerLink='/slides'>
+    Click me to slides page
+  </ion-button>
+  <ion-button color="light" routerLink='/searchbar'>
+    Click me to searchbar page
+  </ion-button>
+  <ion-button color="warning" routerLink='/segment'>
+    Click me to segment page
+  </ion-button>
+  <ion-button color="medium" routerLink='/datetime'>
+    Click me to date time page
+  </ion-button>
+  <ion-button color="danger" routerLink='/actionsheet'>
+    Click me to action sheet page
+  </ion-button>
+  <ion-button color="dark" routerLink='/toast'>
+    Click me to toast page
+  </ion-button>
+  <ion-button color="secondary" routerLink='/alert'>
+    Click me to alert page
+  </ion-button>
+  <ion-button routerLink='/gestures'>
+    Click me to gestures page
+  </ion-button>
+</ion-content>

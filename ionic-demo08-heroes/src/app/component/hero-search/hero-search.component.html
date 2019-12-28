@@ -1,0 +1,7 @@
+<ion-list>
+  <h4>Hero Search</h4>
+  <ion-searchbar #searchBox (input)="search(searchBox.value)"></ion-searchbar>
+  <ion-item *ngFor="let hero of heroes$ | async" routerLink="/detail/{{hero.id}}">
+    <ion-label> {{hero.name}}</ion-label>
+  </ion-item>
+</ion-list>

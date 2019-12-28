@@ -1,0 +1,31 @@
+<ion-app>
+  <!-- <ion-split-pane> -->
+  <ion-menu menuId="avocadoMenu" side="start" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item [routerLink]=''>
+            <ion-label>itme 1</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-label>itme 2</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-label>itme 3</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+  <!-- </ion-split-pane> -->
+</ion-app>

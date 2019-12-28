@@ -1,0 +1,19 @@
+<!-- at the begining the selectedHero is not defined from DOM. -->
+<div *ngIf="hero">
+  <h1>Details</h1>
+  <div>
+    id:
+    {{hero.id}}
+  </div>
+  <div>
+    name:
+    <input [(ngModel)]="hero.name" placeholder="name" />
+  </div>
+  <ion-button color="secondary" (click)="goBack()">
+    Go back
+  </ion-button>
+  <ion-button color="success" (click)="goSave()">
+    Save
+  </ion-button>
+
+</div>

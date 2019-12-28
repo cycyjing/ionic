@@ -1,0 +1,18 @@
+<h3>My Heroes</h3>
+
+<ion-list class="heroes">
+  <ion-item *ngFor="let item of heroes" (click)="onClick(item)" [class.selected]="item === clickedHero">
+    <ion-label>
+      {{item.name}}
+    </ion-label>
+    <ion-note slot="end" color="success">{{item.id}}</ion-note>
+  </ion-item>
+</ion-list>
+
+<!-- <ul class="heroes">
+  <li *ngFor="let item of heroes" (click)="onClick(item)" [class.selected]="item === clickedHero">
+    <span class="badge">{{item.id}}</span> {{item.name}}
+  </li>
+</ul> -->
+
+<app-hero-detail [hero]='clickedHero'></app-hero-detail>

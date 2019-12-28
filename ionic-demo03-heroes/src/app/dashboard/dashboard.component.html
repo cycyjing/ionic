@@ -1,0 +1,15 @@
+<h3>Top Heroes</h3>
+<div class="grid">
+  <!-- <a *ngFor="let hero of heroes" class="col-1-4">
+        <div class="module hero">
+          <h4>{{hero.name}}</h4>
+        </div>
+      </a> -->
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col *ngFor="let hero of heroes">
+        {{hero.name}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

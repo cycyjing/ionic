@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <!-- side menu -->
+    <ion-menu contentId="main-content" menuId='menu' type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{title}}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item routerLink="/dashboard">
+              <ion-label>Dashboard </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item routerLink="/heroes">
+              <ion-label>Heroes</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <!-- the main content -->
+    <ion-router-outlet id="main-content" main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+
+<!-- <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+  <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+    <ion-icon slot="start" [name]="p.icon"></ion-icon>
+    <ion-label>
+      {{p.title}}
+    </ion-label>
+  </ion-item>
+</ion-menu-toggle> -->

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{list.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class='center'>
+    <ion-spinner name="bubbles" *ngIf="!hasData"></ion-spinner>
+  </div>
+
+  <div [innerHTML]='list.content'></div>
+</ion-content>

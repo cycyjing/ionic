@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Event Binding</h1>
+  <ion-list>
+    <ion-item-divider color="medium">
+      <ion-label>target event</ion-label>
+    </ion-item-divider>
+    <ion-button (click)="onSave()">
+      Save
+    </ion-button>
+    <h4>custom ClickDirective</h4>
+    <ion-button color="dark" (appClick)="clickMsg=$event" clickable>
+      Click with message
+    </ion-button>{{clickMsg}}
+
+
+    <ion-item-divider color="medium">
+      <ion-label>$event and event handling statements</ion-label>
+    </ion-item-divider>
+    <h4>result: {{currentItem.name}}</h4>
+    <ion-input type="text" [value]='currentItem.name' (input)='currentItem.name=$event.target.value'></ion-input>
+
+
+    <ion-item-divider color="medium">
+      <ion-label>Binding to a nested component</ion-label>
+    </ion-item-divider>
+    <app-item-detail></app-item-detail>
+    
+  </ion-list>
+</ion-content>
