@@ -20,17 +20,24 @@ export class Tab1Page {
   hotListWidth: any = 111;
 
   constructor() {
-    for (let i = 1; i < 4; i++) {
+    for (let i = 1; i <= 3; i++) {
       this.slideList.push({
         src: 'assets/slide0' + i + '.png',
         url: ''
       });
     }
-    for (let i = 1; i < 10; i++) {
-      this.hotList.push({
-        src: 'assets/0' + i + '.jpg',
-        title: 'item-' + i
-      });
+    for (let i = 1; i <= 10; i++) {
+      if (i < 10) {
+        this.hotList.push({
+          src: 'assets/0' + i + '.jpg',
+          title: 'item-' + i
+        });
+      } else {
+        this.hotList.push({
+          src: 'assets/' + i + '.jpg',
+          title: 'item-' + i
+        });
+      }
     }
     // calculate hotList width
     this.hotListWidth = this.hotListWidth * this.hotList.length + 'px';
