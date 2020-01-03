@@ -18,6 +18,7 @@ export class Tab1Page {
   };
   hotList: any[] = [];
   hotListWidth: any = 111;
+  productList: any[] = [];
 
   constructor() {
     for (let i = 1; i <= 3; i++) {
@@ -30,17 +31,24 @@ export class Tab1Page {
       if (i < 10) {
         this.hotList.push({
           src: 'assets/0' + i + '.jpg',
-          title: 'item-' + i
+          title: 'hotList-' + i
         });
       } else {
         this.hotList.push({
           src: 'assets/' + i + '.jpg',
-          title: 'item-' + i
+          title: 'hotList-' + i
         });
       }
     }
     // calculate hotList width
     this.hotListWidth = this.hotListWidth * this.hotList.length + 'px';
+    // product list
+    for (let i = 1; i <= 12; i++) {
+      this.productList.push({
+        src: 'assets/list' + i + '.jpg',
+        title: 'productList-' + i
+      });
+    }
   }
 
   slideTouchEnd() {

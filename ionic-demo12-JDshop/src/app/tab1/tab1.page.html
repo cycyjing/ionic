@@ -19,7 +19,6 @@
   </ion-slides>
 
   <div class="h-title">猜你喜欢</div>
-
   <div class="hot-list">
     <ul class="clearfix" [ngStyle]="{'width': hotListWidth}">
       <li *ngFor="let item of hotList">
@@ -28,4 +27,15 @@
       </li>
     </ul>
   </div>
+
+  <div class="h-title">商品列表</div>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of productList">
+        <img [src]="item.src" alt="">
+        <p>{{item.title}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
