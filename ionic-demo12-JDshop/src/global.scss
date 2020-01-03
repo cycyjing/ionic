@@ -30,9 +30,9 @@ body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,input,textarea,select,p,a,img,butto
   margin: 0;
   padding: 0;
 }
-html {
-  font-size: 62.5%; // 浏览器的默认字体大小是16px   16*62.5%=10px
-}
+// html {
+//   font-size: 62.5%; // 浏览器的默认字体大小是16px   16*62.5%=10px
+// }
 .clearfix {  
   &::after {
     display: block;
@@ -41,3 +41,6 @@ html {
     clear: both;
   }
 }
+// .clearfix{
+//   overflow: auto;
+// }

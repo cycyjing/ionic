@@ -1,4 +1,50 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+.message {
+  position: relative;
+
+  .badge {
+    position: absolute;
+    right: -4px;
+    top: 2px;
+    font-size: 0.6rem;
+  }
+}
+.h-title {
+  padding: 10px 6px;
+  font-size: 1.2rem;
+
+  &::before {
+    display: inline-block;
+    width: 1px;
+    height: 18px;
+    border-left: 3px solid #f53d3d;
+    content: "";
+    position: relative;
+    top: 2px;
+    padding-right: 5px;
+  }
+}
+.hot-list {
+  width: 100%;
+  height: 145px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  ul {
+    list-style-type: none;
+    // width: 1400px;
+
+    li {
+      float: left;
+      margin-left: 10px;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      p {
+        padding: 4px;
+        text-align: center;
+      }
+    }
+  }
 }
