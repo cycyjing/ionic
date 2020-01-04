@@ -29,22 +29,17 @@
   overflow-x: auto;
   overflow-y: hidden;
 
-  ul {
-    list-style-type: none;
-    // width: 1400px;
+  li {
+    float: left;
+    margin-left: 10px;
 
-    li {
-      float: left;
-      margin-left: 10px;
-
-      img {
-        width: 100px;
-        height: 100px;
-      }
-      p {
-        padding: 4px;
-        text-align: center;
-      }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    p {
+      padding: 4px;
+      text-align: center;
     }
   }
 }
