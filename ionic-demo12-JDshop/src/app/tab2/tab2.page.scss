@@ -1,14 +1,3 @@
-.cat-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-
-  .cat-left {
-    width: 100px;
-    overflow-y: auto;
-  }
-  .cat-right {
-    flex: 1; // 自适应
-    overflow-y: auto;
-  }
+ion-content ion-toolbar {
+  --background: translucent;
 }
