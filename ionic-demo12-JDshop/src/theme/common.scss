@@ -3,58 +3,58 @@
   --color-base: #f53d3d;
 }
 /* global custom css style */ 
-body,
-div,
-ul,
-ol,
-li,
-dl,
-dt,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-textarea,
-select,
-p,
-a,
-img,
-button,
-form,
-table,
-th,
-tr,
-td,
-tbody,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  margin: 0;
-  padding: 0;
-}
+// body,
+// div,
+// ul,
+// ol,
+// li,
+// dl,
+// dt,
+// dd,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// input,
+// textarea,
+// select,
+// p,
+// a,
+// img,
+// button,
+// form,
+// table,
+// th,
+// tr,
+// td,
+// tbody,
+// article,
+// aside,
+// details,
+// figcaption,
+// figure,
+// footer,
+// header,
+// hgroup,
+// menu,
+// nav,
+// section {
+//   margin: 0;
+//   padding: 0;
+// }
 // html {
 //   font-size: 62.5%; // 浏览器的默认字体大小是16px   16*62.5%=10px
 // }
-.clearfix {
-  &::after {
-    display: block;
-    content: "";
-    height: 0px;
-    clear: both;
-  }
-}
+// .clearfix {
+//   &::after {
+//     display: block;
+//     content: "";
+//     height: 0px;
+//     clear: both;
+//   }
+// }
 // .clearfix{
 //   overflow: auto;
 // }

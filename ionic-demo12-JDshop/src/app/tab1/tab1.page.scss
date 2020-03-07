@@ -2,18 +2,29 @@ ion-content ion-toolbar {
   --background: translucent;
 }
 
-ion-searchbar {
-  --box-shadow: none;
-  --background: #f3f3f3;
+ion-header {
+  padding-top: 15px;
+
+  ion-searchbar {
+    --box-shadow: none;
+    --background: #f3f3f3;
+  }
+}
+
+.qrcode{
+  margin-left: 5px;
 }
 
 .message {
   position: relative;
 
+  img{
+    margin-right: 10px;
+  }
   .badge {
     position: absolute;
     left: 10px;
-    top: -4px;
+    top: 0px;
     font-size: 62.5%;
   }
 }
