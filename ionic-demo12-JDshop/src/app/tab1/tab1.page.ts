@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  listSlides: any[] = [];
 
-  constructor() {}
+  constructor() {
+    for (let i = 1; i <= 3; i++) {
+      this.listSlides.push('assets/slide0' + i + '.png');
+    }
+  }
+
 
 }

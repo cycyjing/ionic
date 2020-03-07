@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot({
-    // mode: 'ios',
+    mode: 'ios',
     backButtonText: '返回',
   }), AppRoutingModule],
   providers: [
