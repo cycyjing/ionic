@@ -14,9 +14,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-slides mode="ios" pager="ios" scrollbar="ios">
-  <ion-slide *ngFor="let slide of listSlides">
-    <ion-img [src]="slide"></ion-img>
+<ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="slidesOpts" (ionSlideTouchEnd)="slideTouchEnd()" #slides>
+  <ion-slide *ngFor="let slide of slidesList">
+    <ion-img [src]="slide.img"></ion-img>
   </ion-slide>
 </ion-slides>
 
