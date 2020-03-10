@@ -14,12 +14,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="slidesOpts" (ionSlideTouchEnd)="slideTouchEnd()" #slides>
-  <ion-slide *ngFor="let slide of slidesList">
-    <ion-img [src]="slide.img"></ion-img>
-  </ion-slide>
-</ion-slides>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="slidesOpts" (ionSlideTouchEnd)="slideTouchEnd()"
+    #slides>
+    <ion-slide *ngFor="let slide of slidesList">
+      <ion-img [src]="slide.img"></ion-img>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="like">
+    <div class="like-title">猜你喜欢</div>
+    <ul>
+      <li *ngFor="let item of likeList">
+        <ion-img [src]="item.img"></ion-img>
+        <p>{{item.title}}</p>
+      </li>
+    </ul>
+  </div>
 
 
 
+ 
 </ion-content>

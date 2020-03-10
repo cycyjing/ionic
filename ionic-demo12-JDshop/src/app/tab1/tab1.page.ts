@@ -15,13 +15,29 @@ export class Tab1Page {
     },
     loop: true,
   };
+  likeList: any[] = [];
 
   constructor() {
-    for (var i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 3; i++) {
       this.slidesList.push({
         img: 'assets/slide0' + i + '.png',
         url: ''
       });
+    }
+    for (let i = 1; i <= 10; i++) {
+      if (i < 10) {
+        this.likeList.push({
+          img: 'assets/0' + i + '.jpg',
+          url: '',
+          title: 'item-' + i
+        });
+      } else {
+        this.likeList.push({
+          img: 'assets/' + i + '.jpg',
+          url: '',
+          title: 'item-' + i
+        });
+      }
     }
   }
 

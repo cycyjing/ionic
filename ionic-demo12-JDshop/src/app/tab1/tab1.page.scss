@@ -11,14 +11,14 @@ ion-header {
   }
 }
 
-.qrcode{
+.qrcode {
   margin-left: 5px;
 }
 
 .message {
   position: relative;
 
-  img{
+  img {
     margin-right: 10px;
   }
   .badge {
@@ -26,5 +26,45 @@ ion-header {
     left: 10px;
     top: 0px;
     font-size: 62.5%;
+  }
+}
+
+.like {
+  margin: 20px 10px;
+
+  .like-title {
+    margin-bottom: 8px;
+
+    &::before {
+      // display: inline-block;
+      // border-left: 3px solid var(--color-base);
+      // height: 14px;
+      // width: 1px;
+      // position: relative;
+      // top: 2px;
+      content: "";
+      border: 2px solid var(--color-base);
+      margin-right: 5px;
+    }
+  }
+  ul {
+    display: flex;
+    // white-space: nowrap;
+    overflow-x: auto;
+    flex-shrink: 0;
+
+    li {
+      height: 125px;
+      margin-right: 20px;
+
+      ion-img {
+        height: 100px;
+        width: 100px;
+      }
+      p{
+        text-align: center;
+        margin-top: 2px;
+      }
+    }
   }
 }
