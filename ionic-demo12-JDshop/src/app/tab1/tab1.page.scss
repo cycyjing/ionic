@@ -61,10 +61,26 @@ ion-header {
         height: 100px;
         width: 100px;
       }
-      p{
+      p {
         text-align: center;
         margin-top: 2px;
       }
+    }
+  }
+}
+
+.list {
+  padding: 0 20px;
+
+  span {
+    display: flex;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    ion-img {
+      height: 165px;
+      width: 165px;
     }
   }
 }

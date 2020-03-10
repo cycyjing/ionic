@@ -16,14 +16,17 @@ export class Tab1Page {
     loop: true,
   };
   likeList: any[] = [];
+  lists: any[] = [];
 
   constructor() {
+    // slides
     for (let i = 1; i <= 3; i++) {
       this.slidesList.push({
         img: 'assets/slide0' + i + '.png',
         url: ''
       });
     }
+    // like
     for (let i = 1; i <= 10; i++) {
       if (i < 10) {
         this.likeList.push({
@@ -38,6 +41,13 @@ export class Tab1Page {
           title: 'item-' + i
         });
       }
+    }
+    // list
+    for (let i = 1; i <= 12; i++) {
+      this.lists.push({
+        img: 'assets/list' + i + '.jpg',
+        url: ''
+      });
     }
   }
 
