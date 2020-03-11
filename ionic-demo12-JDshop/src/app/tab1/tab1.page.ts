@@ -16,7 +16,7 @@ export class Tab1Page {
     loop: true,
   };
   likeList: any[] = [];
-  lists: any[] = [];
+  productList: any[] = [];
 
   constructor() {
     // slides
@@ -42,9 +42,9 @@ export class Tab1Page {
         });
       }
     }
-    // list
+    // productList
     for (let i = 1; i <= 12; i++) {
-      this.lists.push({
+      this.productList.push({
         img: 'assets/list' + i + '.jpg',
         url: ''
       });
