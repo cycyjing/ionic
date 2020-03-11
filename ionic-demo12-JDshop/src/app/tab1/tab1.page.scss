@@ -29,12 +29,12 @@ ion-header {
   }
 }
 
-.like {
+.like,
+.list {
   margin: 20px 10px;
 
-  .like-title {
-    margin-bottom: 8px;
-
+  .like-title,
+  .list-title {
     &::before {
       // display: inline-block;
       // border-left: 3px solid var(--color-base);
@@ -43,44 +43,46 @@ ion-header {
       // position: relative;
       // top: 2px;
       content: "";
-      border: 2px solid var(--color-base);
+      border-left: 3px solid var(--color-base);
       margin-right: 5px;
-    }
-  }
-  ul {
-    display: flex;
-    // white-space: nowrap;
-    overflow-x: auto;
-    flex-shrink: 0;
-
-    li {
-      height: 125px;
-      margin-right: 20px;
-
-      ion-img {
-        height: 100px;
-        width: 100px;
-      }
-      p {
-        text-align: center;
-        margin-top: 2px;
-      }
     }
   }
 }
 
-.list {
-  padding: 0 20px;
+.like-title {
+  margin-bottom: 10px;
+}
 
-  span {
-    display: flex;
-    display: inline-block;
+.like-item {
+  display: flex;
+  overflow-x: auto;
+  // white-space: nowrap;
+  // flex-shrink: 0;
+
+  li {
+    height: 145px;
     margin-right: 20px;
-    margin-bottom: 20px;
 
     ion-img {
-      height: 165px;
-      width: 165px;
+      height: 120px;
+      width: 120px;
     }
+    p {
+      text-align: center;
+      margin-top: 2px;
+    }
+  }
+}
+
+.list-item {
+  // *when use <span>
+  // display: flex;
+  // display: inline-block;
+  // margin-right: 20px;
+  // margin-bottom: 20px;
+
+  ion-img {
+    height: 175px;
+    width: 175px;
   }
 }

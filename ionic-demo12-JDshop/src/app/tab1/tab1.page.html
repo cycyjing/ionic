@@ -23,7 +23,7 @@
 
   <div class="like">
     <div class="like-title">猜你喜欢</div>
-    <ul>
+    <ul class="like-item">
       <li *ngFor="let item of likeList">
         <ion-img [src]="item.img"></ion-img>
         <p>{{item.title}}</p>
@@ -32,9 +32,17 @@
   </div>
 
   <div class="list">
-    <span *ngFor="let item of lists">
-      <ion-img [src]="item.img"></ion-img>
-    </span>
+    <div class="list-title">商品列表</div>
+    <ion-grid fixed>
+      <ion-row class="list-item">
+        <ion-col *ngFor="let item of lists">
+          <ion-img [src]="item.img"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
-
+  <!-- *use <span> hard to fit in the center* -->
+  <!-- <span class="list-item" *ngFor="let item of lists">
+    <ion-img [src]="item.img"></ion-img>
+  </span> -->
 </ion-content>
