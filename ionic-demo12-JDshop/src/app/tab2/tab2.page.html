@@ -7,11 +7,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="content">
+    <!-- LEFT: navbar -->
+    <div class="left">
+      <ul>
+        <li *ngFor="let item of navbarList"><a href="">{{item}}</a></li>
+      </ul>
+    </div>
+    <!-- RIGHT: info -->
+    <div class="right">right</div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  </div>
+
+
+
 </ion-content>
