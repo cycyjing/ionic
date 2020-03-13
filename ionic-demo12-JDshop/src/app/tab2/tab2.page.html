@@ -10,12 +10,23 @@
   <div class="content">
     <!-- LEFT: navbar -->
     <div class="left">
-      <ul>
-        <li *ngFor="let item of navbarList"><a href="">{{item}}</a></li>
-      </ul>
+      <ion-list lines="full">
+        <ion-item *ngFor="let item of navbarList">
+          <ion-label>{{item}}</ion-label>
+        </ion-item>
+      </ion-list>
     </div>
     <!-- RIGHT: info -->
-    <div class="right">right</div>
+    <div class="right">
+      <ion-grid fixed>
+        <ion-row class="right-item">
+          <ion-col *ngFor="let item of productList">
+            <ion-img [src]="item.img"></ion-img>
+            <p>{{item.title}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
 
   </div>
 

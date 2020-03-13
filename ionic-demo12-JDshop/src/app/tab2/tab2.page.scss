@@ -4,22 +4,20 @@ ion-content ion-toolbar {
 
 .content {
   display: flex;
+  height: 100%;
 
   .left {
     width: 8rem;
-    padding: 1rem 0;
-    text-align: center;
     border-right: 2px solid lightgray;
-
-    li {
-      margin-bottom: 1rem;
-
-      a {
-        text-decoration: none;
-      }
-    }
+    overflow-y: auto;
   }
   .right {
-    padding: 1rem;
+    flex: 1;
+    overflow-y: auto;
+
+    ion-img {
+      height: 126px;
+      width: 126px;
+    }
   }
 }
