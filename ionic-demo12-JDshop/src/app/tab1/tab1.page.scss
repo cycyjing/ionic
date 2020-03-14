@@ -1,14 +1,16 @@
 ion-content ion-toolbar {
-  --background: translucent;
+  // --background: translucent;
 }
 
-ion-header {
-  padding-top: 15px;
+.qrcode,
+ion-searchbar,
+.message {
+  margin-top: 15px;
+}
 
-  ion-searchbar {
-    --box-shadow: none;
-    --background: #f3f3f3;
-  }
+ion-searchbar {
+  --box-shadow: none;
+  --background: #f3f3f3;
 }
 
 .qrcode {
@@ -35,6 +37,8 @@ ion-header {
 
   .like-title,
   .list-title {
+    font-weight: bold;
+
     &::before {
       // display: inline-block;
       // border-left: 3px solid var(--color-base);
