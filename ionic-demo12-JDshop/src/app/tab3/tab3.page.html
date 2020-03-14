@@ -8,17 +8,17 @@
 
 <ion-content [fullscreen]="true">
   <ion-list lines="full">
-    <ion-item class="content">
+    <ion-item class="content" *ngFor="let item of list">
       <!-- radio and img -->
       <div class="left">
-        <input type="radio" name="" id="radio">
-        <ion-img src="assets/01.jpg"></ion-img>
+        <ion-checkbox></ion-checkbox>
+        <ion-img [src]="item"></ion-img>
       </div>
       <!-- title, price and count -->
       <div class="right">
-        <div class="title">product title product title product title product title</div>
+        <h4 class="title">product title product title product title product title</h4>
         <div class="down">
-          <div class="price">100</div>
+          <div class="price">$100</div>
           <div class="count">
             <span>-</span>
             <input type="number" name="" id="">

@@ -8,10 +8,10 @@ ion-content ion-toolbar {
   .left {
     display: flex;
 
-    #radio {
-      height: 20px;
-      width: 20px;
-      margin-top: 50px;
+    ion-checkbox {
+      margin-top: 2.5rem;
+      --background-checked: var(--color-base);
+      --border-color-checked:var(--color-base);
     }
     ion-img {
       height: 120px;

@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  list: any[] = [];
 
-  constructor() {}
+  constructor() {
+    for (let i = 1; i <= 9; i++) {
+      this.list.push('assets/0' + i + '.jpg');
+    }
+  }
 
 }
