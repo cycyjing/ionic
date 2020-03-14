@@ -11,7 +11,10 @@
     <ion-item class="content" *ngFor="let item of list">
       <!-- radio and img -->
       <div class="left">
-        <ion-checkbox></ion-checkbox>
+        <ion-buttons slot="start">
+          <ion-checkbox></ion-checkbox>
+        </ion-buttons>
+
         <ion-img [src]="item"></ion-img>
       </div>
       <!-- title, price and count -->
@@ -30,3 +33,18 @@
   </ion-list>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-checkbox></ion-checkbox>Select All
+      <strong>Account: $55.20</strong>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        Pay
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

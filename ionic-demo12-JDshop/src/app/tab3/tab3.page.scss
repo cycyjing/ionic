@@ -9,9 +9,8 @@ ion-content ion-toolbar {
     display: flex;
 
     ion-checkbox {
-      margin-top: 2.5rem;
       --background-checked: var(--color-base);
-      --border-color-checked:var(--color-base);
+      --border-color-checked: var(--color-base);
     }
     ion-img {
       height: 120px;
@@ -49,5 +48,21 @@ ion-content ion-toolbar {
         }
       }
     }
+  }
+}
+
+ion-footer {
+  font-size: large;
+  
+  ion-checkbox{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  strong{
+    padding-left: 1rem;
+  }
+  ion-button {
+    --color: #ffffff;
+    --background: var(--color-base);
   }
 }
