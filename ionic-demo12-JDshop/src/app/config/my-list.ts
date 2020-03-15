@@ -1,24 +1,32 @@
 export class MyList {
-  static readonly LIST = [
+  static readonly ORDER_LIST = [
     {
-      icon: '',
-      label: 'All Orders'
+      icon: 'newspaper',
+      label: 'All Orders',
+      color: 'danger'
     },
     {
-      icon: '',
-      label: 'Unpaid'
+      icon: 'card',
+      label: 'Unpaid',
+      color: 'success'
     },
     {
-      icon: '',
-      label: 'Delivering'
+      icon: 'bus',
+      label: 'Delivering',
+      color: 'warning',
+      lines: 'none'
+    },
+  ];
+  static readonly OHTERS_LIST = [
+    {
+      icon: 'star-outline',
+      label: 'Favorite',
+      color: 'tertiary'
     },
     {
-      icon: '',
-      label: 'Favorite'
-    },
-    {
-      icon: '',
-      label: 'Contact Us'
+      icon: 'people',
+      label: 'Contact Us',
+      color: 'secondary'
     },
   ];
 }
