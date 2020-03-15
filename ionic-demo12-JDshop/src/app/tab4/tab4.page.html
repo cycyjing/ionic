@@ -1,10 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>My</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <!-- <div class="avatar">
+    <img [src]="image" />
+    <span>Login / Register</span>
+  </div> -->
+  <div class="avatar">
+    <img [src]="image" />
+    <span>
+      <p>Lisa Smith</p>
+      <p><small>Premium</small></p>
+    </span>
+  </div>
+
   <ion-list>
     <ion-item class="order" *ngFor="let item of MyList.ORDER_LIST" [lines]="item.lines">
       <ion-icon slot="start" [name]="item.icon" [color]="item.color"></ion-icon>

@@ -7,6 +7,7 @@ import { MyList } from '../config/my-list';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page {
+  image = 'assets/user.png';
   MyList = MyList;
 
   constructor() { }
