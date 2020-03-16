@@ -1,28 +1,27 @@
-.qrcode,
-ion-searchbar,
-.message {
-  margin-top: 15px;
-}
-
-ion-searchbar {
-  --box-shadow: none;
-  --background: #f3f3f3;
+div {
+  display: flex;
 }
 
 .qrcode {
   margin-left: 5px;
 }
 
+ion-searchbar {
+  --box-shadow: none;
+  --background: #f3f3f3;
+  margin-top: 15px;
+}
+
 .message {
   position: relative;
 
   img {
-    margin-right: 10px;
+    margin-right: 15px;
   }
   .badge {
     position: absolute;
-    left: 10px;
-    top: 0px;
+    left: 6px;
+    top: 12px;
     font-size: 62.5%;
   }
 }
