@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Shopping Cart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-item class="content" *ngFor="let item of list">
+      <!-- radio and img -->
+      <div class="left">
+        <ion-buttons slot="start">
+          <ion-checkbox></ion-checkbox>
+        </ion-buttons>
+
+        <ion-img [src]="item"></ion-img>
+      </div>
+      <!-- title, price and count -->
+      <div class="right">
+        <h4 class="title">product title product title product title product title</h4>
+        <div class="down">
+          <div class="price">$100</div>
+          <div class="count">
+            <span>-</span>
+            <input type="number" name="" id="">
+            <span>+</span>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-checkbox></ion-checkbox>Select All
+      <strong>Account: $55.20</strong>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        Pay
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

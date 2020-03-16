@@ -1,0 +1,68 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+.content {
+  display: flex;
+
+  .left {
+    display: flex;
+
+    ion-checkbox {
+      --background-checked: var(--color-base);
+      --border-color-checked: var(--color-base);
+    }
+    ion-img {
+      height: 120px;
+      width: 120px;
+      padding: 10px;
+    }
+  }
+  .right {
+    flex: 1;
+
+    .title {
+      margin-bottom: 10px;
+    }
+    .down {
+      display: flex;
+
+      .price {
+        flex: 1;
+      }
+      .count {
+        border: 1px solid lightgrey;
+
+        span {
+          display: inline-block;
+          height: 2rem;
+          width: 2rem;
+          text-align: center;
+          line-height: 2rem;
+          background-color: lightgrey;
+        }
+        input {
+          width: 2rem;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+ion-footer {
+  font-size: large;
+  
+  ion-checkbox{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  strong{
+    padding-left: 2rem;
+  }
+  ion-button {
+    --color: #ffffff;
+    --background: var(--color-base);
+  }
+}
