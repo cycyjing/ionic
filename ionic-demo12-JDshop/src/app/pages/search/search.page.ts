@@ -3,14 +3,15 @@ import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  templateUrl: './search.page.html',
+  styleUrls: ['./search.page.scss'],
 })
-export class SearchComponent {
+export class SearchPage {
 
   constructor(public navController: NavController) { }
 
-  goSearch() {
-    this.navController.navigateForward('/search');
+  goBack() {
+    this.navController.back();
   }
+
 }
