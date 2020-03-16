@@ -1,34 +1,5 @@
 ion-content ion-toolbar {
-  // --background: translucent;
-}
-
-.qrcode,
-ion-searchbar,
-.message {
-  margin-top: 15px;
-}
-
-ion-searchbar {
-  --box-shadow: none;
-  --background: #f3f3f3;
-}
-
-.qrcode {
-  margin-left: 5px;
-}
-
-.message {
-  position: relative;
-
-  img {
-    margin-right: 10px;
-  }
-  .badge {
-    position: absolute;
-    left: 10px;
-    top: 0px;
-    font-size: 62.5%;
-  }
+  --background: translucent;
 }
 
 .like,
