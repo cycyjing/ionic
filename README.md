@@ -1,6 +1,6 @@
 ## install ionic and cordova
 
-npm i -g ionic cordova
+npm i -g ionic cordova 
 
 ## create ionic project
 
