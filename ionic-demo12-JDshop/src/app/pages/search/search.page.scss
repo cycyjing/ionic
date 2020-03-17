@@ -3,14 +3,15 @@ ion-searchbar {
   margin-top: 15px;
 }
 
-.hot-title {
-  margin: 1rem 1rem 0.5rem;
+.hot-title,
+.history-title {
+  padding: 1rem 1rem 0.5rem;
   font-weight: bold;
 }
 
 .hot-content {
   margin-bottom: 0.5rem;
-  
+
   ion-chip {
     --background: #f8f8f8;
     --color: gray;
@@ -19,4 +20,8 @@ ion-searchbar {
 
 ion-item-divider {
   min-height: 0.5rem;
+}
+
+.history-title{
+  border-bottom: 2px solid #c8c7cc;
 }

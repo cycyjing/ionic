@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="hot-title">Hot Search</div>
+  <h4 class="hot-title">Hot Search</h4>
   <div class="hot-content">
     <ion-chip *ngFor="let item of SearchList.HOT_LIST">
       <ion-label>{{item}}</ion-label>
@@ -20,5 +20,10 @@
 
   <ion-item-divider></ion-item-divider>
 
-
+  <h4 class="history-title">History</h4>
+  <ion-list>
+    <ion-item *ngFor="let item of SearchList.HISTORY_LIST">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
