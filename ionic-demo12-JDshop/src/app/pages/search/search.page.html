@@ -11,5 +11,14 @@
 </ion-header>
 
 <ion-content>
-  
+  <div class="hot-title">Hot Search</div>
+  <div class="hot-content">
+    <ion-chip *ngFor="let item of SearchList.HOT_LIST">
+      <ion-label>{{item}}</ion-label>
+    </ion-chip>
+  </div>
+
+  <ion-item-divider></ion-item-divider>
+
+
 </ion-content>

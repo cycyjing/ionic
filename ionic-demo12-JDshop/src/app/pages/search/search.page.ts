@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { SearchList } from '../../config/search-list';
 
 @Component({
   selector: 'app-search',
@@ -7,6 +8,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage {
+  SearchList = SearchList;
 
   constructor(public navController: NavController) { }
 
