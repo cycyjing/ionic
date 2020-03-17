@@ -16,4 +16,5 @@ export class SearchPage {
     this.navController.back();
   }
 
+  doSearch() { }
 }
