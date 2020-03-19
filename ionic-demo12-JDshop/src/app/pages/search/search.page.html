@@ -17,19 +17,30 @@
 </ion-header>
 
 <ion-content>
-  <h4 class="hot-title">Hot Search</h4>
-  <div class="hot-content">
-    <ion-chip *ngFor="let item of SearchList.HOT_LIST">
-      <ion-label>{{item}}</ion-label>
-    </ion-chip>
-  </div>
+  <ng-container *ngIf="flag; else elseTemplate">
+    <h4 class="hot-title">Hot Search</h4>
+    <div class="hot-content">
+      <ion-chip *ngFor="let item of SearchList.HOT_LIST">
+        <ion-label>{{item}}</ion-label>
+      </ion-chip>
+    </div>
 
-  <ion-item-divider></ion-item-divider>
+    <ion-item-divider></ion-item-divider>
 
-  <h4 class="history-title">History</h4>
-  <ion-list>
-    <ion-item *ngFor="let item of SearchList.HISTORY_LIST">
-      <ion-label>{{item}}</ion-label>
-    </ion-item>
-  </ion-list>
+    <h4 class="history-title">History</h4>
+    <ion-list>
+      <ion-item *ngFor="let item of SearchList.HISTORY_LIST">
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <ng-template #elseTemplate>
+    <ion-list>
+      <ion-item>
+        <ion-label>Awesome Label</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+
 </ion-content>

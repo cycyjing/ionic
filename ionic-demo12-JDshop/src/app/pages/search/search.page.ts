@@ -8,6 +8,7 @@ import { SearchList } from '../../config/search-list';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage {
+  flag: boolean = true;
   SearchList = SearchList;
 
   constructor(public navController: NavController) { }
@@ -16,5 +17,7 @@ export class SearchPage {
     this.navController.back();
   }
 
-  doSearch() { }
+  doSearch() {
+    this.flag = false;
+  }
 }
