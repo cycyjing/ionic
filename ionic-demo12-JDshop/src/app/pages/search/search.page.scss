@@ -26,3 +26,11 @@ ion-item-divider {
 .history-title {
   border-bottom: 2px solid #c8c7cc;
 }
+
+.subheader {
+  display: flex;
+  div {
+    flex: 1;
+    text-align: center;
+  }
+}
