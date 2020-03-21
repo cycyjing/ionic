@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,11 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage {
 
-  constructor(public navController: NavController) { }
+  constructor(public navController: NavController, public router: Router) { }
 
-  goBack() {
-    this.navController.back();
+  doClose() { }
+
+  goMy() {
+    this.router.navigate(['/tabs/tab4'], { queryParams: { flag: false } });
   }
-
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MyList } from '../config/my-list';
 
 @Component({
@@ -11,7 +12,12 @@ export class Tab4Page {
   image = 'assets/user.png';
   MyList = MyList;
 
-  constructor() { }
+  constructor(public activatedRoute: ActivatedRoute) {
+    this.activatedRoute.queryParams.subscribe((data) => {
+      console.log(data.flag);
+      this.flag = data.flag;
+    });
+  }
 
 
 }
