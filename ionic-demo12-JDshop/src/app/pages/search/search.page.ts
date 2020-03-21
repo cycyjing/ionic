@@ -8,7 +8,7 @@ import { SearchList } from '../../config/search-list';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage {
-  flag: boolean = false;
+  flag: boolean = true;
   SearchList = SearchList;
   productList: any[] = [];
 
