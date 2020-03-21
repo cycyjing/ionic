@@ -1,4 +1,28 @@
-ion-toolbar{
-  --border-color:#fff;
+ion-toolbar {
+  --border-color: #fff;
 }
 
+ion-img {
+  height: 3rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+ion-item {
+  --padding-end: 20px;
+  --color: #6e6e6e;
+}
+
+.forget-register {
+  padding-top: 10px;
+  padding-left: 12px;
+
+  .register {
+    position: absolute;
+    right: 12px;
+  }
+}
+
+.login {
+  margin: 30px;
+}
