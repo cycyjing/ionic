@@ -45,10 +45,15 @@
   </ng-container>
 
   <ng-template #elseTemplate>
-
-    <ion-list>
-      <ion-item>
-        <ion-label>Awesome Label</ion-label>
+    <ion-list class="product-list">
+      <ion-item *ngFor="let item of productList">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="item.img"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{item.title}}</h3>
+          <p>$100</p>
+        </ion-label>
       </ion-item>
     </ion-list>
   </ng-template>
