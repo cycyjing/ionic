@@ -2,7 +2,7 @@
   <ng-container *ngIf="flag; else login">
     <div class="avatar">
       <img [src]="image" />
-      <span>Login / Register ></span>
+      <span [routerLink]="['/login']">Login / Register ></span>
     </div>
   </ng-container>
   <ng-template #login>
