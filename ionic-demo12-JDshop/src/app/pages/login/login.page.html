@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="doClose()" (tap)="doClose()">
+      <ion-button (click)="goBack()" (tap)="goBack()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -24,10 +24,10 @@
   </ion-item>
 
   <ion-buttons class="forget-register">
-    <ion-button class="forget" color="medium">Forget Password</ion-button>
-    <ion-button class="register" color="medium">Register</ion-button>
+    <ion-button class="forget-btn" color="medium">Forget Password</ion-button>
+    <ion-button class="register-btn" color="dark" [routerLink]="['/register']">Register</ion-button>
   </ion-buttons>
 
-  <ion-button class="login" expand="block" fill="solid" color="danger" (click)="goMy()" (tap)="goMy()">Login
+  <ion-button class="login-btn" expand="block" fill="solid" color="danger" (click)="goMyTab()" (tap)="goMyTab()">Login
   </ion-button>
 </ion-content>

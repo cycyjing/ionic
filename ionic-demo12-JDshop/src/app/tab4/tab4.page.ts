@@ -13,10 +13,10 @@ export class Tab4Page {
   MyList = MyList;
 
   constructor(public activatedRoute: ActivatedRoute) {
-    this.activatedRoute.queryParams.subscribe((data) => {
-      console.log(data.flag);
-      this.flag = data.flag;
-    });
+    // this.activatedRoute.queryParams.subscribe((data) => {
+    //   console.log(data.flag);
+    //   this.flag = data.flag;
+    // });
   }
 
 

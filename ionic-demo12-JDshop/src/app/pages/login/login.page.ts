@@ -11,9 +11,11 @@ export class LoginPage {
 
   constructor(public navController: NavController, public router: Router) { }
 
-  doClose() { }
+  goBack() {
+    this.navController.navigateBack('/tabs/tab4');
+  }
 
-  goMy() {
+  goMyTab() {
     this.router.navigate(['/tabs/tab4'], { queryParams: { flag: false } });
   }
 }
