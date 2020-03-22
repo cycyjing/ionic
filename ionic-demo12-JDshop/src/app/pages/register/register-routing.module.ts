@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'step1', pathMatch: 'full' },
       { path: 'step1', component: RegisterStep1Component },
-      { path: 'step3', component: RegisterStep2Component },
+      { path: 'step2', component: RegisterStep2Component },
     ]
   }
 ];
