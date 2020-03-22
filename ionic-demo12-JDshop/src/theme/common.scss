@@ -2,7 +2,7 @@
 :root {
   --color-base: #f53d3d;
 }
-/* global custom css style */ 
+/* global custom css style */
 body,
 div,
 ul,
@@ -63,6 +63,10 @@ ol {
   list-style-type: none;
 }
 
-.price{
+.price {
   color: var(--color-base);
+}
+
+.register-inner-content {
+  padding: 20px;
 }
