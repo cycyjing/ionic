@@ -9,6 +9,7 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 import { RegisterPage } from './register.page';
 import { RegisterStep1Component } from './register-step1/register-step1.component';
 import { RegisterStep2Component } from './register-step2/register-step2.component';
+import { RegisterStep3Component } from './register-step3/register-step3.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { RegisterStep2Component } from './register-step2/register-step2.componen
     IonicModule,
     RegisterPageRoutingModule
   ],
-  declarations: [RegisterPage, RegisterStep1Component, RegisterStep2Component]
+  declarations: [RegisterPage, RegisterStep1Component, RegisterStep2Component, RegisterStep3Component]
 })
 export class RegisterPageModule { }
