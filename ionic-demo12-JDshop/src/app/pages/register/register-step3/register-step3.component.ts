@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register-step3',
   templateUrl: './register-step3.component.html',
   styleUrls: ['./register-step3.component.scss'],
 })
-export class RegisterStep3Component implements OnInit {
+export class RegisterStep3Component {
 
-  constructor() { }
+  constructor(public navController: NavController) { }
 
-  ngOnInit() {}
+  goBackStep() {
+    this.navController.navigateBack('/register/step2');
+  }
 
 }

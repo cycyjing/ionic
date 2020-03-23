@@ -1,10 +1,10 @@
 <div class="register-inner-content">
   register-step2 works!
 
-  <ion-button expand="block" [routerLink]="['/register/step1']">
-    Back
-  </ion-button>
-  <ion-button expand="block" [routerLink]="['/register/step3']">
+  <ion-button expand="block" (click)="goNextStep()">
     Next
+  </ion-button>
+  <ion-button expand="block" (click)="goBackStep()">
+    Back
   </ion-button>
 </div>
