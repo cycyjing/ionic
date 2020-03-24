@@ -10,14 +10,16 @@ import { RegisterPage } from './register.page';
 import { RegisterStep1Component } from './register-step1/register-step1.component';
 import { RegisterStep2Component } from './register-step2/register-step2.component';
 import { RegisterStep3Component } from './register-step3/register-step3.component';
+import { ContactMeModule } from 'src/app/shared/contact-me/contact-me.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule
+    RegisterPageRoutingModule,
+    ContactMeModule
   ],
-  declarations: [RegisterPage, RegisterStep1Component, RegisterStep2Component, RegisterStep3Component]
+  declarations: [RegisterPage, RegisterStep1Component, RegisterStep2Component, RegisterStep3Component],
 })
 export class RegisterPageModule { }

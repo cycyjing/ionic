@@ -1,10 +1,15 @@
 <div class="register-inner-content">
-  register-step2 works!
-
-  <ion-button expand="block" (click)="goNextStep()">
+  <h5>Please enter the verification code</h5>
+  <div class="display-flex verification">
+    <input class="code" type="number">
+    <span class="send-again">Send again</span>
+  </div>
+  <ion-button class="margin-top-30" expand="block" (click)="goNextStep()">
     Next
   </ion-button>
   <ion-button expand="block" (click)="goBackStep()">
     Back
   </ion-button>
+
+  <app-contact-me></app-contact-me>
 </div>

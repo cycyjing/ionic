@@ -10,8 +10,7 @@ export class RegisterStep3Component {
 
   constructor(public navController: NavController) { }
 
-  goBackStep() {
-    this.navController.navigateBack('/register/step2');
+  doRegister() {
   }
 
 }

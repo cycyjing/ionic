@@ -1,7 +1,14 @@
 <div class="register-inner-content">
-  phone number
+  <div class="display-flex">
+    <select class="country-code">
+      <option *ngFor="let item of COUNTRY_CODE" [value]="item">{{item}}</option>
+    </select>
+    <input class="phone" type="number">
+  </div>
 
-  <ion-button expand="block" (click)="goNextStep()">
+  <ion-button class="margin-top-30" expand="block" (click)="goNextStep()">
     Next
   </ion-button>
+
+  <app-contact-me></app-contact-me>
 </div>
