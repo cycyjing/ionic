@@ -8,7 +8,7 @@
   <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="slidesOpts" (ionSlideTouchEnd)="slideTouchEnd()"
     #slides>
     <ion-slide *ngFor="let slide of slidesList">
-      <ion-img [src]="slide.img"></ion-img>
+      <ion-img [src]="config.domain+slide.pic"></ion-img>
     </ion-slide>
   </ion-slides>
 

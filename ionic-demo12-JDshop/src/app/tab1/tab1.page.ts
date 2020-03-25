@@ -8,6 +8,7 @@ import { CommonService } from '../services/common.service';
 })
 export class Tab1Page implements OnInit {
   @ViewChild('slides', { static: false }) slides;
+  config: any = {};
   slidesList: any[] = [];
   slidesOpts = {
     speed: 2000,
@@ -19,7 +20,9 @@ export class Tab1Page implements OnInit {
   hotList: any[] = [];
   productList: any[] = [];
 
-  constructor(public commonService: CommonService) { }
+  constructor(public commonService: CommonService) {
+    this.config = commonService.config;
+  }
 
   ngOnInit(): void {
     // slides
@@ -35,12 +38,9 @@ export class Tab1Page implements OnInit {
   }
 
   getSlidesData() {
-    for (let i = 1; i <= 3; i++) {
-      this.slidesList.push({
-        img: 'assets/slide0' + i + '.png',
-        url: ''
-      });
-    }
+    this.commonService.ajaxGet('api/focus').then((data: any) => {
+      this.slidesList = data.result;
+    });
   }
 
   getHotListData() {
