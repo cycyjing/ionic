@@ -8,8 +8,15 @@ ion-content ion-toolbar {
 
   .left {
     width: 8rem;
-    border-right: 2px solid lightgray;
     overflow-y: auto;
+    background-color: #eee;
+
+    ion-item {
+      --background: #eee;
+    }
+    .active {
+      --background: #fff;
+    }
   }
   .right {
     flex: 1;
