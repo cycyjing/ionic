@@ -2,11 +2,11 @@ ion-content ion-toolbar {
   --background: translucent;
 }
 
-.like,
+.hot,
 .list {
   margin: 20px 10px;
 
-  .like-title,
+  .hot-title,
   .list-title {
     font-weight: bold;
 
@@ -24,11 +24,11 @@ ion-content ion-toolbar {
   }
 }
 
-.like-title {
+.hot-title {
   margin-bottom: 10px;
 }
 
-.like-item {
+.hot-item {
   display: flex;
   overflow-x: auto;
   // white-space: nowrap;

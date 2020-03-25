@@ -1,11 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   @ViewChild('slides', { static: false }) slides;
   slidesList: any[] = [];
   slidesOpts = {
@@ -15,43 +16,57 @@ export class Tab1Page {
     },
     loop: true,
   };
-  likeList: any[] = [];
+  hotList: any[] = [];
   productList: any[] = [];
 
-  constructor() {
+  constructor(public commonService: CommonService) { }
+
+  ngOnInit(): void {
     // slides
+    this.getSlidesData();
+    // hot
+    this.getHotListData();
+    // productList
+    this.getProductListData();
+  }
+
+  slideTouchEnd() {
+    this.slides.startAutoplay();
+  }
+
+  getSlidesData() {
     for (let i = 1; i <= 3; i++) {
       this.slidesList.push({
         img: 'assets/slide0' + i + '.png',
         url: ''
       });
     }
-    // like
+  }
+
+  getHotListData() {
     for (let i = 1; i <= 10; i++) {
       if (i < 10) {
-        this.likeList.push({
+        this.hotList.push({
           img: 'assets/0' + i + '.jpg',
           url: '',
           title: 'item-' + i
         });
       } else {
-        this.likeList.push({
+        this.hotList.push({
           img: 'assets/' + i + '.jpg',
           url: '',
           title: 'item-' + i
         });
       }
     }
-    // productList
+  }
+
+  getProductListData() {
     for (let i = 1; i <= 12; i++) {
       this.productList.push({
         img: 'assets/list' + i + '.jpg',
         url: ''
       });
     }
-  }
-
-  slideTouchEnd() {
-    this.slides.startAutoplay();
   }
 }

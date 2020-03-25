@@ -12,10 +12,10 @@
     </ion-slide>
   </ion-slides>
 
-  <div class="like">
-    <div class="like-title">Hot</div>
-    <ul class="like-item">
-      <li *ngFor="let item of likeList">
+  <div class="hot">
+    <div class="hot-title">Hot</div>
+    <ul class="hot-item">
+      <li *ngFor="let item of hotList">
         <ion-img [src]="item.img"></ion-img>
         <p>{{item.title}}</p>
       </li>
