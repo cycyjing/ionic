@@ -16,8 +16,7 @@
     <div class="hot-title">Hot</div>
     <ul class="hot-item">
       <li *ngFor="let item of hotList">
-        <ion-img [src]="item.img"></ion-img>
-        <p>{{item.title}}</p>
+        <ion-img [src]="config.domain+item.s_pic"></ion-img>
       </li>
     </ul>
   </div>
@@ -27,7 +26,9 @@
     <ion-grid fixed>
       <ion-row class="list-item">
         <ion-col *ngFor="let item of productList">
-          <ion-img [src]="item.img"></ion-img>
+          <ion-img [src]="config.domain+item.s_pic"></ion-img>
+          <p class="price">${{item.price}}</p>
+          <p class="item-title">{{item.title}}</p>
         </ion-col>
       </ion-row>
     </ion-grid>

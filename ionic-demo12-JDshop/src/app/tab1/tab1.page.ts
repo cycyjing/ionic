@@ -44,29 +44,14 @@ export class Tab1Page implements OnInit {
   }
 
   getHotListData() {
-    for (let i = 1; i <= 10; i++) {
-      if (i < 10) {
-        this.hotList.push({
-          img: 'assets/0' + i + '.jpg',
-          url: '',
-          title: 'item-' + i
-        });
-      } else {
-        this.hotList.push({
-          img: 'assets/' + i + '.jpg',
-          url: '',
-          title: 'item-' + i
-        });
-      }
-    }
+    this.commonService.ajaxGet('api/plist?is_hot=1').then((data: any) => {
+      this.hotList = data.result;
+    });
   }
 
   getProductListData() {
-    for (let i = 1; i <= 12; i++) {
-      this.productList.push({
-        img: 'assets/list' + i + '.jpg',
-        url: ''
-      });
-    }
+    this.commonService.ajaxGet('api/plist').then((data: any) => {
+      this.productList = data.result;
+    });
   }
 }
