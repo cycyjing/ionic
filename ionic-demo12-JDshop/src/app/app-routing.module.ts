@@ -18,11 +18,12 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },  {
-    path: 'product-details',
-    loadChildren: () => import('./pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+    path: 'product-list',
+    loadChildren: () => import('./pages/product-list/product-list.module').then( m => m.ProductListPageModule)
   },
 
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
