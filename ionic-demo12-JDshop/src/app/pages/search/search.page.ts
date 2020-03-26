@@ -21,10 +21,6 @@ export class SearchPage {
     }
   }
 
-  goBack() {
-    this.navController.back();
-  }
-
   doSearch() {
     this.flag = false;
   }

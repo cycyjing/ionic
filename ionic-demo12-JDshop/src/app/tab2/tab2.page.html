@@ -9,7 +9,8 @@
     <!-- LEFT: category -->
     <div class="left">
       <ion-list lines="full">
-        <ion-item *ngFor="let item of categoryList" (click)="getProductsData(item._id)" (tap)="getProductsData(item._id)" [ngClass]="{'active':item._id==selectedid}">
+        <ion-item *ngFor="let item of categoryList" (click)="getProductsData(item._id)"
+          (tap)="getProductsData(item._id)" [ngClass]="{'active':item._id==selectedid}">
           <ion-label>{{item.title}}</ion-label>
         </ion-item>
       </ion-list>
@@ -18,7 +19,7 @@
     <div class="right">
       <ion-grid fixed>
         <ion-row class="right-item">
-          <ion-col *ngFor="let item of subCategoryList">
+          <ion-col *ngFor="let item of subCategoryList" [routerLink]="['/product-list']" [queryParams]="{cid:item._id}">
             <ion-img [src]="config.domain+item.pic"></ion-img>
             <p>{{item.title}}</p>
           </ion-col>
