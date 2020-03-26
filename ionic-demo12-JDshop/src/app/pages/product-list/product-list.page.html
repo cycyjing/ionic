@@ -1,10 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons class="back-btn" slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
 
-    <ion-title>product-list</ion-title>
+    <ion-searchbar placeholder="Search" animated></ion-searchbar>
+
+    <ion-buttons slot="end" class="search-btn">
+      <ion-button (click)="doSearch()" (tap)="doSearch()">
+        Search
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- sub -->
+  <ion-toolbar>
+    <div class="subheader">
+      <div>Composite</div>
+      <div>Sales</div>
+      <div>Price</div>
+      <div>Filter</div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -12,11 +27,11 @@
   <ion-list class="product-list">
     <ion-item *ngFor="let item of productList">
       <ion-thumbnail slot="start">
-        <ion-img [src]="item.img"></ion-img>
+        <ion-img [src]="config.domain+item.s_pic"></ion-img>
       </ion-thumbnail>
       <ion-label>
         <h3>{{item.title}}</h3>
-        <p><span class="price">$100</span></p>
+        <p><span class="price">${{item.price}}</span></p>
       </ion-label>
     </ion-item>
   </ion-list>

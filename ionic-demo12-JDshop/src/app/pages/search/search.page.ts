@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { SearchList } from '../../config/search-list';
 
 @Component({
@@ -12,7 +11,7 @@ export class SearchPage {
   SearchList = SearchList;
   productList: any[] = [];
 
-  constructor(public navController: NavController) {
+  constructor() {
     for (let i = 1; i <= 12; i++) {
       this.productList.push({
         img: 'assets/list' + i + '.jpg',

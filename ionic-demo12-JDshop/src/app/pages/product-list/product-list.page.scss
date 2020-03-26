@@ -1,3 +1,17 @@
+.back-btn,
+ion-searchbar,
+.search-btn {
+  margin-top: 15px;
+}
+
+.subheader {
+  display: flex;
+  div {
+    flex: 1;
+    text-align: center;
+  }
+}
+
 .product-list {
   ion-label {
     white-space: normal;
