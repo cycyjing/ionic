@@ -12,12 +12,31 @@ export class ProductListPage implements OnInit {
   productList: any[] = [];
   cid;
   page: number = 1;
+  subheaderList = [];
+  subheaderSelectedid = 1;
 
   constructor(public commonService: CommonService, public activatedRoute: ActivatedRoute) {
     this.config = commonService.config;
     this.activatedRoute.queryParams.subscribe((data) => {
       this.cid = data.cid;
     });
+    this.subheaderList = [
+      {
+        id: 1,
+        title: 'All',
+        sort: 1
+      },
+      {
+        id: 2,
+        title: 'Sales',
+        sort: 1
+      },
+      {
+        id: 3,
+        title: 'Price',
+        sort: 1
+      },
+    ];
   }
 
   ngOnInit() {
@@ -38,4 +57,7 @@ export class ProductListPage implements OnInit {
     });
   }
 
+  subheaderChange(item) {
+    this.subheaderSelectedid = item.id;
+  }
 }

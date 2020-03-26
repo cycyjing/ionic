@@ -15,10 +15,7 @@
   <!-- sub -->
   <ion-toolbar>
     <div class="subheader">
-      <div>Composite</div>
-      <div>Sales</div>
-      <div>Price</div>
-      <div>Filter</div>
+      <div *ngFor="let item of subheaderList" [ngClass]="{'active': item.id==subheaderSelectedid}" (click)="subheaderChange(item)" (tap)="subheaderChange(item)">{{item.title}}</div>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -37,9 +34,7 @@
   </ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="getProductListData($event)">
-    <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more data...">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>

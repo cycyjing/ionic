@@ -9,7 +9,7 @@ import { CommonService } from '../services/common.service';
 export class Tab2Page implements OnInit {
   config: any = {};
   categoryList: any[] = [];
-  selectedid = '';
+  categorySelectedid = '';
   subCategoryList: any[] = [];
 
   constructor(public commonService: CommonService) {
@@ -29,7 +29,7 @@ export class Tab2Page implements OnInit {
   }
 
   getProductsData(pid) {
-    this.selectedid = pid;
+    this.categorySelectedid = pid;
     this.commonService.ajaxGet('api/pcate?pid=' + pid).then((data: any) => {
       this.subCategoryList = data.result;
     });

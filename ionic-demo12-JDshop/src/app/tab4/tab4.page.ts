@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MyList } from '../config/my-list';
+import { MyList } from '../config/my-list-config';
 
 @Component({
   selector: 'app-tab4',
