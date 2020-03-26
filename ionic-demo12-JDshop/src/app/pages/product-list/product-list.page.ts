@@ -10,22 +10,31 @@ import { CommonService } from '../../services/common.service';
 export class ProductListPage implements OnInit {
   config: any = {};
   productList: any[] = [];
+  cid;
+  page: number = 1;
 
   constructor(public commonService: CommonService, public activatedRoute: ActivatedRoute) {
     this.config = commonService.config;
+    this.activatedRoute.queryParams.subscribe((data) => {
+      this.cid = data.cid;
+    });
   }
 
   ngOnInit() {
-    this.getProductListData();
+    this.getProductListData(null);
   }
 
-  getProductListData() {
-    let cid;
-    this.activatedRoute.queryParams.subscribe((data) => {
-      cid = data.cid;
-    });
-    this.commonService.ajaxGet('api/plist?cid=' + cid).then((data: any) => {
-      this.productList = data.result;
+  doSearch() { }
+
+  getProductListData(event) {
+    this.commonService.ajaxGet('api/plist?cid=' + this.cid + '&page=' + this.page).then((data: any) => {
+      // concat pages data
+      this.productList = this.productList.concat(data.result);
+      this.page++;
+      event ? event.target.complete() : '';
+      if (data.result.length < 10) {
+        event ? event.target.disabled = true : '';
+      }
     });
   }
 
