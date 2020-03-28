@@ -15,7 +15,7 @@
   <!-- sub -->
   <ion-toolbar>
     <div class="subheader">
-      <div *ngFor="let item of subheaderList" [ngClass]="{'active': item.id==subheaderSelectedid}" (click)="subheaderChange(item)" (tap)="subheaderChange(item)">{{item.title}}</div>
+      <div *ngFor="let item of subheaderList" [ngClass]="{'active': item.id==subheaderSelectedid}" (click)="subheaderChange(item.id)">{{item.title}}</div>
     </div>
   </ion-toolbar>
 </ion-header>
