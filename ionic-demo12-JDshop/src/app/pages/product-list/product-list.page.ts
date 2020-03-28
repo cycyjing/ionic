@@ -82,10 +82,12 @@ export class ProductListPage implements OnInit {
     // reset data
     this.page = 1;
     this.productList = [];
-    if (this.subheaderList[id - 1].sort < 0) {
-      this.subheaderList[id - 1].icon = 'caret-down';
-    } else {
-      this.subheaderList[id - 1].icon = 'caret-up';
+    if (id != 1) {
+      if (this.subheaderList[id - 1].sort < 0) {
+        this.subheaderList[id - 1].icon = 'caret-down';
+      } else {
+        this.subheaderList[id - 1].icon = 'caret-up';
+      }
     }
     // change sort status
     this.subheaderList[id - 1].sort = this.subheaderList[id - 1].sort * -1;
