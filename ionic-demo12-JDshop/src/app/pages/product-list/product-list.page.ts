@@ -34,13 +34,15 @@ export class ProductListPage implements OnInit {
         id: 2,
         title: 'Sales',
         field: 'salecount',
-        sort: -1
+        sort: -1,
+        icon: 'caret-down'
       },
       {
         id: 3,
         title: 'Price',
         field: 'price',
-        sort: -1
+        sort: -1,
+        icon: 'caret-down'
       },
     ];
   }
@@ -80,6 +82,11 @@ export class ProductListPage implements OnInit {
     // reset data
     this.page = 1;
     this.productList = [];
+    if (this.subheaderList[id - 1].sort < 0) {
+      this.subheaderList[id - 1].icon = 'caret-down';
+    } else {
+      this.subheaderList[id - 1].icon = 'caret-up';
+    }
     // change sort status
     this.subheaderList[id - 1].sort = this.subheaderList[id - 1].sort * -1;
     // to page top
