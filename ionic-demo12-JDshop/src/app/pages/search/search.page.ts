@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchList } from '../../config/search-list-config';
+import { SearchList } from '../../config';
 
 @Component({
   selector: 'app-search',

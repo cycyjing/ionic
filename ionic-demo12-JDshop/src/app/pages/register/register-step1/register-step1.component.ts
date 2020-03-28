@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { RegisterStep1 } from '../../../config/register-step1-config';
+import { RegisterStep1 } from '../../../config';
 
 @Component({
   selector: 'app-register-step1',

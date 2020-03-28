@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonContent } from '@ionic/angular';
 import { CommonService } from '../../services/common.service';
+import { Subheader } from '../../config';
 
 @Component({
   selector: 'app-product-list',
@@ -15,36 +16,15 @@ export class ProductListPage implements OnInit {
   cid;
   page = 1;
   sort = '';
-  subheaderList = [];
+  subheaderList = Subheader.SUBHEADER;
   subheaderSelectedid: number = 1;
+  infiniteScrollStatus: boolean = true;
 
   constructor(public commonService: CommonService, public activatedRoute: ActivatedRoute) {
     this.config = commonService.config;
     this.activatedRoute.queryParams.subscribe((data) => {
       this.cid = data.cid;
     });
-    this.subheaderList = [
-      {
-        id: 1,
-        title: 'All',
-        field: 'all',
-        sort: -1
-      },
-      {
-        id: 2,
-        title: 'Sales',
-        field: 'salecount',
-        sort: -1,
-        icon: 'caret-down'
-      },
-      {
-        id: 3,
-        title: 'Price',
-        field: 'price',
-        sort: -1,
-        icon: 'caret-down'
-      },
-    ];
   }
 
   ngOnInit() {
@@ -70,8 +50,7 @@ export class ProductListPage implements OnInit {
       event ? event.target.complete() : '';
       // does have more data
       if (data.result.length < 10) {
-        event ? event.target.disabled = true : '';
-        console.log('disabled---' + data.result.length);
+        this.infiniteScrollStatus = false;
       }
     });
   }
@@ -93,6 +72,7 @@ export class ProductListPage implements OnInit {
     this.subheaderList[id - 1].sort = this.subheaderList[id - 1].sort * -1;
     // to page top
     this.content.scrollToTop(0);
+    this.infiniteScrollStatus = true;
     this.getProductListData(null);
   }
 }
