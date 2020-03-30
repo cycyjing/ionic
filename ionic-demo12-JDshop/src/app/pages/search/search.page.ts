@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { SearchList, Subheader } from '../../config';
-import { CommonService } from '../../services/common.service';
+import { CommonService, StorageService } from '../../services';
 
 @Component({
   selector: 'app-search',
@@ -21,7 +21,7 @@ export class SearchPage {
   sort = '';
   infiniteScrollStatus: boolean = true;
 
-  constructor(public commonService: CommonService) {
+  constructor(public commonService: CommonService, public storageService: StorageService) {
     this.config = commonService.config;
   }
 
