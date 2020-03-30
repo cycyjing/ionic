@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonContent } from '@ionic/angular';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { IonContent, AlertController } from '@ionic/angular';
 import { SearchList, Subheader } from '../../config';
 import { CommonService, StorageService } from '../../services';
 
@@ -8,10 +8,11 @@ import { CommonService, StorageService } from '../../services';
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
 })
-export class SearchPage {
+export class SearchPage implements OnInit {
   @ViewChild(IonContent, { static: false }) content;
   flag: boolean = true;
   searchList = SearchList;
+
   config: any = {};
   productList: any[] = [];
   keywords;
@@ -20,12 +21,19 @@ export class SearchPage {
   subheaderSelectedid: number = 1;
   sort = '';
   infiniteScrollStatus: boolean = true;
+  historyList: any[] = [];
 
-  constructor(public commonService: CommonService, public storageService: StorageService) {
+  constructor(public commonService: CommonService, public storageService: StorageService, public alertController: AlertController) {
     this.config = commonService.config;
   }
 
+  ngOnInit(): void {
+    this.getHistory();
+  }
+
   doSearch() {
+    this.saveHistory();
+
     this.flag = false;
     this.page = 1;
     this.infiniteScrollStatus = true;
@@ -73,4 +81,25 @@ export class SearchPage {
     this.content.scrollToTop(0);
     this.getProductListData(null);
   }
+
+  saveHistory() {
+    this.historyList = this.storageService.get('history');
+    if (this.historyList) {// exist
+      // have duplicate or not
+      if (this.historyList.indexOf(this.keywords) == -1) {
+        this.historyList.push(this.keywords);
+      }
+    } else {// dont exist
+      this.historyList = [];
+      this.historyList.push(this.keywords);
+    }
+    this.storageService.set('history', this.historyList);
+  }
+
+  getHistory() {
+    let history = this.storageService.get('history');
+    history ? this.historyList = history : [];
+  }
+
+  
 }
