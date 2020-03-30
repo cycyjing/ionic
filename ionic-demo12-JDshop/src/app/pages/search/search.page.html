@@ -4,10 +4,10 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
 
-    <ion-searchbar placeholder="Search" animated></ion-searchbar>
+    <ion-searchbar class="searchbar" placeholder="Search" [(ngModel)]="keywords" animated></ion-searchbar>
 
     <ion-buttons slot="end" class="search-btn">
-      <ion-button (click)="doSearch()" (tap)="doSearch()">
+      <ion-button (tap)="doSearch()">
         Search
       </ion-button>
     </ion-buttons>
@@ -47,14 +47,19 @@
     <ion-list class="product-list">
       <ion-item *ngFor="let item of productList">
         <ion-thumbnail slot="start">
-          <ion-img [src]="item.img"></ion-img>
+          <ion-img [src]="config.domain+item.s_pic"></ion-img>
         </ion-thumbnail>
         <ion-label>
           <h3>{{item.title}}</h3>
-          <p><span class="price">$100</span></p>
+          <p><span class="price">${{item.price}}</span></p>
         </ion-label>
       </ion-item>
     </ion-list>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="getProductListData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </ng-template>
 
 </ion-content>

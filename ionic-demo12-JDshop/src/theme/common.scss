@@ -81,7 +81,7 @@ ol {
 
 /* SEARCH AND PRODUCT LIST pages*/
 .back-btn,
-ion-searchbar,
+.searchbar,
 .search-btn {
   margin-top: 15px;
 }
@@ -100,7 +100,7 @@ ion-searchbar,
 }
 
 .product-list {
-  ion-label {
+  ion-label h3 {
     white-space: normal;
   }
 }
