@@ -1,11 +1,12 @@
 .hot-title,
 .history-title {
-  padding: 1rem 1rem 0.5rem;
+  padding: 15px 15px 10px;
   font-weight: bold;
 }
 
 .hot-content {
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
+  margin-left: 15px;
 
   ion-chip {
     --background: #f8f8f8;
@@ -14,10 +15,5 @@
 }
 
 ion-item-divider {
-  min-height: 0.5rem;
+  min-height: 5px;
 }
-
-.history-title {
-  border-bottom: 2px solid #c8c7cc;
-}
-
