@@ -1,5 +1,5 @@
-ion-content ion-toolbar {
-  --background: translucent;
+.slide-img {
+  min-height: 207px;
 }
 
 .hot,
@@ -60,7 +60,7 @@ ion-content ion-toolbar {
     height: 175px;
     width: 175px;
   }
-  .price{
+  .price {
     margin-top: 5px;
   }
 }

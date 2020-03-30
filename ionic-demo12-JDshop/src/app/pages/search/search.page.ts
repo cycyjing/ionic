@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchList } from '../../config';
+import { SearchList, Subheader } from '../../config';
 
 @Component({
   selector: 'app-search',
@@ -8,8 +8,10 @@ import { SearchList } from '../../config';
 })
 export class SearchPage {
   flag: boolean = true;
-  SearchList = SearchList;
+  searchList = SearchList;
   productList: any[] = [];
+  subheaderList = Subheader.SUBHEADER;
+  subheaderSelectedid: number = 1;
 
   constructor() {
     for (let i = 1; i <= 12; i++) {
@@ -22,5 +24,10 @@ export class SearchPage {
 
   doSearch() {
     this.flag = false;
+  }
+
+  subheaderChange(id) {
+    this.subheaderSelectedid = id;
+    
   }
 }

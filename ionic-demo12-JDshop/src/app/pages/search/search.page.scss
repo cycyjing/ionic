@@ -1,9 +1,3 @@
-.back-btn,
-ion-searchbar,
-.search-btn {
-  margin-top: 15px;
-}
-
 .hot-title,
 .history-title {
   padding: 1rem 1rem 0.5rem;
@@ -27,16 +21,3 @@ ion-item-divider {
   border-bottom: 2px solid #c8c7cc;
 }
 
-.subheader {
-  display: flex;
-  div {
-    flex: 1;
-    text-align: center;
-  }
-}
-
-.product-list {
-  ion-label {
-    white-space: normal;
-  }
-}

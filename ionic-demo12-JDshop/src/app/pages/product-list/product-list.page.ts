@@ -34,10 +34,10 @@ export class ProductListPage implements OnInit {
   doSearch() { }
 
   getProductListData(event) {
+    console.log(this.infiniteScrollStatus);
     let api;
     if (this.sort) {
       api = 'api/plist?cid=' + this.cid + '&page=' + this.page + '&sort=' + this.sort;
-      console.log(api);
     } else {
       api = 'api/plist?cid=' + this.cid + '&page=' + this.page;
     }

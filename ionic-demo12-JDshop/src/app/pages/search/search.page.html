@@ -15,10 +15,11 @@
   <!-- sub -->
   <ion-toolbar *ngIf="!flag">
     <div class="subheader">
-      <div>Composite</div>
-      <div>Sales</div>
-      <div>Price</div>
-      <div>Filter</div>
+      <div *ngFor="let item of subheaderList" [ngClass]="{'active':item.id==subheaderSelectedid}"
+        (click)="subheaderChange(item.id)">
+        {{item.title}}
+        <ion-icon [name]="item.icon"></ion-icon>
+      </div>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -27,7 +28,7 @@
   <ng-container *ngIf="flag; else elseTemplate">
     <h4 class="hot-title">Hot Search</h4>
     <div class="hot-content">
-      <ion-chip *ngFor="let item of SearchList.HOT_LIST">
+      <ion-chip *ngFor="let item of searchList.HOT_LIST">
         <ion-label>{{item}}</ion-label>
       </ion-chip>
     </div>
@@ -36,7 +37,7 @@
 
     <h4 class="history-title">History</h4>
     <ion-list>
-      <ion-item *ngFor="let item of SearchList.HISTORY_LIST">
+      <ion-item *ngFor="let item of searchList.HISTORY_LIST">
         <ion-label>{{item}}</ion-label>
       </ion-item>
     </ion-list>
