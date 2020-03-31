@@ -32,17 +32,17 @@ export class SearchPage implements OnInit {
   }
 
   doSearch() {
-    this.saveHistory();
-
     this.flag = false;
     this.page = 1;
     this.infiniteScrollStatus = true;
     this.content.scrollToTop(0);
     this.subheaderSelectedid = 1;
-
+    
     this.commonService.ajaxGet('api/plist?search=' + this.keywords + '&page=' + this.page).then((data: any) => {
       this.productList = data.result;
     });
+    
+    this.saveHistory();
   }
 
   getProductListData(event) {
@@ -86,7 +86,7 @@ export class SearchPage implements OnInit {
     this.historyList = this.storageService.get('history');
     if (this.historyList) {// exist
       // have duplicate or not
-      if (this.historyList.indexOf(this.keywords) == -1) {
+      if (this.historyList.indexOf(this.keywords) == -1 && this.keywords != '' && this.keywords != null) {
         this.historyList.push(this.keywords);
       }
     } else {// dont exist
@@ -101,5 +101,29 @@ export class SearchPage implements OnInit {
     history ? this.historyList = history : [];
   }
 
-  
+  async removeHistory(index) {
+    const alert = await this.alertController.create({
+      backdropDismiss: false,
+      header: 'Does delete it?',
+      buttons: [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'OK',
+          handler: () => {
+            this.historyList.splice(index, 1);
+            this.storageService.set('history', this.historyList);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  searchByHistory(keywords) {
+    this.keywords = keywords;
+    this.doSearch();
+  }
 }
