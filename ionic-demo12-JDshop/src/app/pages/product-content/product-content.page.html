@@ -20,8 +20,8 @@
     <div *ngSwitchCase="'product'">
       <div class="content-inner">
         <ion-img src="assets/01.jpg"></ion-img>
-        <h1>jklsdjfslfj</h1>
-        <p>dfsfs</p>
+        <h1 class="title">jklsdjfslfj</h1>
+        <p class="subtitle">dfsfs</p>
         <span class="original">$1000</span>
         <span class="price special">$100</span>
         <p class="sales">Sales: 1000 / month</p>
@@ -31,16 +31,18 @@
 
       <div class="content-inner">
         <div class="attr">
-          <strong>颜色: </strong>
+          <strong>颜色：</strong>
           <span>white</span>
           <span>white</span>
           <span>white</span>
         </div>
-
-        <div class="count">
-          <span>-</span>
-          <input type="number" name="" id="">
-          <span>+</span>
+        <div class="display-flex number">
+          <strong>数量：</strong>
+          <div class="count">
+            <span>-</span>
+            <input type="number" name="" id="">
+            <span>+</span>
+          </div>
         </div>
       </div>
     </div>

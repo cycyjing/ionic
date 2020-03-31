@@ -12,6 +12,14 @@ ion-img {
   height: 350px;
 }
 
+.title {
+  margin-top: 10px;
+}
+
+.subtitle {
+  margin: 10px 0;
+}
+
 .original {
   font-size: 1.2rem;
   margin-right: 50px;
@@ -36,22 +44,28 @@ ion-item-divider {
   }
 }
 
-.count {
-  border: 1px solid lightgrey;
-  float: right;
+.number {
+  margin-top: 10px;
 
-  span {
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    text-align: center;
-    line-height: 30px;
-    background-color: lightgrey;
+  strong {
+    flex: 1;
   }
-  input {
-    width: 30px;
-    border: none;
-    outline: none;
+  .count {
+    border: 1px solid lightgrey;
+
+    span {
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      line-height: 30px;
+      background-color: lightgrey;
+    }
+    input {
+      width: 30px;
+      border: none;
+      outline: none;
+    }
   }
 }
 
