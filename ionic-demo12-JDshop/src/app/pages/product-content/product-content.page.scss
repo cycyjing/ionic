@@ -1,0 +1,40 @@
+ion-segment {
+  --background: var(--color-base);
+  width: 240px;
+}
+
+ion-segment-button {
+  --color-checked: var(--color-base);
+  --color: #fff;
+}
+
+
+
+ion-footer {
+  ion-button {
+    height: 50px;
+    --border-radius: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
+  .cart-icon {
+    width: 100px;
+    text-align: center;
+
+    ion-icon {
+      font-size: 2.5rem;
+    }
+    ion-badge {
+      position: absolute;
+      left: 55px;
+    }
+  }
+  .add-cart {
+    flex: 1;
+    --background: orange;
+  }
+  .buy-now {
+    flex: 1;
+    --background: var(--color-base);
+  }
+}

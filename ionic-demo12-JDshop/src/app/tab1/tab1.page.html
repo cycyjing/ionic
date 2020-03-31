@@ -25,7 +25,7 @@
     <div class="list-title">Products</div>
     <ion-grid fixed>
       <ion-row class="list-item">
-        <ion-col *ngFor="let item of productList">
+        <ion-col *ngFor="let item of productList" >
           <ion-img [src]="config.domain+item.s_pic"></ion-img>
           <p class="price">${{item.price}}</p>
           <p class="item-title">{{item.title}}</p>
