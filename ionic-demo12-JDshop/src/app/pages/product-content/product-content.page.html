@@ -19,22 +19,20 @@
   <div [ngSwitch]="segment">
     <div *ngSwitchCase="'product'">
       <div class="content-inner">
-        <ion-img src="assets/01.jpg"></ion-img>
-        <h1 class="title">jklsdjfslfj</h1>
-        <p class="subtitle">dfsfs</p>
-        <span class="original">$1000</span>
-        <span class="price special">$100</span>
-        <p class="sales">Sales: 1000 / month</p>
+        <ion-img [src]="config.domain+result.pic"></ion-img>
+        <h1 class="title">{{result.title}}</h1>
+        <p class="subtitle">{{result.sub_title}}</p>
+        <span class="original" [ngClass]="{'active':result.old_price>result.price}">${{result.old_price||0}}</span>
+        <span class="price special" *ngIf="result.old_price>result.price">${{result.price||0}}</span>
+        <p class="sales">销量：{{result.salecount||0}} / month</p>
       </div>
 
       <ion-item-divider></ion-item-divider>
 
       <div class="content-inner">
-        <div class="attr">
-          <strong>颜色：</strong>
-          <span>white</span>
-          <span>white</span>
-          <span>white</span>
+        <div class="attr" *ngFor="let attr of result.attr">
+          <strong>{{attr.cate}}：</strong>
+          <span *ngFor="let item of attr.list">{{item}}</span>
         </div>
         <div class="display-flex number">
           <strong>数量：</strong>
@@ -47,8 +45,9 @@
       </div>
     </div>
 
-    <div *ngSwitchCase="'info'">
-      'info'
+    <div *ngSwitchCase="'info'" [innerHTML]='result.content'>
+      <div [innerHTML]="result.content"></div>
+
     </div>
   </div>
 </ion-content>

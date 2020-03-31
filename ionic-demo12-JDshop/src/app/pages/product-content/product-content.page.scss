@@ -23,6 +23,9 @@ ion-img {
 .original {
   font-size: 1.2rem;
   margin-right: 50px;
+}
+
+.active {
   text-decoration-line: line-through;
 }
 
@@ -39,6 +42,8 @@ ion-item-divider {
 }
 
 .attr {
+  font-size: 1.1rem;
+
   span {
     padding: 5px;
   }
@@ -46,6 +51,7 @@ ion-item-divider {
 
 .number {
   margin-top: 10px;
+  font-size: 1.1rem;
 
   strong {
     flex: 1;
