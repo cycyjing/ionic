@@ -8,7 +8,52 @@ ion-segment-button {
   --color: #fff;
 }
 
+ion-img {
+  height: 350px;
+}
 
+.original {
+  font-size: 1.2rem;
+  margin-right: 50px;
+  text-decoration-line: line-through;
+}
+
+.special {
+  font-size: 1.4rem;
+}
+
+.sales {
+  text-align: right;
+}
+
+ion-item-divider {
+  min-height: 15px;
+}
+
+.attr {
+  span {
+    padding: 5px;
+  }
+}
+
+.count {
+  border: 1px solid lightgrey;
+  float: right;
+
+  span {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: lightgrey;
+  }
+  input {
+    width: 30px;
+    border: none;
+    outline: none;
+  }
+}
 
 ion-footer {
   ion-button {

@@ -18,14 +18,37 @@
 <ion-content>
   <div [ngSwitch]="segment">
     <div *ngSwitchCase="'product'">
-      'product'
+      <div class="content-inner">
+        <ion-img src="assets/01.jpg"></ion-img>
+        <h1>jklsdjfslfj</h1>
+        <p>dfsfs</p>
+        <span class="original">$1000</span>
+        <span class="price special">$100</span>
+        <p class="sales">Sales: 1000 / month</p>
+      </div>
+
+      <ion-item-divider></ion-item-divider>
+
+      <div class="content-inner">
+        <div class="attr">
+          <strong>颜色: </strong>
+          <span>white</span>
+          <span>white</span>
+          <span>white</span>
+        </div>
+
+        <div class="count">
+          <span>-</span>
+          <input type="number" name="" id="">
+          <span>+</span>
+        </div>
+      </div>
     </div>
+
     <div *ngSwitchCase="'info'">
       'info'
     </div>
   </div>
-  
-
 </ion-content>
 
 <ion-footer>
