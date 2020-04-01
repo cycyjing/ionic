@@ -11,10 +11,21 @@ export class CommonService {
 
   constructor(public http: HttpClient) { }
 
-  ajaxGet(url) {
+  ajaxGet(url: string) {
     const api = this.config.domain + url;
     return new Promise((resolve, reject) => {
       this.http.get(api).subscribe((response) => {
+        resolve(response);
+      }, (error) => {
+        reject(error);
+      });
+    });
+  }
+
+  ajaxPost(url: string, json: object) {
+    const api = this.config.domain + url;
+    return new Promise((resolve, reject) => {
+      this.http.post(api, json).subscribe((response) => {
         resolve(response);
       }, (error) => {
         reject(error);

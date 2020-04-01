@@ -2,8 +2,15 @@
   <h5>Please enter the verification code</h5>
   <div class="display-flex verification">
     <input class="code" type="number">
-    <span class="send-again">Send again</span>
+    <ng-container *ngIf="sendCodeBtn; else elseTemplate">
+      <span class="send-code" (click)="sendCode()">Send Code</span>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <span class="send-code">{{timer}}</span>
+    </ng-template>
   </div>
+  
+  
   <ion-button class="margin-top-30" expand="block" (click)="goNextStep()">
     Next
   </ion-button>
