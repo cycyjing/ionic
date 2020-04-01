@@ -10,7 +10,8 @@ import { CommonService, StorageService } from '../../../services';
 export class RegisterStep2Component implements OnInit {
   sendCodeBtn: boolean = false;
   timer: number = 5;
-  tel;
+  tel = '';
+  code = '';
 
   constructor(public navController: NavController, public commonService: CommonService, public storageService: StorageService) {
     this.tel = storageService.get('tel');
@@ -21,7 +22,16 @@ export class RegisterStep2Component implements OnInit {
   }
 
   goNextStep() {
-    this.navController.navigateForward('/register/step3');
+    console.log(this.code + '---' + this.tel + '--------input')
+    this.commonService.ajaxPost('api/validateCode', { tel: this.tel, code: this.code }).then((response: any) => {
+      console.log(response);
+      if (response.success) {
+        this.storageService.set('code', this.code);
+        this.navController.navigateForward('/register/step3');
+      } else {
+        alert('code is incorrect');
+      }
+    });
   }
 
   goBackStep() {
@@ -39,13 +49,15 @@ export class RegisterStep2Component implements OnInit {
   }
 
   sendCode() {
+    console.log(this.tel)
     this.commonService.ajaxPost('api/sendCode', { tel: this.tel }).then((response: any) => {
       console.log(response);
+      console.log(this.tel);
       if (response.success) {
-        alert('Success!');
         this.doTimer();
         this.sendCodeBtn = false;
         this.timer = 5;
+        alert('Code Send!');
       } else {
         alert('Send Fail' + response.message);
       }

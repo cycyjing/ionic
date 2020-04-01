@@ -1,7 +1,7 @@
 <div class="content-inner">
   <h5>Please enter the verification code</h5>
   <div class="display-flex verification">
-    <input class="code" type="number">
+    <input class="code" [(ngModel)]="code">
     <ng-container *ngIf="sendCodeBtn; else elseTemplate">
       <span class="send-code" (click)="sendCode()">Send Code</span>
     </ng-container>
@@ -9,8 +9,8 @@
       <span class="send-code">{{timer}}</span>
     </ng-template>
   </div>
-  
-  
+
+
   <ion-button class="margin-top-30" expand="block" (click)="goNextStep()">
     Next
   </ion-button>
