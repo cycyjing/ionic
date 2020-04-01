@@ -8,9 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <ion-list lines="full">
-    <ion-item class="content" *ngFor="let item of list">
+    <ion-item class="display-flex content" *ngFor="let item of list">
       <!-- radio and img -->
-      <div class="left">
+      <div class="display-flex left">
         <ion-buttons slot="start">
           <ion-checkbox></ion-checkbox>
         </ion-buttons>
@@ -20,7 +20,7 @@
       <!-- title, price and count -->
       <div class="right">
         <h4 class="title">product title product title product title product title</h4>
-        <div class="down">
+        <div class="display-flex down">
           <div class="price">$100</div>
           <div class="count">
             <span>-</span>
