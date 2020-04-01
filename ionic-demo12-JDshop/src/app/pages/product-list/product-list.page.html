@@ -25,7 +25,7 @@
 
 <ion-content>
   <ion-list class="product-list">
-    <ion-item *ngFor="let item of productList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}" >
+    <ion-item *ngFor="let item of productList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">
       <ion-thumbnail slot="start">
         <ion-img [src]="config.domain+item.s_pic"></ion-img>
       </ion-thumbnail>

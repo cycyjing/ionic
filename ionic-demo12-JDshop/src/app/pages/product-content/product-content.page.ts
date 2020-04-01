@@ -14,7 +14,6 @@ export class ProductContentPage implements OnInit {
 
   constructor(public commonService: CommonService, public activatedRoute: ActivatedRoute) {
     this.config = commonService.config;
-
   }
 
   ngOnInit(): void {

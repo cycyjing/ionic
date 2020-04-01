@@ -19,7 +19,7 @@
   <div [ngSwitch]="segment">
     <div *ngSwitchCase="'product'">
       <div class="content-inner">
-        <ion-img [src]="config.domain+result.pic"></ion-img>
+        <ion-img *ngIf="result.pic" [src]="config.domain+result.pic"></ion-img>
         <h1 class="title">{{result.title}}</h1>
         <p class="subtitle">{{result.sub_title}}</p>
         <span class="original" [ngClass]="{'active':result.old_price>result.price}">${{result.old_price||0}}</span>

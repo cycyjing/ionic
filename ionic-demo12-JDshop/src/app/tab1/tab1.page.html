@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true">
   <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="slidesOpts" (ionSlideTouchEnd)="slideTouchEnd()"
     #slides>
-    <ion-slide *ngFor="let slide of slidesList">
+    <ion-slide *ngFor="let slide of slidesList" [routerLink]="['/product-content']" [queryParams]="{id:slide._id}">
       <ion-img class="slide-img" [src]="config.domain+slide.pic"></ion-img>
     </ion-slide>
   </ion-slides>
@@ -15,7 +15,7 @@
   <div class="hot">
     <div class="hot-title">Hot</div>
     <ul class="display-flex hot-item">
-      <li *ngFor="let item of hotList">
+      <li *ngFor="let item of hotList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">
         <ion-img [src]="config.domain+item.s_pic"></ion-img>
       </li>
     </ul>
@@ -25,7 +25,7 @@
     <div class="list-title">Products</div>
     <ion-grid fixed>
       <ion-row class="list-item">
-        <ion-col *ngFor="let item of productList" >
+        <ion-col *ngFor="let item of productList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">
           <ion-img [src]="config.domain+item.s_pic"></ion-img>
           <p class="price">${{item.price}}</p>
           <p class="item-title">{{item.title}}</p>
