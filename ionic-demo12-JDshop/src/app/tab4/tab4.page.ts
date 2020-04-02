@@ -9,7 +9,6 @@ import { StorageService } from '../services';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page {
-  // flag: boolean = true;
   myList = MyList;
   userinfo: any = {};
 
