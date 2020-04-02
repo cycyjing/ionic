@@ -39,7 +39,7 @@ export class RegisterStep2Component implements OnInit {
   }
 
   doTimer() {
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       this.timer--;
       if (this.timer == 0) {
         this.sendCodeBtn = true;
@@ -49,12 +49,11 @@ export class RegisterStep2Component implements OnInit {
   }
 
   sendCode() {
-    console.log(this.tel)
     this.commonService.ajaxPost('api/sendCode', { tel: this.tel }).then((response: any) => {
       console.log(response);
-      console.log(this.tel);
       if (response.success) {
         this.doTimer();
+        this.code = response.code;
         this.sendCodeBtn = false;
         this.timer = 5;
         alert('Code Send!');
