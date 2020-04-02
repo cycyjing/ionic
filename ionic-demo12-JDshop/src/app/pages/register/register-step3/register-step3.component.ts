@@ -26,7 +26,7 @@ export class RegisterStep3Component {
     } else {
       this.commonService.ajaxPost('api/register', { tel: this.tel, code: this.code, password: this.password }).then((response: any) => {
         console.log(response);
-        this.storageService.set('userinfo', response.userinfo);
+        this.storageService.set('userinfo', response.userinfo[0]);
         this.navController.navigateRoot('/tabs/tab4');
       });
     }

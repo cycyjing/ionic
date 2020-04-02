@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MyList } from '../config';
+import { StorageService } from '../services';
 
 @Component({
   selector: 'app-tab4',
@@ -8,16 +9,16 @@ import { MyList } from '../config';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page {
-  flag: boolean = true;
-  image = 'assets/user.png';
-  MyList = MyList;
+  // flag: boolean = true;
+  myList = MyList;
+  userinfo: any = {};
 
-  constructor(public activatedRoute: ActivatedRoute) {
-    // this.activatedRoute.queryParams.subscribe((data) => {
-    //   console.log(data.flag);
-    //   this.flag = data.flag;
-    // });
+  constructor(public activatedRoute: ActivatedRoute, public storageService: StorageService) {
+    const userinfo = this.storageService.get('userinfo');
+    console.log(userinfo);
+    if (userinfo && userinfo.username) {
+      this.userinfo = userinfo;
+    }
   }
-
 
 }

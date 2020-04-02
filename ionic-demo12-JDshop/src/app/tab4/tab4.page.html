@@ -1,29 +1,29 @@
 <ion-content>
-  <ng-container *ngIf="flag; else login">
+  <ng-container *ngIf="!userinfo; else login">
     <div class="display-flex avatar">
-      <img [src]="image" />
+      <img src="assets/user.png" />
       <span [routerLink]="['/login']">Login / Register ></span>
     </div>
   </ng-container>
   <ng-template #login>
-    <div class="avatar">
-      <img [src]="image" />
+    <div class="display-flex avatar">
+      <img [src]="'assets/user.png'" />
       <span>
-        <p>Lisa Smith</p>
-        <p><small>Premium</small></p>
+        <p>{{userinfo.username}}</p>
+        <p><small>{{userinfo.tel}}</small></p>
       </span>
     </div>
   </ng-template>
 
   <ion-list>
-    <ion-item class="order" *ngFor="let item of MyList.ORDER_LIST" [lines]="item.lines">
+    <ion-item class="order" *ngFor="let item of myList.ORDER_LIST" [lines]="item.lines">
       <ion-icon slot="start" [name]="item.icon" [color]="item.color"></ion-icon>
       <ion-label>{{item.label}}</ion-label>
     </ion-item>
 
     <ion-item-divider></ion-item-divider>
 
-    <ion-item *ngFor="let item of MyList.OHTERS_LIST">
+    <ion-item *ngFor="let item of myList.OHTERS_LIST">
       <ion-icon slot="start" [name]="item.icon" [color]="item.color"></ion-icon>
       <ion-label>{{item.label}}</ion-label>
     </ion-item>
