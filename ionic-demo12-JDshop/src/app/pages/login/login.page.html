@@ -16,11 +16,11 @@
   <ion-img src="assets/yang.png"></ion-img>
   <ion-item>
     <ion-label position="fixed">Username</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="user.username"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="fixed">Password</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
   </ion-item>
 
   <ion-buttons class="forget-register">
@@ -28,6 +28,6 @@
     <ion-button class="register-btn" color="dark" [routerLink]="['/register']">Register</ion-button>
   </ion-buttons>
 
-  <ion-button class="login-btn" expand="block" color="danger" (click)="goMyTab()" (tap)="goMyTab()">Login
+  <ion-button class="login-btn" expand="block" color="danger" (click)="doLogin()">Login
   </ion-button>
 </ion-content>
