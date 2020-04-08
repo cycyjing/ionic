@@ -26,6 +26,11 @@ const routes: Routes = [
     path: 'product-content',
     loadChildren: () => import('./pages/product-content/product-content.module').then( m => m.ProductContentPageModule)
   },
+  {
+    path: 'account-setting',
+    loadChildren: () => import('./pages/account-setting/account-setting.module').then( m => m.AccountSettingPageModule)
+  },
+
 
 ];
 

@@ -13,7 +13,10 @@
         <p><small>Premium</small></p>
       </span>
 
-      <ion-icon slot="icon-only" name="settings-outline" (click)="goSetting()"></ion-icon>
+      <ion-button class="personal-btn" color="light" expand="block" fill="clear" (click)="goSetting()"
+        [routerLink]="['/account-setting']">
+        <ion-icon slot="icon-only" name="person-circle-outline" (click)="goSetting()"></ion-icon>
+      </ion-button>
     </div>
   </ng-template>
 
