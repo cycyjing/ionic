@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { PickerController } from '@ionic/angular';
+import { PickerController, NavController } from '@ionic/angular';
+import { StorageService, EventEmitterService } from '../../services';
 
 @Component({
   selector: 'app-account-setting',
@@ -7,18 +8,45 @@ import { PickerController } from '@ionic/angular';
   styleUrls: ['./account-setting.page.scss'],
 })
 export class AccountSettingPage {
-  defaultColumnOptions = [
-    [
-      'Female',
-      'Male',
-    ]
-  ];
+  user = {
+    avatar: 'assets/user.png',
+    username: 'username',
+    gender: 'Female',
+    birth: '1990-01-01'
+  };
+  max = {
+    year: '',
+    month: '',
+    day: ''
+  };
 
-  constructor(public pickerController: PickerController) { }
+  constructor(
+    public pickerController: PickerController,
+    public navController: NavController,
+    public storageService: StorageService,
+    public eventEmitterService: EventEmitterService) {
+    const nowDate = new Date();
+    this.max.year = nowDate.getFullYear() + '';
+    const m = nowDate.getMonth() + 1;
+    const d = nowDate.getDate();
+    if (m < 10) {
+      this.max.month = '0' + m;
+    }
+    if (d < 10) {
+      this.max.day = '0' + d;
+    }
+  }
 
-  async  openGenderPicker(numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions) {
+  async  openGenderPicker() {
     const picker = await this.pickerController.create({
-      columns: [],
+      columns: [{
+        name: 'gender',
+        options: [
+          { text: 'Female', value: 'female' },
+          { text: 'Male', value: 'male' },
+          { text: 'Prefer not to say', value: 'not' }
+        ]
+      }],
       buttons: [
         {
           text: 'Cancel',
@@ -27,7 +55,7 @@ export class AccountSettingPage {
         {
           text: 'Confirm',
           handler: (value) => {
-            console.log(`Got Value ${value}`);
+            this.user.gender = value.gender.text;
           }
         }
       ]
@@ -36,4 +64,12 @@ export class AccountSettingPage {
     await picker.present();
   }
 
+  doLogout() {
+    this.storageService.remove('userinfo');
+    this.storageService.remove('tel');
+    this.storageService.remove('code');
+
+    this.eventEmitterService.event.emit('userAction');
+    this.navController.navigateBack('/tabs/tab4');
+  }
 }
