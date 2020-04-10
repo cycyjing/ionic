@@ -25,7 +25,19 @@ export class ProductContentPage implements OnInit {
   getProductContentData(id) {
     this.commonService.ajaxGet('api/pcontent?id=' + id).then((data: any) => {
       this.result = data.result;
-      console.log(data.result.price);
+      console.log('special price---' + data.result.price);
     });
+  }
+
+  changeAttr(e) {
+    const element = e.srcElement;
+    if (element.nodeName == 'SPAN') {
+      // get all sbling nodes delete className
+      const children = element.parentNode.children;
+      for (let i = 0; i < children.length; i++) {
+        children[i].className = '';
+      }
+      element.className = 'active';
+    }
   }
 }

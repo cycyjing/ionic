@@ -23,10 +23,10 @@ ion-img {
 .original {
   font-size: 1.2rem;
   margin-right: 50px;
-}
 
-.active {
-  text-decoration-line: line-through;
+  &.active {
+    text-decoration-line: line-through;
+  }
 }
 
 .special {
@@ -42,10 +42,21 @@ ion-item-divider {
 }
 
 .attr {
-  font-size: 1.1rem;
+  margin-bottom: 10px;
 
+  strong {
+    font-size: 1.1rem;
+  }
   span {
-    padding: 5px;
+    border: 2px solid #eeeeee;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-right: 10px;
+    display: inline-block;
+
+    &.active {
+      border-color: var(--color-base);
+    }
   }
 }
 

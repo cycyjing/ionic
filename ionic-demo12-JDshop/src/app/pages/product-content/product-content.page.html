@@ -30,7 +30,7 @@
       <ion-item-divider></ion-item-divider>
 
       <div class="content-inner">
-        <div class="attr" *ngFor="let attr of result.attr">
+        <div class="attr" *ngFor="let attr of result.attr" (click)="changeAttr($event)">
           <strong>{{attr.cate}}：</strong>
           <span *ngFor="let item of attr.list">{{item}}</span>
         </div>
