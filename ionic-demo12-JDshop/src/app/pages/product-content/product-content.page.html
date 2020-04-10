@@ -22,8 +22,10 @@
         <ion-img *ngIf="result.pic" [src]="config.domain+result.pic"></ion-img>
         <h1 class="title">{{result.title}}</h1>
         <p class="subtitle">{{result.sub_title}}</p>
-        <span class="original" [ngClass]="{'active':result.old_price>result.price}">${{result.old_price||0}}</span>
-        <span class="price special" *ngIf="result.old_price>result.price">${{result.price||0}}</span>
+        <span class="original"
+          [ngClass]="{'active':result.old_price>result.price && result.old_price!=''}">${{result.old_price||0}}</span>
+        <span class="price special"
+          *ngIf="result.old_price>result.price && result.old_price!=''">${{result.price||0}}</span>
         <p class="sales">销量：{{result.salecount||0}} / month</p>
       </div>
 
@@ -37,9 +39,9 @@
         <div class="display-flex number">
           <strong>数量：</strong>
           <div class="count">
-            <span>-</span>
-            <input type="number" name="" id="">
-            <span>+</span>
+            <span (click)="decreaseCount()">-</span>
+            <input type="number" [(ngModel)]="count">
+            <span (click)="increaseCount()">+</span>
           </div>
         </div>
       </div>
@@ -61,7 +63,7 @@
         </ion-button>
         <ion-badge color="danger">88 </ion-badge>
       </div>
-      <ion-button class="add-cart" fill="solid">
+      <ion-button class="add-cart" fill="solid" (click)="addCart()">
         Add Cart
       </ion-button>
       <ion-button class="buy-now" fill="solid">

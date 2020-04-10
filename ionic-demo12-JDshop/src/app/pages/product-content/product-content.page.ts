@@ -8,9 +8,10 @@ import { CommonService } from '../../services';
   styleUrls: ['./product-content.page.scss'],
 })
 export class ProductContentPage implements OnInit {
-  segment: string = 'product';
+  segment = 'product';
   config: any = {};
   result: any = {};
+  count = 1;
 
   constructor(public commonService: CommonService, public activatedRoute: ActivatedRoute) {
     this.config = commonService.config;
@@ -25,6 +26,7 @@ export class ProductContentPage implements OnInit {
   getProductContentData(id) {
     this.commonService.ajaxGet('api/pcontent?id=' + id).then((data: any) => {
       this.result = data.result;
+      console.log(data.result);
       console.log('special price---' + data.result.price);
     });
   }
@@ -39,5 +41,41 @@ export class ProductContentPage implements OnInit {
       }
       element.className = 'active';
     }
+  }
+
+  decreaseCount() {
+    if (this.count < 2) {
+      this.count = 2;
+    }
+    this.count--;
+  }
+
+  increaseCount() {
+    if (this.count < 0) {
+      this.count = 0;
+    }
+    this.count++;
+  }
+
+  addCart() {
+    let product_attrs = '';
+    const spanActive = document.querySelectorAll('.attr .active');
+    for (let i = 0; i < spanActive.length; i++) {
+      if (i < 1) {
+        product_attrs += spanActive[i].innerHTML;
+      } else {
+        product_attrs += ',' + spanActive[i].innerHTML;
+      }
+    }
+
+    const cartJson = {
+      product_id: this.result._id,
+      product_title: this.result.title,
+      product_pic: this.result.pic,
+      product_price: this.result.price,
+      product_count: this.count,
+      product_attrs
+    };
+    console.log(cartJson);
   }
 }
