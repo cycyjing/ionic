@@ -14,27 +14,15 @@ export class AccountSettingPage {
     gender: 'Female',
     birth: '1990-01-01'
   };
-  max = {
-    year: '',
-    month: '',
-    day: ''
-  };
+  maxDate: string = '';
 
   constructor(
     public pickerController: PickerController,
     public navController: NavController,
     public storageService: StorageService,
     public eventEmitterService: EventEmitterService) {
-    const nowDate = new Date();
-    this.max.year = nowDate.getFullYear() + '';
-    const m = nowDate.getMonth() + 1;
-    const d = nowDate.getDate();
-    if (m < 10) {
-      this.max.month = '0' + m;
-    }
-    if (d < 10) {
-      this.max.day = '0' + d;
-    }
+    this.maxDate = new Date().toISOString().substr(0, 10);
+    console.log(new Date().toISOString() + '---' + this.maxDate);
   }
 
   async  openGenderPicker() {

@@ -35,8 +35,7 @@
     </ion-item>
     <ion-item>
       <ion-label>Date of Birth</ion-label>
-      <ion-datetime placeholder="Select Date" [value]="user.birth" [max]="max.year+'-'+max.month+'-'+max.day"
-        [(ngModel)]="user.birth">
+      <ion-datetime placeholder="Select Date" [value]="user.birth" [max]="maxDate" [(ngModel)]="user.birth">
       </ion-datetime>
     </ion-item>
   </ion-list>
