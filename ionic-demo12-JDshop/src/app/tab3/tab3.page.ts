@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService, CommonService } from '../services';
 
 @Component({
   selector: 'app-tab3',
@@ -6,11 +7,36 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  list: any[] = [];
+  // list: any[] = [];
+  cartList: any[] = [];
+  config: any = {};
+  sum: number = 0;
 
-  constructor() {
-    for (let i = 1; i <= 9; i++) {
-      this.list.push('assets/0' + i + '.jpg');
+  constructor(
+    public storageService: StorageService,
+    public commonService: CommonService) {
+    this.config = commonService.config;
+    this.getCartData();
+  }
+
+  ionViewDidEnter() {
+    this.getCartData();
+  }
+
+  getCartData() {
+    const cartList = this.storageService.get('cart');
+    if (cartList && cartList.length > 0) {
+      this.cartList = cartList;
+    }
+    this.getSumPrice();
+  }
+
+  getSumPrice() {
+    const cartList = this.storageService.get('cart');
+    if (cartList && cartList.length > 0) {
+      for (const product of cartList) {
+        this.sum += parseInt(product.product_price);
+      }
     }
   }
 

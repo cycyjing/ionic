@@ -8,23 +8,23 @@
 
 <ion-content [fullscreen]="true">
   <ion-list lines="full">
-    <ion-item class="display-flex content" *ngFor="let item of list">
+    <ion-item class="display-flex content" *ngFor="let item of cartList">
       <!-- radio and img -->
       <div class="display-flex left">
         <ion-buttons slot="start">
           <ion-checkbox></ion-checkbox>
         </ion-buttons>
 
-        <ion-img [src]="item"></ion-img>
+        <ion-img [src]="config.domain+item.product_pic"></ion-img>
       </div>
       <!-- title, price and count -->
       <div class="right">
-        <h4 class="title">product title product title product title product title</h4>
+        <h4 class="title">{{item.product_title}}</h4>
         <div class="display-flex down">
-          <div class="price">$100</div>
+          <div class="price">${{item.product_price}}</div>
           <div class="count">
             <span>-</span>
-            <input type="number" name="" id="">
+            <input type="number" [value]="item.product_count">
             <span>+</span>
           </div>
         </div>
@@ -38,13 +38,11 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-checkbox></ion-checkbox>Select All
-      <strong>Account: $55.20</strong>
+      <strong>Account: ${{sum}}</strong>
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button>
-        Pay
-      </ion-button>
+      <ion-button>Pay</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
