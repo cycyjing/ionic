@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CommonService, StorageService } from './services';
+import { CommonService, StorageService, CartService } from './services';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +24,7 @@ import { CommonService, StorageService } from './services';
     SplashScreen,
     CommonService,
     StorageService,
+    CartService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
