@@ -7,10 +7,10 @@ export class CartService {
 
   constructor() { }
 
-  HaveProduct(cart: any[], id: string): boolean {
-    if (cart && cart.length > 0) {
-      for (const product of cart) {
-        if (product.product_id == id) {
+  HaveProduct(cartList: any[], currentProduct): boolean {
+    if (cartList && cartList.length > 0) {
+      for (const product of cartList) {
+        if (product.product_id == currentProduct.product_id && product.product_attrs == currentProduct.product_attrs) {
           return true;
         }
       }
@@ -19,5 +19,11 @@ export class CartService {
     return false;
   }
 
-
+  getCartTotalCount(cartList: any[]): number {
+    let sum = 0;
+    for (const product of cartList) {
+      sum += product.product_count;
+    }
+    return sum;
+  }
 }

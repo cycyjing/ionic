@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommonService } from '../../services';
+import { CommonService, StorageService, CartService } from '../../services';
 
 @Component({
   selector: 'app-product-content',
@@ -8,12 +8,17 @@ import { CommonService } from '../../services';
   styleUrls: ['./product-content.page.scss'],
 })
 export class ProductContentPage implements OnInit {
-  segment = 'product';
+  segment: string = 'product';
   config: any = {};
   result: any = {};
-  count = 1;
+  count: number = 1;
+  sum: number = 0;
 
-  constructor(public commonService: CommonService, public activatedRoute: ActivatedRoute) {
+  constructor(
+    public activatedRoute: ActivatedRoute,
+    public commonService: CommonService,
+    public storageService: StorageService,
+    public cartService: CartService) {
     this.config = commonService.config;
   }
 
@@ -21,6 +26,10 @@ export class ProductContentPage implements OnInit {
     this.activatedRoute.queryParams.subscribe((data) => {
       this.getProductContentData(data.id);
     });
+    const cartList = this.storageService.get('cart');
+    if (cartList && cartList.length > 0) {
+      this.sum = this.cartService.getCartTotalCount(cartList);
+    }
   }
 
   getProductContentData(id) {
@@ -68,7 +77,7 @@ export class ProductContentPage implements OnInit {
       }
     }
 
-    const cartJson = {
+    const productJson = {
       product_id: this.result._id,
       product_title: this.result.title,
       product_pic: this.result.pic,
@@ -76,6 +85,25 @@ export class ProductContentPage implements OnInit {
       product_count: this.count,
       product_attrs
     };
-    console.log(cartJson);
+
+    const cartList = this.storageService.get('cart');
+    if (cartList && cartList.length > 0) {
+      if (this.cartService.HaveProduct(cartList, productJson)) {
+        for (const product of cartList) {
+          if (product.product_id == this.result._id && product.product_attrs == product_attrs) {
+            product.product_count += this.count;
+          }
+        }
+      } else {
+        cartList.push(productJson);
+      }
+      this.storageService.set('cart', cartList);
+    } else {
+      const cart = [];
+      cart.push(productJson);
+      this.storageService.set('cart', cart);
+    }
+
+    this.sum += this.count;
   }
 }

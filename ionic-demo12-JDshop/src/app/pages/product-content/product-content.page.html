@@ -61,7 +61,7 @@
         <ion-button>
           <ion-icon slot="icon-only" name="cart"></ion-icon>
         </ion-button>
-        <ion-badge color="danger">88 </ion-badge>
+        <ion-badge color="danger">{{sum||0}}</ion-badge>
       </div>
       <ion-button class="add-cart" fill="solid" (click)="addCart()">
         Add Cart
