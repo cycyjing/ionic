@@ -12,7 +12,7 @@
       <!-- radio and img -->
       <div class="display-flex left">
         <ion-buttons slot="start">
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox [(ngModel)]="item.checked" (ionChange)="changeCheckbox()"></ion-checkbox>
         </ion-buttons>
 
         <ion-img [src]="config.domain+item.product_pic"></ion-img>
@@ -23,9 +23,9 @@
         <div class="display-flex down">
           <div class="price">${{item.product_price}}</div>
           <div class="count">
-            <span>-</span>
-            <input type="number" [value]="item.product_count">
-            <span>+</span>
+            <span (click)="decreaseCount(item)">-</span>
+            <input type="number" [(ngModel)]="item.product_count">
+            <span (click)="increaseCount(item)">+</span>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StorageService, CommonService } from '../services';
+import { StorageService, CommonService, CartService } from '../services';
 
 @Component({
   selector: 'app-tab3',
@@ -7,14 +7,14 @@ import { StorageService, CommonService } from '../services';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  // list: any[] = [];
   cartList: any[] = [];
   config: any = {};
   sum: number = 0;
 
   constructor(
     public storageService: StorageService,
-    public commonService: CommonService) {
+    public commonService: CommonService,
+    public cartService: CartService) {
     this.config = commonService.config;
     this.getCartData();
   }
@@ -28,16 +28,29 @@ export class Tab3Page {
     if (cartList && cartList.length > 0) {
       this.cartList = cartList;
     }
-    this.getSumPrice();
+    this.sum = this.cartService.getSumPrice(this.cartList);
   }
 
-  getSumPrice() {
-    const cartList = this.storageService.get('cart');
-    if (cartList && cartList.length > 0) {
-      for (const product of cartList) {
-        this.sum += parseInt(product.product_price);
-      }
-    }
+  changeCheckbox() {
+    this.sum = this.cartService.getSumPrice(this.cartList);
   }
+
+  decreaseCount(item) {
+    if (item.product_count < 2) {
+      item.product_count = 2;
+    }
+    item.product_count--;
+    this.sum = this.cartService.getSumPrice(this.cartList);
+  }
+
+  increaseCount(item) {
+    if (item.product_count < 0) {
+      item.product_count = 0;
+    }
+    item.product_count++;
+    this.sum = this.cartService.getSumPrice(this.cartList);
+  }
+
+
 
 }

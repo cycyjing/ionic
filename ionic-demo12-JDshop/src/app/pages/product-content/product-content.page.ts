@@ -81,9 +81,10 @@ export class ProductContentPage implements OnInit {
       product_id: this.result._id,
       product_title: this.result.title,
       product_pic: this.result.pic,
-      product_price: this.result.price,
+      product_price: this.result.price < this.result.old_price ? this.result.price : this.result.old_price,
       product_count: this.count,
-      product_attrs
+      product_attrs,
+      checked: false
     };
 
     const cartList = this.storageService.get('cart');
