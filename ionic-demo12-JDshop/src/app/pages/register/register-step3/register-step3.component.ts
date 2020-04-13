@@ -37,6 +37,8 @@ export class RegisterStep3Component {
         if (response.success) {
           this.storageService.set('userinfo', response.userinfo[0]);
           this.eventEmitterService.event.emit('userAction');
+          this.storageService.remove('tel');
+          this.storageService.remove('code');
           // this.navController.navigateRoot('/tabs/tab4');
           this.navController.navigateRoot('/login');
         } else {

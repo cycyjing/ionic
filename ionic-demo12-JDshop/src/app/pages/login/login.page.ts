@@ -29,7 +29,7 @@ export class LoginPage {
     if (this.user.username == '') {
       alert('Username is required');
     } else if (this.user.password.length < 6) {
-      alert('Password is less than 8');
+      alert('Password is less than 6');
     } else {
       this.commonService.ajaxPost('api/doLogin', {
         username: this.user.username,

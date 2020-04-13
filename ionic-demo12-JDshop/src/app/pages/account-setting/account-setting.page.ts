@@ -54,8 +54,6 @@ export class AccountSettingPage {
 
   doLogout() {
     this.storageService.remove('userinfo');
-    this.storageService.remove('tel');
-    this.storageService.remove('code');
 
     this.eventEmitterService.event.emit('userAction');
     this.navController.navigateBack('/tabs/tab4');
