@@ -2,23 +2,22 @@ ion-content ion-toolbar {
   --background: translucent;
 }
 
-.left {
+ion-item {
+  ion-buttons {
+    margin: 0;
+  }
   ion-checkbox {
     --background-checked: var(--color-base);
     --border-color-checked: var(--color-base);
   }
   ion-img {
-    height: 120px;
-    width: 120px;
-    padding: 10px;
+    height: 100px;
+    width: 100px;
+    margin: 5px 10px;
   }
-}
-
-.right {
-  flex: 1;
-
   .title {
     margin-bottom: 10px;
+    white-space: normal;
   }
   .price {
     flex: 1;
