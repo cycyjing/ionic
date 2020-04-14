@@ -24,6 +24,10 @@ export class Tab3Page {
     this.isSelectAllFunction();
   }
 
+  ionViewDidLeave() {
+    this.storageService.set('cart', this.cartList);
+  }
+
   getCartData() {
     const cartList = this.storageService.get('cart');
     if (cartList && cartList.length > 0) {
