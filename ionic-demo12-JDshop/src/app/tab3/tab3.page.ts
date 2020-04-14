@@ -9,18 +9,19 @@ import { StorageService, CommonService, CartService } from '../services';
 export class Tab3Page {
   cartList: any[] = [];
   config: any = {};
-  sum: number = 0;
+  sumPrice: number = 0;
+  isSelectAll: boolean = false;
 
   constructor(
     public storageService: StorageService,
     public commonService: CommonService,
     public cartService: CartService) {
     this.config = commonService.config;
-    this.getCartData();
   }
 
   ionViewDidEnter() {
     this.getCartData();
+    this.isSelectAllFunction();
   }
 
   getCartData() {
@@ -28,11 +29,12 @@ export class Tab3Page {
     if (cartList && cartList.length > 0) {
       this.cartList = cartList;
     }
-    this.sum = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSumPrice(this.cartList);
   }
 
   changeCheckbox() {
-    this.sum = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSumPrice(this.cartList);
+    this.isSelectAllFunction();
   }
 
   decreaseCount(item) {
@@ -40,7 +42,7 @@ export class Tab3Page {
       item.product_count = 2;
     }
     item.product_count--;
-    this.sum = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSumPrice(this.cartList);
   }
 
   increaseCount(item) {
@@ -48,9 +50,22 @@ export class Tab3Page {
       item.product_count = 0;
     }
     item.product_count++;
-    this.sum = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSumPrice(this.cartList);
   }
 
+  // whether to choose all when  click product item
+  isSelectAllFunction() {
+    if (this.cartService.getSelectedProductsLength(this.cartList) == this.cartList.length) {
+      this.isSelectAll = true;
+    } else {
+      this.isSelectAll = false;
+    }
+  }
 
-
+  // click 'Select All' button to choose all or not
+  selectAllButtonStatus() {
+    for (const item of this.cartList) {
+      item.checked = this.isSelectAll;
+    }
+  }
 }

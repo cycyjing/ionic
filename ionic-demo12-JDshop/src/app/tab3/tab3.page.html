@@ -33,9 +33,9 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-checkbox></ion-checkbox>Select All
-      <strong>Account: ${{sum}}</strong>
+    <ion-buttons slot="start" (click)="selectAllButtonStatus()">
+      <ion-checkbox [(ngModel)]="isSelectAll"></ion-checkbox>Select All
+      <strong>Account: ${{sumPrice}}</strong>
     </ion-buttons>
 
     <ion-buttons slot="end">

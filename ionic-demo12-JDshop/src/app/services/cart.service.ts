@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class CartService {
 
   constructor() { }
+
   // does have the product 
   HaveProduct(cartList: any[], currentProduct): boolean {
     if (cartList && cartList.length > 0) {
@@ -18,6 +19,7 @@ export class CartService {
     }
     return false;
   }
+
   // the total count of products in the cart
   getCartTotalCount(cartList: any[]): number {
     let sum = 0;
@@ -28,6 +30,7 @@ export class CartService {
     }
     return sum;
   }
+
   // the total price of the selected products
   getSumPrice(cartList: any[]): number {
     let sum = 0;
@@ -39,5 +42,19 @@ export class CartService {
       }
     }
     return sum;
+  }
+
+  // the length of selected products
+  getSelectedProductsLength(cartList: any[]): number {
+    let length = 0;
+    if (cartList && cartList.length > 0) {
+      for (const product of cartList) {
+        if (product.checked) {
+          length++;
+        }
+      }
+      return length;
+    }
+    return 0;
   }
 }
