@@ -22,7 +22,8 @@ export class ProductListPage implements OnInit {
 
   constructor(
     public activatedRoute: ActivatedRoute,
-    public navController: NavController, public commonService: CommonService) {
+    public navController: NavController,
+    public commonService: CommonService) {
     this.config = commonService.config;
     this.activatedRoute.queryParams.subscribe((data) => {
       this.cid = data.cid;

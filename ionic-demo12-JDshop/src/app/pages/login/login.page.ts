@@ -15,8 +15,8 @@ export class LoginPage {
   };
 
   constructor(
-    public navController: NavController,
     public router: Router,
+    public navController: NavController,
     public toastController: ToastController,
     public commonService: CommonService,
     public storageService: StorageService,

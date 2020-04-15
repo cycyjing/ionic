@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { StorageService, CommonService, EventEmitterService } from '../../../services';
 
 @Component({
@@ -15,7 +15,7 @@ export class RegisterStep3Component {
 
   constructor(
     public navController: NavController,
-    public toastController:ToastController,
+    public toastController: ToastController,
     public storageService: StorageService,
     public commonService: CommonService,
     public eventEmitterService: EventEmitterService) {
