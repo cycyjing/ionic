@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
     <ion-segment [(ngModel)]="segment">
@@ -57,7 +59,7 @@
   <ion-toolbar>
     <ion-buttons>
       <div class="cart-icon">
-        <ion-button [routerLink]="['/cart']">
+        <ion-button [routerLink]="['/tabs/tab3']">
           <ion-icon slot="icon-only" name="cart"></ion-icon>
         </ion-button>
         <ion-badge color="danger">{{sum||0}}</ion-badge>

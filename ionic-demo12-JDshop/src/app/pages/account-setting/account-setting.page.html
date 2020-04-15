@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
     <ion-title>Account Setting</ion-title>

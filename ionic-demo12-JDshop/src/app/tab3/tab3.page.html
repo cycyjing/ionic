@@ -1,8 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-title>
       Shopping Cart
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>Edit</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

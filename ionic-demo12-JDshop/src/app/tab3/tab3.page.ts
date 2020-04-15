@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { StorageService, CommonService, CartService } from '../services';
 
 @Component({
@@ -13,6 +14,7 @@ export class Tab3Page {
   isSelectAll: boolean = false;
 
   constructor(
+    public navController: NavController,
     public storageService: StorageService,
     public commonService: CommonService,
     public cartService: CartService) {
@@ -26,6 +28,10 @@ export class Tab3Page {
 
   ionViewDidLeave() {
     this.storageService.set('cart', this.cartList);
+  }
+
+  goBack() {
+    this.navController.back();
   }
 
   getCartData() {

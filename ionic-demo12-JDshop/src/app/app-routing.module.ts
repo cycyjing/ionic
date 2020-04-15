@@ -8,33 +8,28 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'product-list',
-    loadChildren: () => import('./pages/product-list/product-list.module').then( m => m.ProductListPageModule)
+    loadChildren: () => import('./pages/product-list/product-list.module').then(m => m.ProductListPageModule)
   },
   {
     path: 'product-content',
-    loadChildren: () => import('./pages/product-content/product-content.module').then( m => m.ProductContentPageModule)
+    loadChildren: () => import('./pages/product-content/product-content.module').then(m => m.ProductContentPageModule)
   },
   {
     path: 'account-setting',
-    loadChildren: () => import('./pages/account-setting/account-setting.module').then( m => m.AccountSettingPageModule)
-  },  {
-    path: 'cart',
-    loadChildren: () => import('./pages/cart/cart.module').then( m => m.CartPageModule)
+    loadChildren: () => import('./pages/account-setting/account-setting.module').then(m => m.AccountSettingPageModule)
   },
-
-
 
 ];
 
@@ -44,4 +39,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

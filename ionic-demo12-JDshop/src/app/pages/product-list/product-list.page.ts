@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IonContent } from '@ionic/angular';
+import { IonContent, NavController } from '@ionic/angular';
 import { CommonService } from '../../services/common.service';
 import { Subheader } from '../../config';
 
@@ -20,7 +20,9 @@ export class ProductListPage implements OnInit {
   subheaderSelectedid: number = 1;
   infiniteScrollStatus: boolean = true;
 
-  constructor(public commonService: CommonService, public activatedRoute: ActivatedRoute) {
+  constructor(
+    public activatedRoute: ActivatedRoute,
+    public navController: NavController, public commonService: CommonService) {
     this.config = commonService.config;
     this.activatedRoute.queryParams.subscribe((data) => {
       this.cid = data.cid;
@@ -31,10 +33,13 @@ export class ProductListPage implements OnInit {
     this.getProductListData(null);
   }
 
+  goBack() {
+    this.navController.back();
+  }
+
   doSearch() { }
 
   getProductListData(event) {
-    console.log(this.infiniteScrollStatus);
     let api;
     if (this.sort) {
       api = 'api/plist?cid=' + this.cid + '&page=' + this.page + '&sort=' + this.sort;
@@ -46,7 +51,6 @@ export class ProductListPage implements OnInit {
       // concat pages data
       this.productList = this.productList.concat(data.result);
       this.page++;
-      console.log(this.page);
       event ? event.target.complete() : '';
       // does have more data
       if (data.result.length < 10) {

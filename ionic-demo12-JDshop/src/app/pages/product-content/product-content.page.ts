@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { CommonService, StorageService, CartService } from '../../services';
 
 @Component({
@@ -16,6 +17,7 @@ export class ProductContentPage implements OnInit {
 
   constructor(
     public activatedRoute: ActivatedRoute,
+    public navController: NavController,
     public commonService: CommonService,
     public storageService: StorageService,
     public cartService: CartService) {
@@ -30,6 +32,10 @@ export class ProductContentPage implements OnInit {
     if (cartList && cartList.length > 0) {
       this.sum = this.cartService.getCartTotalCount(cartList);
     }
+  }
+
+  goBack() {
+    this.navController.back();
   }
 
   getProductContentData(id) {

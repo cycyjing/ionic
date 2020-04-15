@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { IonContent, AlertController } from '@ionic/angular';
+import { IonContent, AlertController, NavController } from '@ionic/angular';
 import { SearchList, Subheader } from '../../config';
 import { CommonService, StorageService } from '../../services';
 
@@ -23,12 +23,18 @@ export class SearchPage implements OnInit {
   infiniteScrollStatus: boolean = true;
   historyList: any[] = [];
 
-  constructor(public commonService: CommonService, public storageService: StorageService, public alertController: AlertController) {
+  constructor(
+    public alertController: AlertController,
+    public navController: NavController, public commonService: CommonService, public storageService: StorageService) {
     this.config = commonService.config;
   }
 
   ngOnInit(): void {
     this.getHistory();
+  }
+
+  goBack() {
+    this.navController.back();
   }
 
   doSearch() {
@@ -37,11 +43,11 @@ export class SearchPage implements OnInit {
     this.infiniteScrollStatus = true;
     this.content.scrollToTop(0);
     this.subheaderSelectedid = 1;
-    
+
     this.commonService.ajaxGet('api/plist?search=' + this.keywords + '&page=' + this.page).then((data: any) => {
       this.productList = data.result;
     });
-    
+
     this.saveHistory();
   }
 

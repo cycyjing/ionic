@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons class="back-btn" slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
     <ion-searchbar class="searchbar" placeholder="Search" animated></ion-searchbar>

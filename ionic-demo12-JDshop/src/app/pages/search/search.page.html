@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons class="back-btn" slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
     <ion-searchbar class="searchbar" placeholder="Search" [(ngModel)]="keywords" animated></ion-searchbar>
@@ -38,7 +40,8 @@
     <ng-container *ngIf="historyList.length>0">
       <h4 class="history-title">History</h4>
       <ion-list>
-        <ion-item *ngFor="let item of historyList; let key=index" (press)="removeHistory(key)" (click)="searchByHistory(item)">
+        <ion-item *ngFor="let item of historyList; let key=index" (press)="removeHistory(key)"
+          (click)="searchByHistory(item)">
           <ion-label>{{item}}</ion-label>
           <!-- <ion-icon slot="end" color="medium" name="close-circle" (click)="removeHistory(key)"></ion-icon> -->
         </ion-item>

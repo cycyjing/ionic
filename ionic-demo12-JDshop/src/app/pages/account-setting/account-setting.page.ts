@@ -25,6 +25,10 @@ export class AccountSettingPage {
     console.log(new Date().toISOString() + '---' + this.maxDate);
   }
 
+  goBack() {
+    this.navController.back();
+  }
+  
   async  openGenderPicker() {
     const picker = await this.pickerController.create({
       columns: [{
