@@ -50,6 +50,11 @@
   </ng-container>
 
   <ng-template #elseTemplate>
+    <div class="display-flex spinner" *ngIf="!productList">
+      <ion-spinner></ion-spinner>
+      Loading...
+    </div>
+
     <ion-list class="product-list">
       <ion-item *ngFor="let item of productList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">
         <ion-thumbnail slot="start">

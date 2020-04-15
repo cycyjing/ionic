@@ -17,6 +17,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="display-flex spinner" *ngIf="!cartList[0]">
+    <ion-spinner></ion-spinner>
+    Loading...
+  </div>
   <ion-list lines="full">
     <ion-item class="cart-content" *ngFor="let item of cartList">
       <!-- radio and img -->

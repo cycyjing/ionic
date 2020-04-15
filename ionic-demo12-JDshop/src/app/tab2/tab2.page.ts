@@ -17,18 +17,19 @@ export class Tab2Page implements OnInit {
   }
 
   ngOnInit(): void {
-    // left: navbar
     this.getNavbarData();
   }
 
+  // left: navbar
   getNavbarData() {
     this.commonService.ajaxGet('api/pcate').then((data: any) => {
       this.categoryList = data.result;
-      this.getProductsData(this.categoryList[0]._id);
+      this.getSubcategoryData(this.categoryList[0]._id);
     });
   }
 
-  getProductsData(pid) {
+  // right: sub category
+  getSubcategoryData(pid) {
     this.categorySelectedid = pid;
     this.commonService.ajaxGet('api/pcate?pid=' + pid).then((data: any) => {
       this.subCategoryList = data.result;
