@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController,ToastController } from '@ionic/angular';
 import { StorageService, CommonService, EventEmitterService } from '../../../services';
 
 @Component({
@@ -15,6 +15,7 @@ export class RegisterStep3Component {
 
   constructor(
     public navController: NavController,
+    public toastController:ToastController,
     public storageService: StorageService,
     public commonService: CommonService,
     public eventEmitterService: EventEmitterService) {
@@ -24,9 +25,9 @@ export class RegisterStep3Component {
 
   doRegister() {
     if (this.password != this.confirm) {
-      alert('Two passwords are not same!');
+      this.showToast('Two passwords are not same!');
     } else if (!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(this.password))) {
-      alert('Password format is not correct!');
+      this.showToast('Password format is not correct!');
     } else {
       this.commonService.ajaxPost('api/register', {
         tel: this.tel,
@@ -42,10 +43,19 @@ export class RegisterStep3Component {
           // this.navController.navigateRoot('/tabs/tab4');
           this.navController.navigateRoot('/login');
         } else {
-          alert('Register Fail!' + response.message);
+          this.showToast('Register Fail!' + response.message);
         }
       });
     }
+  }
+
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000,
+      cssClass: 'toast'
+    });
+    toast.present();
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { CommonService, StorageService } from '../../../services';
 
 @Component({
@@ -13,7 +13,11 @@ export class RegisterStep2Component implements OnInit {
   tel = '';
   code = '';
 
-  constructor(public navController: NavController, public commonService: CommonService, public storageService: StorageService) {
+  constructor(
+    public navController: NavController,
+    public toastController: ToastController,
+    public commonService: CommonService,
+    public storageService: StorageService) {
     this.tel = storageService.get('tel');
   }
 
@@ -29,7 +33,7 @@ export class RegisterStep2Component implements OnInit {
         this.storageService.set('code', this.code);
         this.navController.navigateForward('/register/step3');
       } else {
-        alert('code is incorrect');
+        this.showToast('Code is incorrect');
       }
     });
   }
@@ -53,13 +57,22 @@ export class RegisterStep2Component implements OnInit {
       console.log(response);
       if (response.success) {
         this.doTimer();
-        this.code = response.code;
         this.sendCodeBtn = false;
         this.timer = 5;
-        alert('Code Send!');
+        this.showToast('Code Send!');
       } else {
-        alert('Send Fail' + response.message);
+        this.showToast('Send Fail' + response.message);
       }
     });
   }
+
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000,
+      cssClass: 'toast'
+    });
+    toast.present();
+  }
+
 }

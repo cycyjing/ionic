@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { RegisterStep1 } from '../../../config';
 import { CommonService, StorageService } from '../../../services';
 
@@ -12,7 +12,11 @@ export class RegisterStep1Component {
   COUNTRY_CODE = RegisterStep1.COUNTRY_CODE;
   tel;
 
-  constructor(public navController: NavController, public commonService: CommonService, public storageService: StorageService) { }
+  constructor(
+    public navController: NavController,
+    public toastController: ToastController,
+    public commonService: CommonService,
+    public storageService: StorageService) { }
 
   goNextStep() {
     if (/^\d{8,11}$/.test(this.tel)) {
@@ -24,13 +28,20 @@ export class RegisterStep1Component {
 
           this.navController.navigateForward('/register/step2');
         } else {
-          alert('Send code fail ' + response.message);
+          this.showToast('Send code fail ' + response.message);
         }
       });
     } else {
-      alert('Format is not correct');
+      this.showToast('Format is not correct');
     }
   }
 
-
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000,
+      cssClass: 'toast'
+    });
+    toast.present();
+  }
 }

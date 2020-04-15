@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CommonService, StorageService, EventEmitterService } from '../../services';
 
@@ -17,6 +17,7 @@ export class LoginPage {
   constructor(
     public navController: NavController,
     public router: Router,
+    public toastController: ToastController,
     public commonService: CommonService,
     public storageService: StorageService,
     public eventEmitterService: EventEmitterService) { }
@@ -27,27 +28,31 @@ export class LoginPage {
 
   doLogin() {
     if (this.user.username == '') {
-      alert('Username is required');
+      this.showToast('Username is required.');
     } else if (this.user.password.length < 6) {
-      alert('Password is less than 6');
+      this.showToast('Password is less than 6');
     } else {
       this.commonService.ajaxPost('api/doLogin', {
         username: this.user.username,
         password: this.user.password
       }).then((response: any) => {
-        console.log(response);
         if (response.success) {
           this.storageService.set('userinfo', response.userinfo[0]);
           this.eventEmitterService.event.emit('userAction');
           this.router.navigate(['/tabs/tab4']);
         } else {
-          alert('Login Fail! ' + response.message);
-          // this.user = {
-          //   username: '',
-          //   password: ''
-          // };
+          this.showToast('Login Fail! ' + response.message);
         }
       });
     }
+  }
+
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000,
+      cssClass: 'toast'
+    });
+    toast.present();
   }
 }
