@@ -10,9 +10,17 @@
       Shopping Cart
     </ion-title>
 
-    <ion-buttons slot="end">
-      <ion-button>Edit</ion-button>
-    </ion-buttons>
+    <ng-container *ngIf="isEdit; else cancel" >
+      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+        <ion-button>Edit</ion-button>
+      </ion-buttons>
+    </ng-container>
+    <ng-template #cancel>
+      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+        <ion-button>Cancel</ion-button>
+      </ion-buttons>
+    </ng-template>
+
   </ion-toolbar>
 </ion-header>
 
@@ -49,11 +57,18 @@
   <ion-toolbar class="cart-footer">
     <ion-buttons slot="start" (click)="selectAllButtonStatus()">
       <ion-checkbox [(ngModel)]="isSelectAll"></ion-checkbox>Select All
-      <strong>Account: ${{sumPrice}}</strong>
+      <strong *ngIf="isEdit">Account: ${{sumPrice}}</strong>
     </ion-buttons>
 
-    <ion-buttons slot="end">
-      <ion-button>Pay</ion-button>
-    </ion-buttons>
+    <ng-container *ngIf="isEdit; else delete" >
+      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+        <ion-button>Pay</ion-button>
+      </ion-buttons>
+    </ng-container>
+    <ng-template #delete>
+      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+        <ion-button>Delete</ion-button>
+      </ion-buttons>
+    </ng-template>
   </ion-toolbar>
 </ion-footer>

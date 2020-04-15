@@ -12,6 +12,7 @@ export class Tab3Page {
   config: any = {};
   sumPrice: number = 0;
   isSelectAll: boolean = false;
+  isEdit: boolean = true;
 
   constructor(
     public navController: NavController,
