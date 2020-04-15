@@ -10,7 +10,7 @@
       Shopping Cart
     </ion-title>
 
-    <ng-container *ngIf="isEdit; else cancel" >
+    <ng-container *ngIf="isEdit; else cancel">
       <ion-buttons slot="end" (click)="isEdit=!isEdit">
         <ion-button>Edit</ion-button>
       </ion-buttons>
@@ -60,13 +60,13 @@
       <strong *ngIf="isEdit">Account: ${{sumPrice}}</strong>
     </ion-buttons>
 
-    <ng-container *ngIf="isEdit; else delete" >
-      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+    <ng-container *ngIf="isEdit; else delete">
+      <ion-buttons slot="end">
         <ion-button>Pay</ion-button>
       </ion-buttons>
     </ng-container>
     <ng-template #delete>
-      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+      <ion-buttons slot="end">
         <ion-button>Delete</ion-button>
       </ion-buttons>
     </ng-template>

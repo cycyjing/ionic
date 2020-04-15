@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { CommonService, StorageService, CartService } from '../../services';
 
 @Component({
@@ -18,6 +18,7 @@ export class ProductContentPage implements OnInit {
   constructor(
     public activatedRoute: ActivatedRoute,
     public navController: NavController,
+    public toastController: ToastController,
     public commonService: CommonService,
     public storageService: StorageService,
     public cartService: CartService) {
@@ -112,5 +113,17 @@ export class ProductContentPage implements OnInit {
     }
 
     this.sum += this.count;
+
+    this.showToast('Product add to Cart.');
+  }
+
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000,
+      cssClass: 'toast',
+      position: 'top'
+    });
+    toast.present();
   }
 }
