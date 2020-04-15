@@ -79,4 +79,16 @@ export class Tab3Page {
       item.checked = this.isSelectAll;
     }
   }
+
+  // delete selected products
+  doDelete() {
+    let notSelectedProducts = [];
+    for (const product of this.cartList) {
+      if (!product.checked) {
+        notSelectedProducts.push(product);
+      }
+    }
+    this.cartList = notSelectedProducts;
+    this.storageService.set('cart', this.cartList);
+  }
 }
