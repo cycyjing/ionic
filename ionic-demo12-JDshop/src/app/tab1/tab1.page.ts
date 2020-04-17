@@ -10,7 +10,7 @@ export class Tab1Page implements OnInit {
   @ViewChild('slides', { static: false }) slides;
   config: any = {};
   slidesList: any[] = [];
-  slidesOpts = {
+  slidesOpts = { // slides options
     speed: 2000,
     autoplay: {
       delay: 2000,
@@ -33,6 +33,7 @@ export class Tab1Page implements OnInit {
     this.getProductListData();
   }
 
+  // restart slides after manual slide
   slideTouchEnd() {
     this.slides.startAutoplay();
   }

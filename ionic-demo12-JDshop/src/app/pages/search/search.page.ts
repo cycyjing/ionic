@@ -10,16 +10,15 @@ import { CommonService, StorageService } from '../../services';
 })
 export class SearchPage implements OnInit {
   @ViewChild(IonContent, { static: false }) content;
-  flag: boolean = true;
+  flag: boolean = true; // is show subheader
   searchList = SearchList;
-
-  config: any = {};
+  config: any = {}; // api config
   productList: any[] = [];
-  keywords;
+  keywords; // search keywords
   page: number = 1;
   subheaderList = Subheader.SUBHEADER;
   subheaderSelectedid: number = 1;
-  sort = '';
+  sort = ''; // sort type
   infiniteScrollStatus: boolean = true;
   historyList: any[] = [];
 

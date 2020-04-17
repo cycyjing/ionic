@@ -9,7 +9,7 @@
     <ion-searchbar class="searchbar" placeholder="Search" animated></ion-searchbar>
 
     <ion-buttons slot="end" class="search-btn">
-      <ion-button (click)="doSearch()" (tap)="doSearch()">
+      <ion-button>
         Search
       </ion-button>
     </ion-buttons>
@@ -17,7 +17,8 @@
   <!-- sub -->
   <ion-toolbar>
     <div class="subheader">
-      <div *ngFor="let item of subheaderList" [ngClass]="{'active': item.id==subheaderSelectedid}" (click)="subheaderChange(item.id)">
+      <div *ngFor="let item of subheaderList" [ngClass]="{'active': item.id==subheaderSelectedid}"
+        (click)="subheaderChange(item.id)">
         {{item.title}}
         <ion-icon [name]="item.icon"></ion-icon>
       </div>

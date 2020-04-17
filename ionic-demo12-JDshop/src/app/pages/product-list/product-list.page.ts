@@ -10,12 +10,12 @@ import { Subheader } from '../../config';
   styleUrls: ['./product-list.page.scss'],
 })
 export class ProductListPage implements OnInit {
-  @ViewChild(IonContent, { static: false }) content;
-  config: any = {};
-  productList: any[] = [];
-  cid;
+  @ViewChild(IonContent, { static: false }) content; // To monitor the content
+  config: any = {}; // api config
+  productList: any[] = []; // store response list
+  cid; // category id
   page = 1;
-  sort = '';
+  sort = ''; // sort type
   subheaderList = Subheader.SUBHEADER;
   subheaderSelectedid: number = 1;
   infiniteScrollStatus: boolean = true;
@@ -37,8 +37,6 @@ export class ProductListPage implements OnInit {
   goBack() {
     this.navController.back();
   }
-
-  doSearch() { }
 
   getProductListData(event) {
     let api;

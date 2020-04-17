@@ -10,9 +10,9 @@ import { StorageService, CommonService, CartService } from '../services';
 export class Tab3Page {
   cartList: any[] = [];
   config: any = {};
-  sumPrice: number = 0;
+  sumPrice: number = 0; // total price of selected products
   isSelectAll: boolean = false;
-  isEdit: boolean = true;
+  isEdit: boolean = true; // is show edit button
 
   constructor(
     public navController: NavController,
@@ -27,6 +27,7 @@ export class Tab3Page {
     this.isSelectAllFunction();
   }
 
+  // leave page save cartList info
   ionViewDidLeave() {
     this.storageService.set('cart', this.cartList);
   }
@@ -43,8 +44,11 @@ export class Tab3Page {
     this.sumPrice = this.cartService.getSumPrice(this.cartList);
   }
 
+  // when list checkbox checked or not
   changeCheckbox() {
+    // change total price
     this.sumPrice = this.cartService.getSumPrice(this.cartList);
+    // 'Select All' button status
     this.isSelectAllFunction();
   }
 
@@ -64,7 +68,7 @@ export class Tab3Page {
     this.sumPrice = this.cartService.getSumPrice(this.cartList);
   }
 
-  // whether to choose all when  click product item
+  // whether to choose all when click product item
   isSelectAllFunction() {
     if (this.cartService.getSelectedProductsLength(this.cartList) == this.cartList.length) {
       this.isSelectAll = true;

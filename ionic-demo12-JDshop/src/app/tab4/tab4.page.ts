@@ -20,6 +20,7 @@ export class Tab4Page implements OnInit {
   }
 
   ngOnInit(): void {
+    // create user action, when it is listened update data
     this.eventEmitterService.event.on('userAction', () => {
       this.getUserInfo();
     });

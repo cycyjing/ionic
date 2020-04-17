@@ -8,13 +8,13 @@ import { StorageService, EventEmitterService } from '../../services';
   styleUrls: ['./account-setting.page.scss'],
 })
 export class AccountSettingPage {
-  user = {
+  user = { // after login, user's information
     avatar: 'assets/user.png',
     username: 'username',
     gender: 'Female',
     birth: '1990-01-01'
   };
-  maxDate: string = '';
+  maxDate: string = ''; // the date is not later than today
 
   constructor(
     public pickerController: PickerController,
@@ -28,7 +28,7 @@ export class AccountSettingPage {
   goBack() {
     this.navController.back();
   }
-  
+
   async  openGenderPicker() {
     const picker = await this.pickerController.create({
       columns: [{

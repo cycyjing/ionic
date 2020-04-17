@@ -10,7 +10,7 @@ import { CommonService, StorageService } from '../../../services';
 })
 export class RegisterStep1Component {
   COUNTRY_CODE = RegisterStep1.COUNTRY_CODE;
-  tel;
+  tel; //telephone number
 
   constructor(
     public navController: NavController,
