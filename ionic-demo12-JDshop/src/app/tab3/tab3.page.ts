@@ -95,4 +95,20 @@ export class Tab3Page {
     this.cartList = notSelectedProducts;
     this.storageService.set('cart', this.cartList);
   }
+
+  goCheckout() {
+    let selectedProducts = [];
+    let notSelectedProducts = [];
+    for (const product of this.cartList) {
+      if (product.checked) {
+        selectedProducts.push(product);
+      } else {
+        notSelectedProducts.push(product);
+      }
+    }
+    this.cartList = notSelectedProducts;
+    this.storageService.set('cart', this.cartList);
+    this.navController.navigateForward('/checkout');
+  }
+
 }

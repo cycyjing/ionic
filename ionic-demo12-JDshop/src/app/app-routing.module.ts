@@ -29,7 +29,11 @@ const routes: Routes = [
   {
     path: 'account-setting',
     loadChildren: () => import('./pages/account-setting/account-setting.module').then(m => m.AccountSettingPageModule)
+  },  {
+    path: 'checkout',
+    loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
   },
+
 
 ];
 
