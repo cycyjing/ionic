@@ -108,6 +108,8 @@ export class Tab3Page {
     }
     this.cartList = notSelectedProducts;
     this.storageService.set('cart', this.cartList);
+
+    this.storageService.set('checkout', selectedProducts);
     this.navController.navigateForward('/checkout');
   }
 

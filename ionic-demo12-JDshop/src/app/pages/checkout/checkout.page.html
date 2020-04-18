@@ -11,4 +11,66 @@
 
 <ion-content>
 
+  <div class="checkout-address">
+    <ng-container *ngIf="false; else elseTemplate">
+      <div class="content-inner">
+        <p>Hi, you did not login, sync your address information after login</p>
+
+        <ion-button expand="block">Login</ion-button>
+      </div>
+    </ng-container>
+    <!-- login -->
+    <ng-template #elseTemplate>
+      <ion-item button lines="full">
+        <ion-icon slot="start" color="medium" name="location"></ion-icon>
+        <ion-label>Add shipping address</ion-label>
+        <ion-button slot="end" expand="block" fill="clear" color="medium">
+        </ion-button>
+      </ion-item>
+    </ng-template>
+
+
+
+  </div>
+
+  <ion-item-divider></ion-item-divider>
+
+
+
+  <!-- <div class="display-flex spinner" *ngIf="!checkoutList[0]">
+    <ion-spinner></ion-spinner>
+    Loading...
+  </div> -->
+  <ion-list lines="full">
+    <ion-item class="checkout-list" *ngFor="let item of checkoutList">
+      <!-- img -->
+      <ion-img [src]="config.domain+item.product_pic"></ion-img>
+      <!-- title, price and count -->
+      <ion-label>
+        <h3 class="title">{{item.product_title}}</h3>
+        <div class="display-flex">
+          <div class="price">${{item.product_price}}</div>
+          <!-- <div class="count">
+            <span (click)="decreaseCount(item)">-</span>
+            <input type="number" [(ngModel)]="item.product_count">
+            <span (click)="increaseCount(item)">+</span>
+          </div> -->
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar class="checkout-footer">
+    <strong>
+      Total:
+      <span class="price">${{sumPrice}}</span>
+    </strong>
+
+    <ion-buttons slot="end">
+      <ion-button>Order</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
