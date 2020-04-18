@@ -40,7 +40,7 @@ export class RegisterStep1Component {
     const toast = await this.toastController.create({
       message: msg,
       duration: 2000,
-      cssClass: 'toast'
+      cssClass: 'toast-red'
     });
     toast.present();
   }

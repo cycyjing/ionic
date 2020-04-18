@@ -125,7 +125,6 @@ export class ProductContentPage implements OnInit {
     const toast = await this.toastController.create({
       message: msg,
       duration: 2000,
-      cssClass: 'toast',
       position: 'top'
     });
     toast.present();
