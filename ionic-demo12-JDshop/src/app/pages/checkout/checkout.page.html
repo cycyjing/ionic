@@ -49,7 +49,7 @@
       <ion-label>
         <h3 class="title">{{item.product_title}}</h3>
         <div class="display-flex">
-          <div class="price">${{item.product_price}}</div>
+          <div class="price-red price">${{item.product_price}}</div>
           <!-- <div class="count">
             <span (click)="decreaseCount(item)">-</span>
             <input type="number" [(ngModel)]="item.product_count">
@@ -66,7 +66,7 @@
   <ion-toolbar class="checkout-footer">
     <strong>
       Total:
-      <span class="price">${{sumPrice}}</span>
+      <span class="price-red price">${{sumPrice}}</span>
     </strong>
 
     <ion-buttons slot="end">

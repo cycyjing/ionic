@@ -47,7 +47,7 @@
       <ion-row class="list-item">
         <ion-col *ngFor="let item of productList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">
           <ion-img [src]="config.domain+item.s_pic"></ion-img>
-          <p class="price">${{item.price}}</p>
+          <p class="price-red price">${{item.price}}</p>
           <p class="item-title">{{item.title}}</p>
         </ion-col>
       </ion-row>

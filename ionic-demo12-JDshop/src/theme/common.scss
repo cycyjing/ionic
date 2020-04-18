@@ -62,6 +62,10 @@ ol {
   list-style-type: none;
 }
 
+ion-item-divider {
+  min-height: 15px;
+}
+
 .display-flex {
   display: flex;
 }
@@ -70,7 +74,7 @@ ol {
   margin-top: 30px;
 }
 
-.price {
+.price-red {
   color: var(--color-base);
 }
 

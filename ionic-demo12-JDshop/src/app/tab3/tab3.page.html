@@ -40,7 +40,7 @@
       <ion-label>
         <h2 class="title">{{item.product_title}}</h2>
         <div class="display-flex">
-          <div class="price">${{item.product_price}}</div>
+          <div class="price-red price">${{item.product_price}}</div>
           <div class="count">
             <span (click)="decreaseCount(item)">-</span>
             <input type="number" [(ngModel)]="item.product_count">
