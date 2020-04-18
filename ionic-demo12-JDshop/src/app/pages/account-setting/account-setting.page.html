@@ -12,30 +12,21 @@
 
 <ion-content>
   <ion-list lines="full">
-    <ion-item>
+    <ion-item button>
       <ion-avatar slot="end">
         <img [src]="user.avatar">
       </ion-avatar>
       <ion-label>Avatar</ion-label>
-      <ion-button slot="end" expand="block" fill="clear" color="medium">
-        <ion-icon name="chevron-forward"></ion-icon>
-      </ion-button>
     </ion-item>
-    <ion-item>
+    <ion-item button>
       <ion-label>Username</ion-label>
       <span>{{user.username}}</span>
-      <ion-button slot="end" expand="block" fill="clear" color="medium">
-        <ion-icon name="chevron-forward"></ion-icon>
-      </ion-button>
     </ion-item>
-    <ion-item>
+    <ion-item button (click)="openGenderPicker()">
       <ion-label>Gender</ion-label>
       <span>{{user.gender}}</span>
-      <ion-button slot="end" expand="block" fill="clear" color="medium" (click)="openGenderPicker()">
-        <ion-icon name="chevron-forward"></ion-icon>
-      </ion-button>
     </ion-item>
-    <ion-item>
+    <ion-item button>
       <ion-label>Date of Birth</ion-label>
       <ion-datetime placeholder="Select Date" [value]="user.birth" [max]="maxDate" [(ngModel)]="user.birth">
       </ion-datetime>
