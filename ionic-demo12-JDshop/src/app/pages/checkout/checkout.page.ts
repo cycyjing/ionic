@@ -9,6 +9,7 @@ import { CommonService, StorageService } from '../../services';
 })
 export class CheckoutPage {
   config: any = {};
+  userinfo: any = {};
   checkoutList: any[] = [];
   sumPrice: number = 0;
 
@@ -17,6 +18,8 @@ export class CheckoutPage {
     public commonService: CommonService,
     public storageService: StorageService) {
     this.config = commonService.config;
+    this.userinfo = storageService.get('userinfo');
+
     let checkoutList = storageService.get('checkout');
     if (checkoutList && checkoutList.length > 0) {
       this.checkoutList = checkoutList;

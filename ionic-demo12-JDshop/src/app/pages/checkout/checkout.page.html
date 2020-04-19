@@ -10,32 +10,26 @@
 </ion-header>
 
 <ion-content>
-
   <div class="checkout-address">
-    <ng-container *ngIf="false; else elseTemplate">
-      <div class="content-inner">
-        <p>Hi, you did not login, sync your address information after login</p>
-
-        <ion-button expand="block">Login</ion-button>
-      </div>
-    </ng-container>
-    <!-- login -->
-    <ng-template #elseTemplate>
+    <ng-container *ngIf="userinfo.username; else elseTemplate">
       <ion-item button lines="full">
         <ion-icon slot="start" color="medium" name="location"></ion-icon>
         <ion-label>Add shipping address</ion-label>
         <ion-button slot="end" expand="block" fill="clear" color="medium">
         </ion-button>
       </ion-item>
+    </ng-container>
+    <!-- login -->
+    <ng-template #elseTemplate>
+      <div class="content-inner">
+        <p>Hi, you did not login, sync your address information after login</p>
+
+        <ion-button expand="block">Login</ion-button>
+      </div>
     </ng-template>
-
-
-
   </div>
 
   <ion-item-divider></ion-item-divider>
-
-
 
   <!-- <div class="display-flex spinner" *ngIf="!checkoutList[0]">
     <ion-spinner></ion-spinner>
@@ -50,15 +44,37 @@
         <h3 class="title">{{item.product_title}}</h3>
         <div class="display-flex">
           <div class="price-red price">${{item.product_price}}</div>
-          <!-- <div class="count">
-            <span (click)="decreaseCount(item)">-</span>
-            <input type="number" [(ngModel)]="item.product_count">
-            <span (click)="increaseCount(item)">+</span>
-          </div> -->
+          <div class="count">x{{item.product_count}}</div>
         </div>
+        <p class="attr"><strong>属性：</strong>{{item.product_attrs}}</p>
       </ion-label>
     </ion-item>
   </ion-list>
+
+  <ion-item-divider></ion-item-divider>
+
+  <div class="content-inner">
+    Pay online
+  </div>
+
+  <ion-item-divider></ion-item-divider>
+
+  <div class="content-inner checkout-price">
+    <strong>Subtotol：<span class="price-red">$1000</span></strong>
+    <p>Discount：-$5</p>
+    <p>Shipping：+$0</p>
+
+  </div>
+
+  <ion-item-divider></ion-item-divider>
+
+  <ion-item class="checkout-note">
+    <ion-label position="stacked">Notes：</ion-label>
+    <ion-textarea placeholder="Message for the Seller" autoGrow></ion-textarea>
+  </ion-item>
+
+  <ion-item-divider></ion-item-divider>
+
 </ion-content>
 
 
@@ -70,7 +86,7 @@
     </strong>
 
     <ion-buttons slot="end">
-      <ion-button>Order</ion-button>
+      <ion-button>Order Now</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

@@ -1,47 +1,46 @@
+ion-item {
+  --border-color: #ffffff;
+}
 
 .checkout-address {
   p {
     color: #bbbbbb;
     margin-bottom: 10px;
   }
-  ion-item {
-    --border-color: #ffffff;
-  }
 }
 
 .checkout-list {
-  ion-buttons {
-    margin: 0;
-  }
+  font-size: 14px;
+
   ion-img {
     height: 100px;
     width: 100px;
     margin: 5px 10px;
   }
   .title {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     white-space: normal;
   }
   .price {
     flex: 1;
   }
   .count {
-    border: 1px solid lightgrey;
+    color: #bbbbbb;
+  }
+  .attr{
+    margin-top: 5px;
+  }
+}
 
-    span {
-      display: inline-block;
-      height: 30px;
-      width: 30px;
-      text-align: center;
-      line-height: 30px;
-      background-color: lightgrey;
-    }
-    input {
-      width: 30px;
-      border: none;
-      outline: none;
-      text-align: center;
-    }
+.checkout-price {
+  p {
+    padding-top: 5px;
+  }
+}
+
+.checkout-note {
+  ion-label {
+    font-size: 16px;
   }
 }
 
