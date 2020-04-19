@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonService, StorageService, EventEmitterService } from '../../services';
 
 @Component({
@@ -13,17 +13,27 @@ export class LoginPage {
     username: '',
     password: ''
   };
+  returnUrl = '/tabs/tab4';
 
   constructor(
     public router: Router,
+    public activatedRoute: ActivatedRoute,
     public navController: NavController,
     public toastController: ToastController,
     public commonService: CommonService,
     public storageService: StorageService,
-    public eventEmitterService: EventEmitterService) { }
+    public eventEmitterService: EventEmitterService) {
+    activatedRoute.queryParams.subscribe((response) => {
+      console.log(response.returnUrl);
+      if (response && response.returnUrl) {
+        this.returnUrl = response.returnUrl;
+      }
+    });
+  }
 
   goBack() {
-    this.navController.navigateBack('/tabs/tab4');
+
+    this.navController.navigateBack(this.returnUrl);
   }
 
   doLogin() {
@@ -39,7 +49,7 @@ export class LoginPage {
         if (response.success) {
           this.storageService.set('userinfo', response.userinfo[0]);
           this.eventEmitterService.event.emit('userAction');
-          this.router.navigate(['/tabs/tab4']);
+          this.router.navigate([this.returnUrl]);
         } else {
           this.showToast('Login Fail! ' + response.message);
         }

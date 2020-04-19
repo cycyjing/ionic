@@ -12,11 +12,9 @@
 <ion-content>
   <div class="checkout-address">
     <ng-container *ngIf="userinfo.username; else elseTemplate">
-      <ion-item button lines="full">
+      <ion-item button lines="full" [routerLink]="['/address']">
         <ion-icon slot="start" color="medium" name="location"></ion-icon>
         <ion-label>Add shipping address</ion-label>
-        <ion-button slot="end" expand="block" fill="clear" color="medium">
-        </ion-button>
       </ion-item>
     </ng-container>
     <!-- login -->
@@ -24,7 +22,7 @@
       <div class="content-inner">
         <p>Hi, you did not login, sync your address information after login</p>
 
-        <ion-button expand="block">Login</ion-button>
+        <ion-button expand="block" [routerLink]="['/login']" [queryParams]="{returnUrl:'/checkout'}">Login</ion-button>
       </div>
     </ng-template>
   </div>
@@ -86,7 +84,7 @@
     </strong>
 
     <ion-buttons slot="end">
-      <ion-button>Order Now</ion-button>
+      <ion-button [disabled]="!userinfo.username">Order Now</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
