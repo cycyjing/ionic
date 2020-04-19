@@ -22,14 +22,22 @@ export class CheckoutPage {
     public storageService: StorageService,
     public cartService: CartService) {
     this.config = commonService.config;
-    this.userinfo = storageService.get('userinfo');
+  }
 
-    let checkoutList = storageService.get('checkout');
+  ionViewDidEnter() {
+    let userinfo = this.storageService.get('userinfo');
+    if (userinfo && userinfo.username) {
+      this.userinfo = userinfo;
+    } else {
+      this.userinfo = '';
+    }
+
+    let checkoutList = this.storageService.get('checkout');
     if (checkoutList && checkoutList.length > 0) {
       this.checkoutList = checkoutList;
     }
 
-    this.subtotol = cartService.getSelectedSumPrice(this.checkoutList);
+    this.subtotol = this.cartService.getSelectedSumPrice(this.checkoutList);
     this.sumPrice = this.subtotol - this.discount + this.shipping;
   }
 

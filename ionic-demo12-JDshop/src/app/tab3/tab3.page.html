@@ -62,7 +62,7 @@
 
     <ng-container *ngIf="isEdit; else delete">
       <ion-buttons slot="end">
-        <ion-button (click)="goCheckout()">Pay</ion-button>
+        <ion-button (click)="doCheckout()">Pay</ion-button>
       </ion-buttons>
     </ng-container>
     <ng-template #delete>

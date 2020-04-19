@@ -76,7 +76,7 @@
         <ion-badge color="danger">{{sum||0}}</ion-badge>
       </div>
       <ion-button class="add-cart" fill="solid" (click)="addCart()">Add Cart</ion-button>
-      <ion-button class="buy-now" fill="solid" [routerLink]="['/checkout']">Buy Now</ion-button>
+      <ion-button class="buy-now" fill="solid" (click)="doCheckout()">Buy Now</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

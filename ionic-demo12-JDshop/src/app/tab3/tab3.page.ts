@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { StorageService, CommonService, CartService } from '../services';
 
 @Component({
@@ -16,6 +16,7 @@ export class Tab3Page {
 
   constructor(
     public navController: NavController,
+    public toastController: ToastController,
     public storageService: StorageService,
     public commonService: CommonService,
     public cartService: CartService) {
@@ -96,7 +97,7 @@ export class Tab3Page {
     this.storageService.set('cart', this.cartList);
   }
 
-  goCheckout() {
+  doCheckout() {
     let selectedProducts = [];
     let notSelectedProducts = [];
     for (const product of this.cartList) {
@@ -109,8 +110,21 @@ export class Tab3Page {
     this.cartList = notSelectedProducts;
     this.storageService.set('cart', this.cartList);
 
-    this.storageService.set('checkout', selectedProducts);
-    this.navController.navigateForward('/checkout');
+    if (selectedProducts.length > 0) {
+      this.storageService.set('checkout', selectedProducts);
+      this.navController.navigateForward('/checkout');
+    } else {
+      this.showToast('Choose something♥');
+    }
+  }
+
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1000,
+      cssClass: 'toast-red'
+    });
+    toast.present();
   }
 
 }

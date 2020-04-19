@@ -69,7 +69,7 @@ export class RegisterStep2Component implements OnInit {
   async showToast(msg) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 2000,
+      duration: 1000,
       cssClass: 'toast-red'
     });
     toast.present();

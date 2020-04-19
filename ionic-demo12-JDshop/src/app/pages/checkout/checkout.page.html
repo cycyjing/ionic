@@ -42,10 +42,10 @@
       <!-- title, price and count -->
       <ion-label>
         <h3 class="title">{{item.product_title}}</h3>
-        <div class="display-flex">
-          <div class="price-red price">${{item.product_price}}</div>
-          <div class="count">x{{item.product_count}}</div>
-        </div>
+        <p class="display-flex">
+          <span class="price-red price">${{item.product_price}}</span>
+          <span>x{{item.product_count}}</span>
+        </p>
         <p class="attr"><strong>属性：</strong>{{item.product_attrs}}</p>
       </ion-label>
     </ion-item>

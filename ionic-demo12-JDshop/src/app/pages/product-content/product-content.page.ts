@@ -73,7 +73,7 @@ export class ProductContentPage implements OnInit {
     this.count++;
   }
 
-  addCart() {
+  getAttrs(): string {
     let product_attrs = '';
     // get selected attributes
     const spanActive = document.querySelectorAll('.attr .active');
@@ -84,6 +84,11 @@ export class ProductContentPage implements OnInit {
         product_attrs += ',' + spanActive[i].innerHTML;
       }
     }
+    return product_attrs;
+  }
+
+  addCart() {
+    let product_attrs = this.getAttrs();
 
     const productJson = {
       product_id: this.result._id,
@@ -124,9 +129,26 @@ export class ProductContentPage implements OnInit {
   async showToast(msg) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 2000,
+      duration: 1000,
       position: 'top'
     });
     toast.present();
   }
+
+  doCheckout() {
+    const productJson = {
+      product_id: this.result._id,
+      product_title: this.result.title,
+      product_pic: this.result.pic,
+      product_price: this.result.price < this.result.old_price ? this.result.price : this.result.old_price,
+      product_count: this.count,
+      product_attrs: this.getAttrs(),
+      checked: true
+    };
+
+    this.storageService.set('checkout', [productJson]);
+
+    this.navController.navigateForward('/checkout');
+  }
+
 }
