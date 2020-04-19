@@ -41,13 +41,13 @@ export class Tab3Page {
     if (cartList && cartList.length > 0) {
       this.cartList = cartList;
     }
-    this.sumPrice = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSelectedSumPrice(this.cartList);
   }
 
   // when list checkbox checked or not
   changeCheckbox() {
     // change total price
-    this.sumPrice = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSelectedSumPrice(this.cartList);
     // 'Select All' button status
     this.isSelectAllFunction();
   }
@@ -57,7 +57,7 @@ export class Tab3Page {
       item.product_count = 2;
     }
     item.product_count--;
-    this.sumPrice = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSelectedSumPrice(this.cartList);
   }
 
   increaseCount(item) {
@@ -65,7 +65,7 @@ export class Tab3Page {
       item.product_count = 0;
     }
     item.product_count++;
-    this.sumPrice = this.cartService.getSumPrice(this.cartList);
+    this.sumPrice = this.cartService.getSelectedSumPrice(this.cartList);
   }
 
   // whether to choose all when click product item

@@ -32,10 +32,10 @@ export class CartService {
   }
 
   // the total price of the selected products
-  getSumPrice(cartList: any[]): number {
+  getSelectedSumPrice(list: any[]): number {
     let sum = 0;
-    if (cartList && cartList.length > 0) {
-      for (const product of cartList) {
+    if (list && list.length > 0) {
+      for (const product of list) {
         if (product.checked) {
           sum += parseInt(product.product_price) * product.product_count;
         }
