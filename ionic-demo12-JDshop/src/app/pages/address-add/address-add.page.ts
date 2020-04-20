@@ -14,4 +14,6 @@ export class AddressAddPage {
     this.navController.back();
   }
 
+  addAddress(){}
+
 }

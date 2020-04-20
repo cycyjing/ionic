@@ -26,7 +26,9 @@ export class RegisterStep3Component {
   doRegister() {
     if (this.password != this.confirm) {
       this.showToast('Two passwords are not same!');
-    } else if (!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(this.password))) {
+    // } else if (!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(this.password))) {
+    } else if (!(/^\d{6,20}$/.test(this.password))) {
+      // because of API, password is only set as 123456 can be login
       this.showToast('Password format is not correct!');
     } else {
       this.commonService.ajaxPost('api/register', {
