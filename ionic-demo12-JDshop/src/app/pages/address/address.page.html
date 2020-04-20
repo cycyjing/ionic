@@ -14,14 +14,42 @@
   <ion-list>
     <ion-radio-group value="tesla">
       <ion-item>
-        <ion-label>Tesla</ion-label>
         <ion-radio slot="start" value="tesla"></ion-radio>
-        <ion-icon name="create"></ion-icon>
+        <ion-label>
+          <h2>Mary Smith</h2>
+          <p>mary.smith@gmail.com</p>
+          <p>Symonds St, Auckland, New Zealand</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon name="create"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-item>
       <ion-item>
-        <ion-label>Ford</ion-label>
         <ion-radio slot="start" value="ford"></ion-radio>
+        <ion-label>
+          <h2>Andy White</h2>
+          <p>andywhite@hotmail.com</p>
+          <p>Queen St, Auckland, New Zealand</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon name="create"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-item>
+
     </ion-radio-group>
   </ion-list>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" color="danger" [routerLink]="['/address-add']">
+      <ion-icon name="add"></ion-icon>
+      Add address
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

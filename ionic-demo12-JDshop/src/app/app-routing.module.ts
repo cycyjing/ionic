@@ -37,6 +37,10 @@ const routes: Routes = [
     path: 'address',
     loadChildren: () => import('./pages/address/address.module').then( m => m.AddressPageModule)
   },
+  {
+    path: 'address-add',
+    loadChildren: () => import('./pages/address-add/address-add.module').then( m => m.AddressAddPageModule)
+  },
 
 
 ];
