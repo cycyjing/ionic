@@ -37,6 +37,7 @@ export class LoginPage {
   }
 
   doLogin() {
+    // TODO
     if (this.user.username == '') {
       this.showToast('Username is required.');
     } else if (this.user.password.length < 6 || this.user.password.length > 20) {
@@ -65,4 +66,5 @@ export class LoginPage {
     });
     toast.present();
   }
+  
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Md5 } from 'ts-md5/dist/md5';
 
 @Injectable({
   providedIn: 'root'
@@ -32,4 +33,19 @@ export class CommonService {
       });
     });
   }
+
+  createSign(json) {
+    let tempArr = [];
+    for (const key in json) {
+      tempArr.push(key);
+    }
+    tempArr = tempArr.sort();
+
+    let temp = '';
+    for (const key of tempArr) {
+      temp += key + json[key];
+    }
+    return Md5.hashStr(temp);
+  }
+
 }
