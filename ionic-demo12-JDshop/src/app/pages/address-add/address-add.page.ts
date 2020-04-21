@@ -44,15 +44,13 @@ export class AddressAddPage {
         address: this.address.address
       });
 
-      const addJson = {
+      this.commonService.ajaxPost('api/addAddress', {
         uid: this.userinfo._id,
         name: this.address.name,
         phone: this.address.phone,
         address: this.address.address,
         sign
-      };
-
-      this.commonService.ajaxPost('api/addAddress', addJson).then((response: any) => {
+      }).then((response: any) => {
         if (response.success) {
           this.goBack();
         } else {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { CommonService, StorageService } from '../../services';
 
 @Component({
@@ -13,6 +13,7 @@ export class AddressPage {
 
   constructor(
     public navController: NavController,
+    public toastController: ToastController,
     public commonService: CommonService,
     public storageService: StorageService) {
     const userinfo = storageService.get('userinfo');
@@ -40,6 +41,35 @@ export class AddressPage {
       console.log(data.result);
       this.addressList = data.result;
     });
+  }
+
+  changeDefaultAddress(id) {
+    const sign = this.commonService.createSign({
+      uid: this.userinfo._id,
+      salt: this.userinfo.salt,
+      id
+    });
+
+    this.commonService.ajaxPost('api/changeDefaultAddress', {
+      uid: this.userinfo._id,
+      id,
+      sign
+    }).then((response: any) => {
+      if (response.success) {
+        this.goBack();
+      } else {
+        this.showToast('Fail! ' + response.message);
+      }
+    });
+  }
+
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1000,
+      cssClass: 'toast-red'
+    });
+    toast.present();
   }
 
 }

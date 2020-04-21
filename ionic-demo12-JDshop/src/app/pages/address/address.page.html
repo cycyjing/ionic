@@ -12,21 +12,19 @@
 
 <ion-content>
   <ion-list>
-    <ion-radio-group value="tesla">
-      <ion-item *ngFor="let item of addressList">
-        <ion-radio slot="start" value="tesla"></ion-radio>
-        <ion-label>
-          <h2>{{item.name}}</h2>
-          <p>{{item.phone}}</p>
-          <p>{{item.address}}</p>
-        </ion-label>
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon name="create"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
-    </ion-radio-group>
+    <ion-item *ngFor="let item of addressList">
+      <ion-icon *ngIf="item.default_address" slot="start" name="checkmark" color="primary"></ion-icon>
+      <ion-label (click)="changeDefaultAddress(item._id)">
+        <h2>{{item.name}}</h2>
+        <p>{{item.phone}}</p>
+        <p>{{item.address}}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
   </ion-list>
 
 
