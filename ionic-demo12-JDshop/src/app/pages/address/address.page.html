@@ -13,12 +13,12 @@
 <ion-content>
   <ion-list>
     <ion-radio-group value="tesla">
-      <ion-item>
+      <ion-item *ngFor="let item of addressList">
         <ion-radio slot="start" value="tesla"></ion-radio>
         <ion-label>
-          <h2>Mary Smith</h2>
-          <p>021432111</p>
-          <p>Symonds St, Auckland, New Zealand</p>
+          <h2>{{item.name}}</h2>
+          <p>{{item.phone}}</p>
+          <p>{{item.address}}</p>
         </ion-label>
         <ion-buttons slot="end">
           <ion-button>
@@ -26,22 +26,10 @@
           </ion-button>
         </ion-buttons>
       </ion-item>
-      <ion-item>
-        <ion-radio slot="start" value="ford"></ion-radio>
-        <ion-label>
-          <h2>Andy White</h2>
-          <p>0213546789</p>
-          <p>Queen St, Auckland, New Zealand</p>
-        </ion-label>
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon name="create"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
-
     </ion-radio-group>
   </ion-list>
+
+
 </ion-content>
 
 
