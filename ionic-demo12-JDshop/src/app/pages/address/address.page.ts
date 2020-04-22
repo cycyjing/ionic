@@ -40,6 +40,7 @@ export class AddressPage {
     });
     this.commonService.ajaxGet('api/addressList?uid=' + this.userinfo._id + '&sign=' + sign).then((data: any) => {
       this.addressList = data.result;
+      console.log(data.result)
     });
   }
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NavController, ToastController } from '@ionic/angular';
 import { CommonService, StorageService, EventEmitterService } from '../../services';
 
 @Component({

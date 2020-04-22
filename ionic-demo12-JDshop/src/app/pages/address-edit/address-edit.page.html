@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Edit Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Name" [(ngModel)]="address.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="phone" placeholder="Phone" [(ngModel)]="address.phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Address" [(ngModel)]="address.address"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-button class="margin-top-30 padding-70" expand="block" color="danger" (click)="editAddress()">Edit</ion-button>
+</ion-content>

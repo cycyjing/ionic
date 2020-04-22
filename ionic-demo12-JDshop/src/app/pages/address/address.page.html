@@ -18,7 +18,7 @@
         <h2>{{item.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{item.phone}}</h2>
         <p>{{item.address}}</p>
       </ion-label>
-      <ion-buttons slot="end">
+      <ion-buttons slot="end" [routerLink]="['/address-edit']" [queryParams]="item">
         <ion-button>
           <ion-icon name="create"></ion-icon>
         </ion-button>
