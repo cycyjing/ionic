@@ -12,15 +12,22 @@
 <ion-content>
   <div class="checkout-address">
     <ng-container *ngIf="userinfo.username; else elseTemplate">
-      <ion-item button lines="full" [routerLink]="['/address']">
+      <ion-item *ngIf="!defaultAddress.name" button lines="full" [routerLink]="['/address']">
         <ion-icon slot="start" color="medium" name="location"></ion-icon>
         <ion-label>Add shipping address</ion-label>
       </ion-item>
+
+      <ion-item *ngIf="defaultAddress.name" button lines="full" [routerLink]="['/address']">
+        <ion-label>
+          <h2>{{defaultAddress.name}} &nbsp;&nbsp;&nbsp;&nbsp;{{defaultAddress.phone}}</h2>
+          <p>{{defaultAddress.address}}</p>
+        </ion-label>
+      </ion-item>
     </ng-container>
-    <!-- login -->
+    <!-- not login -->
     <ng-template #elseTemplate>
       <div class="content-inner">
-        <p>Hi, you did not login, sync your address information after login</p>
+        <p class="nologin-msg">Hi, you did not login, sync your address information after login</p>
 
         <ion-button expand="block" [routerLink]="['/login']" [queryParams]="{returnUrl:'/checkout'}">Login</ion-button>
       </div>

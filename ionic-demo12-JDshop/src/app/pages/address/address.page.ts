@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController, ToastController, AlertController } from '@ionic/angular';
 import { CommonService, StorageService } from '../../services';
 
 @Component({
@@ -14,6 +14,7 @@ export class AddressPage {
   constructor(
     public navController: NavController,
     public toastController: ToastController,
+    public alertController: AlertController,
     public commonService: CommonService,
     public storageService: StorageService) {
     const userinfo = storageService.get('userinfo');
@@ -38,7 +39,6 @@ export class AddressPage {
       salt: this.userinfo.salt
     });
     this.commonService.ajaxGet('api/addressList?uid=' + this.userinfo._id + '&sign=' + sign).then((data: any) => {
-      console.log(data.result);
       this.addressList = data.result;
     });
   }
@@ -57,6 +57,46 @@ export class AddressPage {
     }).then((response: any) => {
       if (response.success) {
         this.goBack();
+      } else {
+        this.showToast('Change Default Address Fail! ' + response.message);
+      }
+    });
+  }
+
+  async removeAddress(id) {
+    const alert = await this.alertController.create({
+      backdropDismiss: false,
+      header: 'Does delete it?',
+      buttons: [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'OK',
+          handler: () => {
+            this.doRemoveAddress(id);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  doRemoveAddress(id) {
+    const sign = this.commonService.createSign({
+      uid: this.userinfo._id,
+      salt: this.userinfo.salt,
+      id
+    });
+    this.commonService.ajaxPost('api/deleteAddress', {
+      uid: this.userinfo._id,
+      sign,
+      id
+    }).then((response: any) => {
+      if (response.success) {
+        this.getAddressesData();
+        // this.addressList.splice(key, 1);
       } else {
         this.showToast('Fail! ' + response.message);
       }
