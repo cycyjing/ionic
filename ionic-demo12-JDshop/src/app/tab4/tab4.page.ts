@@ -28,7 +28,6 @@ export class Tab4Page implements OnInit {
 
   getUserInfo() {
     const userinfo = this.storageService.get('userinfo');
-    console.log(userinfo);
     if (userinfo && userinfo.username) {
       this.userinfo = userinfo;
     } else {
@@ -36,5 +35,4 @@ export class Tab4Page implements OnInit {
     }
   }
 
-  goSetting() { }
 }

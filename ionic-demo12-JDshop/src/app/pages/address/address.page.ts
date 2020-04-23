@@ -17,12 +17,7 @@ export class AddressPage {
     public alertController: AlertController,
     public commonService: CommonService,
     public storageService: StorageService) {
-    const userinfo = storageService.get('userinfo');
-    if (userinfo && userinfo.username) {
-      this.userinfo = userinfo;
-    } else {
-      navController.navigateForward('/login');
-    }
+    this.userinfo = storageService.get('userinfo');
   }
 
   ionViewDidEnter() {

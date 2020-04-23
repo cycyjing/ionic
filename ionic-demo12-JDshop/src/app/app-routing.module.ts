@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -29,24 +30,26 @@ const routes: Routes = [
   {
     path: 'account-setting',
     loadChildren: () => import('./pages/account-setting/account-setting.module').then(m => m.AccountSettingPageModule)
-  },  {
+  },
+  {
     path: 'checkout',
-    loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
+    loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutPageModule)
   },
   {
     path: 'address',
-    loadChildren: () => import('./pages/address/address.module').then( m => m.AddressPageModule)
+    loadChildren: () => import('./pages/address/address.module').then(m => m.AddressPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'address-add',
-    loadChildren: () => import('./pages/address-add/address-add.module').then( m => m.AddressAddPageModule)
+    loadChildren: () => import('./pages/address-add/address-add.module').then(m => m.AddressAddPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'address-edit',
-    loadChildren: () => import('./pages/address-edit/address-edit.module').then( m => m.AddressEditPageModule)
+    loadChildren: () => import('./pages/address-edit/address-edit.module').then(m => m.AddressEditPageModule),
+    canActivate: [LoginGuard]
   },
-
-
 ];
 
 @NgModule({

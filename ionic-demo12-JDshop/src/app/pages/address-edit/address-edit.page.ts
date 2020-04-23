@@ -23,12 +23,7 @@ export class AddressEditPage {
       // data is readonly
       this.address = JSON.parse(JSON.stringify(data));
     });
-    const userinfo = storageService.get('userinfo');
-    if (userinfo && userinfo.username) {
-      this.userinfo = userinfo;
-    } else {
-      navController.navigateForward('/login');
-    }
+    this.userinfo = storageService.get('userinfo');
   }
 
   goBack() {

@@ -27,7 +27,7 @@ export class CheckoutPage {
   }
 
   ionViewDidEnter() {
-    let userinfo = this.storageService.get('userinfo');
+    const userinfo = this.storageService.get('userinfo');
     if (userinfo && userinfo.username) {
       this.userinfo = userinfo;
       this.getDefaultAddress();
@@ -35,7 +35,7 @@ export class CheckoutPage {
       this.userinfo = '';
     }
 
-    let checkoutList = this.storageService.get('checkout');
+    const checkoutList = this.storageService.get('checkout');
     if (checkoutList && checkoutList.length > 0) {
       this.checkoutList = checkoutList;
     }

@@ -20,13 +20,7 @@ export class AddressAddPage {
     public toastController: ToastController,
     public commonService: CommonService,
     public storageService: StorageService) {
-    const userinfo = storageService.get('userinfo');
-    if (userinfo && userinfo.username) {
-      this.userinfo = userinfo;
-    } else {
-      this.showToast('User did not login!');
-      navController.navigateForward('/login');
-    }
+      this.userinfo = storageService.get('userinfo');
   }
 
   goBack() {
