@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-divider></ion-item-divider>
+
+  <ion-list>
+    <ion-radio-group value="alipay">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/alipay.png" />
+        </ion-avatar>
+        <ion-label>Alipay</ion-label>
+        <ion-radio value="alipay"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/weixinpay.png" />
+        </ion-avatar>
+        <ion-label>WeChat Pay</ion-label>
+        <ion-radio value="wechat"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-icon name="card-outline"></ion-icon>
+        </ion-avatar>
+        <ion-label>Card</ion-label>
+        <ion-radio value="card"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+<ion-button class="margin-top-30 padding-70" expand="block" color="danger" (click)="doPay()">Pay
+  </ion-button>
+</ion-content>

@@ -91,7 +91,7 @@
     </strong>
 
     <ion-buttons slot="end">
-      <ion-button [disabled]="!userinfo.username">Order Now</ion-button>
+      <ion-button [disabled]="!userinfo.username" [routerLink]="['/payment']">Order Now</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

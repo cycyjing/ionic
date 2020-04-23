@@ -49,7 +49,11 @@ const routes: Routes = [
     path: 'address-edit',
     loadChildren: () => import('./pages/address-edit/address-edit.module').then(m => m.AddressEditPageModule),
     canActivate: [LoginGuard]
+  },  {
+    path: 'payment',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
   },
+
 ];
 
 @NgModule({
