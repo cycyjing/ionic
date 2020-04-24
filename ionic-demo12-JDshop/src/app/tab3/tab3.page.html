@@ -57,7 +57,7 @@
   <ion-toolbar class="cart-footer">
     <ion-buttons slot="start" (click)="selectAllButtonStatus()">
       <ion-checkbox [(ngModel)]="isSelectAll"></ion-checkbox>Select All
-      <strong *ngIf="isEdit">Account: ${{sumPrice}}</strong>
+      <strong *ngIf="isEdit">Account: ${{sumPrice||0}}</strong>
     </ion-buttons>
 
     <ng-container *ngIf="isEdit; else delete">

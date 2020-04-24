@@ -53,7 +53,6 @@ export class CheckoutPage {
       uid: this.userinfo._id,
       salt: this.userinfo.salt
     });
-    console.log(sign);
     this.commonService.ajaxGet('api/oneAddressList?uid=' + this.userinfo._id + '&sign=' + sign).then((data: any) => {
       if (data.success) {
         this.defaultAddress = data.result[0];
@@ -61,6 +60,45 @@ export class CheckoutPage {
         this.showToast('Fail! ' + data.message);
       }
     });
+  }
+
+  doOrder() {
+    if (!this.userinfo || !this.userinfo.username) {
+      this.showToast('Please Login!');
+      this.navController.navigateForward(['/login'], {
+        queryParams: { returnUrl: '/checkout' }
+      });
+    } else if (!this.defaultAddress || !this.defaultAddress.name) {
+      this.showToast('Add address!');
+    } else {
+      const sign = this.commonService.createSign({
+        uid: this.userinfo._id,
+        salt: this.userinfo.salt,
+        name: this.defaultAddress.name,
+        phone: this.defaultAddress.phone,
+        address: this.defaultAddress.address,
+        all_price: this.sumPrice,
+        products: JSON.stringify(this.checkoutList)
+      });
+      this.commonService.ajaxPost('api/doOrder', {
+        uid: this.userinfo._id,
+        name: this.defaultAddress.name,
+        phone: this.defaultAddress.phone,
+        address: this.defaultAddress.address,
+        all_price: this.sumPrice,
+        products: JSON.stringify(this.checkoutList),
+        sign
+      }).then((data: any) => {
+        if (data.success) {
+          this.navController.navigateForward('/payment', {
+            queryParams: { oid: data.result.order_id }
+          });
+          console.log(data.result);
+        } else {
+          this.showToast('Fail!' + data.message);
+        }
+      });
+    }
   }
 
   async showToast(msg) {

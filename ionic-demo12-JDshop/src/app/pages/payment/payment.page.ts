@@ -7,6 +7,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./payment.page.scss'],
 })
 export class PaymentPage {
+  payway = 'alipay';
 
   constructor(public navController: NavController) { }
 
@@ -14,6 +15,8 @@ export class PaymentPage {
     this.navController.back();
   }
 
-  doPay(){}
+  doPay() {
+    console.log(this.payway)
+  }
 
 }
