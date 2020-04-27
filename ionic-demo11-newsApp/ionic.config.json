@@ -1,5 +1,7 @@
 {
   "name": "ionic-demo11-ion-infinite-scroll",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
