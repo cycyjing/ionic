@@ -1,5 +1,7 @@
 {
   "name": "ionic-demo12-JDshop",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
