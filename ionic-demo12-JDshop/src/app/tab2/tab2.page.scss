@@ -6,11 +6,13 @@ ion-content ion-toolbar {
   height: 100%;
 
   .left {
-    width: 8rem;
+    width: 9rem;
     overflow-y: auto;
     background-color: #eee;
 
     ion-item {
+      font-size: 1rem;
+      text-align: center;
       --background: #eee;
     }
     .active {
@@ -22,8 +24,8 @@ ion-content ion-toolbar {
     overflow-y: auto;
 
     ion-img {
-      height: 126px;
-      width: 126px;
+      height: 12rem;
+      width: 12rem;
     }
   }
 }

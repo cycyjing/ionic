@@ -21,7 +21,7 @@
         <ion-spinner></ion-spinner>
         Loading...
       </div>
-      <ion-grid fixed>
+      <ion-grid>
         <ion-row class="right-item">
           <ion-col *ngFor="let item of subCategoryList" [routerLink]="['/product-list']" [queryParams]="{cid:item._id}">
             <ion-img [src]="config.domain+item.pic"></ion-img>
