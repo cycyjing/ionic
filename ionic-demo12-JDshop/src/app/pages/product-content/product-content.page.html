@@ -18,10 +18,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="display-flex spinner" *ngIf="!result.pic">
-    <ion-spinner></ion-spinner>
-    Loading...
-  </div>
+  <app-loading-indicator *ngIf="!result.pic"></app-loading-indicator>
 
   <div [ngSwitch]="segment">
     <div *ngSwitchCase="'product'">

@@ -7,14 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ProductContentPageRoutingModule } from './product-content-routing.module';
 
 import { ProductContentPage } from './product-content.page';
+/* custom import */
+import { LoadingIndicatorModule } from '../../shared/loading-indicator/loading-indicator.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductContentPageRoutingModule
+    ProductContentPageRoutingModule,
+    LoadingIndicatorModule
   ],
   declarations: [ProductContentPage]
 })
-export class ProductContentPageModule {}
+export class ProductContentPageModule { }

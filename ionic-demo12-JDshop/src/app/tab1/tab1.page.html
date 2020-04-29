@@ -6,10 +6,7 @@
 
 <ion-content [fullscreen]="true">
   <!-- slides -->
-  <div class="display-flex spinner" *ngIf="!slidesList[0]">
-    <ion-spinner></ion-spinner>
-    Loading...
-  </div>
+  <app-loading-indicator *ngIf="!slidesList[0]"></app-loading-indicator>
 
   <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="slidesOpts" (ionSlideTouchEnd)="slideTouchEnd()"
     #slides>
@@ -22,10 +19,7 @@
   <div class="hot">
     <div class="hot-title">Hot</div>
 
-    <div class="display-flex spinner" *ngIf="!hotList[0]">
-      <ion-spinner></ion-spinner>
-      Loading...
-    </div>
+    <app-loading-indicator *ngIf="!hotList[0]"></app-loading-indicator>
 
     <ul class="display-flex hot-item">
       <li *ngFor="let item of hotList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">
@@ -38,10 +32,7 @@
   <div class="list">
     <div class="list-title">Products</div>
 
-    <div class="display-flex spinner" *ngIf="!productList[0]">
-      <ion-spinner></ion-spinner>
-      Loading...
-    </div>
+    <app-loading-indicator *ngIf="!productList[0]"></app-loading-indicator>
 
     <ion-grid>
       <ion-row class="list-item">

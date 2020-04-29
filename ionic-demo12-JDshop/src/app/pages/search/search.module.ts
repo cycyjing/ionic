@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
+/* custom import */
+import { LoadingIndicatorModule } from '../../shared/loading-indicator/loading-indicator.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchPageRoutingModule
+    SearchPageRoutingModule,
+    LoadingIndicatorModule
   ],
   declarations: [SearchPage]
 })

@@ -27,10 +27,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="display-flex spinner" *ngIf="!productList">
-    <ion-spinner></ion-spinner>
-    Loading...
-  </div>
+  <app-loading-indicator *ngIf="!productList"></app-loading-indicator>
 
   <ion-list class="product-list">
     <ion-item *ngFor="let item of productList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">

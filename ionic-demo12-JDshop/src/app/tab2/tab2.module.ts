@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
+/* custom import */
 import { SearchModule } from '../shared/search/search.module';
-
+import { LoadingIndicatorModule } from '../shared/loading-indicator/loading-indicator.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { SearchModule } from '../shared/search/search.module';
     CommonModule,
     FormsModule,
     SearchModule,
+    LoadingIndicatorModule,
     RouterModule.forChild([{ path: '', component: Tab2Page }])
   ],
   declarations: [Tab2Page]
