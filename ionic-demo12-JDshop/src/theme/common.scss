@@ -1,3 +1,5 @@
+@import "media-mixins";
+
 :root {
   --color-base: #f53d3d;
 }
@@ -43,23 +45,16 @@ section {
   margin: 0;
   padding: 0;
 }
-// html {
-//   font-size: 62.5%; // 浏览器的默认字体大小是16px   16*62.5%=10px
-// }
-// .clearfix {
-//   &::after {
-//     display: block;
-//     content: "";
-//     height: 0px;
-//     clear: both;
-//   }
-// }
-// .clearfix{
-//   overflow: auto;
-// }
+
 ul,
 ol {
   list-style-type: none;
+}
+
+@include phone {
+  html {
+    font-size: 62.5%; // brower default font-size:16px   16*62.5%=10px
+  }
 }
 
 ion-item-divider {
@@ -74,7 +69,7 @@ ion-item-divider {
   margin-top: 30px;
 }
 
-.padding-70{
+.padding-70 {
   padding: 0 70px;
 }
 
