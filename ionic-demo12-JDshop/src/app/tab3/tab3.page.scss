@@ -1,3 +1,5 @@
+@import "~src/theme/media-mixins.scss";
+
 .cart-content,
 .cart-footer {
   ion-checkbox {
@@ -11,8 +13,8 @@
     margin: 0;
   }
   ion-img {
-    height: 100px;
-    width: 100px;
+    height: 9rem;
+    width: 9rem;
     margin: 5px 10px;
   }
   .title {
@@ -27,24 +29,29 @@
 
     span {
       display: inline-block;
-      height: 30px;
-      width: 30px;
+      height: 2rem;
+      width: 2rem;
       text-align: center;
-      line-height: 30px;
+      line-height: 2rem;
       background-color: lightgrey;
     }
     input {
-      width: 30px;
+      width: 2rem;
       border: none;
       outline: none;
       text-align: center;
     }
   }
+  @include phone {
+    .title,
+    .price,
+    .count {
+      font-size: 1rem;
+    }
+  }
 }
 
 .cart-footer {
-  font-size: large;
-
   ion-checkbox {
     margin-left: 15px;
     margin-right: 15px;

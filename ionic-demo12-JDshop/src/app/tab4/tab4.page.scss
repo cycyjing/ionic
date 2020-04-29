@@ -1,12 +1,13 @@
 .avatar {
   background: url(../../assets/user_bg.jpg);
   align-items: center;
+  height: 150px;
   margin-bottom: 20px;
 
   img {
     margin: 30px;
-    height: 100px;
-    width: 100px;
+    height: 6.5rem;
+    width: 6.5rem;
     border-radius: 50%;
   }
   span {
@@ -16,8 +17,12 @@
   }
   .personal-btn {
     position: relative;
-    top: -48px;
+    top: -46px;
   }
+}
+
+ion-item{
+  font-size: 1rem;
 }
 
 ion-item-divider {

@@ -1,8 +1,10 @@
 ion-list {
+  ion-item {
+    font-size: 1rem;
+  }
   span,
   ion-datetime {
     color: #444444;
-    font-size: 1rem;
   }
   span {
     padding-right: 10px;
