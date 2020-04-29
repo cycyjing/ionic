@@ -13,7 +13,7 @@
 
   <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="slidesOpts" (ionSlideTouchEnd)="slideTouchEnd()"
     #slides>
-    <ion-slide *ngFor="let slide of slidesList" [routerLink]="['/product-content']" [queryParams]="{id:slide._id}">
+    <ion-slide *ngFor="let slide of slidesList">
       <ion-img class="slide-img" [src]="config.domain+slide.pic"></ion-img>
     </ion-slide>
   </ion-slides>
@@ -43,7 +43,7 @@
       Loading...
     </div>
 
-    <ion-grid fixed>
+    <ion-grid>
       <ion-row class="list-item">
         <ion-col *ngFor="let item of productList" [routerLink]="['/product-content']" [queryParams]="{id:item._id}">
           <ion-img [src]="config.domain+item.s_pic"></ion-img>
