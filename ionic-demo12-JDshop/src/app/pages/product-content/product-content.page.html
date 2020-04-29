@@ -31,7 +31,7 @@
         <p class="subtitle">{{result.sub_title}}</p>
         <span class="original"
           [ngClass]="{'active':result.old_price>result.price && result.old_price!=''}">${{result.old_price||0}}</span>
-        <span class="price special"
+        <span class="price-red special"
           *ngIf="result.old_price>result.price && result.old_price!=''">${{result.price||0}}</span>
         <p class="sales">销量：{{result.salecount||0}} / month</p>
       </div>
