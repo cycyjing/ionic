@@ -1,3 +1,5 @@
+@import "~src/theme/media-mixins.scss";
+
 ion-segment {
   --background: var(--color-base);
   width: 240px;
@@ -9,7 +11,7 @@ ion-segment-button {
 }
 
 ion-img {
-  height: 350px;
+  height: 28rem;
 }
 
 .title {
@@ -18,6 +20,15 @@ ion-img {
 
 .subtitle {
   margin: 10px 0;
+}
+
+@include phone {
+  .title {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 1.4rem;
+  }
 }
 
 .original {
@@ -68,14 +79,14 @@ ion-img {
 
     span {
       display: inline-block;
-      height: 30px;
-      width: 30px;
+      height: 2rem;
+      width: 2rem;
       text-align: center;
-      line-height: 30px;
+      line-height: 2rem;
       background-color: lightgrey;
     }
     input {
-      width: 30px;
+      width: 2rem;
       border: none;
       outline: none;
       text-align: center;
