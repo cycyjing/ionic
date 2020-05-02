@@ -25,8 +25,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-loading-indicator *ngIf="!cartList[0]"></app-loading-indicator>
-  
+  <app-loading-indicator *ngIf="cartList.length==0"></app-loading-indicator>
+
   <ion-list lines="full">
     <ion-item class="cart-content" *ngFor="let item of cartList">
       <!-- radio and img -->
@@ -53,7 +53,7 @@
 
 <ion-footer>
   <ion-toolbar class="cart-footer">
-    <ion-buttons slot="start" (tap)="selectAllButtonStatus()">
+    <ion-buttons slot="start" (click)="selectAllButtonStatus()">
       <ion-checkbox [(ngModel)]="isSelectAll"></ion-checkbox>Select All
       <strong *ngIf="isEdit">Account: ${{sumPrice||0}}</strong>
     </ion-buttons>
