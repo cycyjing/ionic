@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons class="back-btn" slot="start">
-      <ion-button (click)="goBack()">
+      <ion-button (tap)="goBack()">
         <ion-icon name="chevron-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -18,7 +18,7 @@
   <ion-toolbar *ngIf="!flag">
     <div class="subheader">
       <div *ngFor="let item of subheaderList" [ngClass]="{'active':item.id==subheaderSelectedid}"
-        (click)="subheaderChange(item.id)">
+        (tap)="subheaderChange(item.id)">
         {{item.title}}
         <ion-icon [name]="item.icon"></ion-icon>
       </div>
@@ -41,9 +41,9 @@
       <h4 class="history-title">History</h4>
       <ion-list>
         <ion-item *ngFor="let item of historyList; let key=index" (press)="removeHistory(key)"
-          (click)="searchByHistory(item)">
+          (tap)="searchByHistory(item)">
           <ion-label>{{item}}</ion-label>
-          <!-- <ion-icon slot="end" color="medium" name="close-circle" (click)="removeHistory(key)"></ion-icon> -->
+          <!-- <ion-icon slot="end" color="medium" name="close-circle" (tap)="removeHistory(key)"></ion-icon> -->
         </ion-item>
       </ion-list>
     </ng-container>

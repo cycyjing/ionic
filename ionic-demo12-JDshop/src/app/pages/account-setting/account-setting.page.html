@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
+      <ion-button (tap)="goBack()">
         <ion-icon name="chevron-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -22,7 +22,7 @@
       <ion-label>Username</ion-label>
       <span>{{user.username}}</span>
     </ion-item>
-    <ion-item button (click)="openGenderPicker()">
+    <ion-item button (tap)="openGenderPicker()">
       <ion-label>Gender</ion-label>
       <span>{{user.gender}}</span>
     </ion-item>
@@ -38,7 +38,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="full" color="danger" (click)="doLogout()">
+    <ion-button expand="full" color="danger" (tap)="doLogout()">
       Log out
     </ion-button>
   </ion-toolbar>

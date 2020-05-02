@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
+      <ion-button (tap)="goBack()">
         <ion-icon name="chevron-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -87,7 +87,7 @@
     </strong>
 
     <ion-buttons slot="end">
-      <ion-button [disabled]="!userinfo.username" (click)="doOrder()">Order Now</ion-button>
+      <ion-button [disabled]="!userinfo.username" (tap)="doOrder()">Order Now</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

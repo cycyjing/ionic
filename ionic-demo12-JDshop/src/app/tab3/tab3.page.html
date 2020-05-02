@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
+      <ion-button (tap)="goBack()">
         <ion-icon name="chevron-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -11,12 +11,12 @@
     </ion-title>
 
     <ng-container *ngIf="isEdit; else cancel">
-      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+      <ion-buttons slot="end" (tap)="isEdit=!isEdit">
         <ion-button>Edit</ion-button>
       </ion-buttons>
     </ng-container>
     <ng-template #cancel>
-      <ion-buttons slot="end" (click)="isEdit=!isEdit">
+      <ion-buttons slot="end" (tap)="isEdit=!isEdit">
         <ion-button>Cancel</ion-button>
       </ion-buttons>
     </ng-template>
@@ -40,9 +40,9 @@
         <div class="display-flex">
           <div class="price-red price">${{item.product_price}}</div>
           <div class="count">
-            <span (click)="decreaseCount(item)">-</span>
+            <span (tap)="decreaseCount(item)">-</span>
             <input type="number" [(ngModel)]="item.product_count">
-            <span (click)="increaseCount(item)">+</span>
+            <span (tap)="increaseCount(item)">+</span>
           </div>
         </div>
       </ion-label>
@@ -53,19 +53,19 @@
 
 <ion-footer>
   <ion-toolbar class="cart-footer">
-    <ion-buttons slot="start" (click)="selectAllButtonStatus()">
+    <ion-buttons slot="start" (tap)="selectAllButtonStatus()">
       <ion-checkbox [(ngModel)]="isSelectAll"></ion-checkbox>Select All
       <strong *ngIf="isEdit">Account: ${{sumPrice||0}}</strong>
     </ion-buttons>
 
     <ng-container *ngIf="isEdit; else delete">
       <ion-buttons slot="end">
-        <ion-button (click)="doCheckout()">Pay</ion-button>
+        <ion-button (tap)="doCheckout()">Pay</ion-button>
       </ion-buttons>
     </ng-container>
     <ng-template #delete>
       <ion-buttons slot="end">
-        <ion-button (click)="doDelete()">Delete</ion-button>
+        <ion-button (tap)="doDelete()">Delete</ion-button>
       </ion-buttons>
     </ng-template>
   </ion-toolbar>

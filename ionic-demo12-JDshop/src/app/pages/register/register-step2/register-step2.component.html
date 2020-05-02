@@ -3,7 +3,7 @@
   <div class="display-flex verification">
     <input class="code" [(ngModel)]="code">
     <ng-container *ngIf="sendCodeBtn; else elseTemplate">
-      <span class="send-code" (click)="sendCode()">Send Code</span>
+      <span class="send-code" (tap)="sendCode()">Send Code</span>
     </ng-container>
     <ng-template #elseTemplate>
       <span class="send-code">{{timer}}</span>
@@ -11,10 +11,10 @@
   </div>
 
 
-  <ion-button class="margin-top-30 padding-70" expand="block" (click)="goNextStep()">
+  <ion-button class="margin-top-30 padding-70" expand="block" (tap)="goNextStep()">
     Next
   </ion-button>
-  <ion-button class="padding-70" expand="block" (click)="goBackStep()">
+  <ion-button class="padding-70" expand="block" (tap)="goBackStep()">
     Back
   </ion-button>
 

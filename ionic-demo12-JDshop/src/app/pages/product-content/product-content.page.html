@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
+      <ion-button (tap)="goBack()">
         <ion-icon name="chevron-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -36,16 +36,16 @@
       <ion-item-divider></ion-item-divider>
 
       <div class="content-inner">
-        <div class="attr" *ngFor="let attr of result.attr" (click)="changeAttr($event)">
+        <div class="attr" *ngFor="let attr of result.attr" (tap)="changeAttr($event)">
           <strong>{{attr.cate}}：</strong>
           <span *ngFor="let item of attr.list; let key=index" [ngClass]="{'active': key==0}">{{item}}</span>
         </div>
         <div class="display-flex number">
           <strong>数量：</strong>
           <div class="count">
-            <span (click)="decreaseCount()">-</span>
+            <span (tap)="decreaseCount()">-</span>
             <input type="number" [(ngModel)]="count">
-            <span (click)="increaseCount()">+</span>
+            <span (tap)="increaseCount()">+</span>
           </div>
         </div>
       </div>
@@ -72,8 +72,8 @@
         </ion-button>
         <ion-badge color="danger">{{sum||0}}</ion-badge>
       </div>
-      <ion-button class="add-cart" fill="solid" (click)="addCart()">Add Cart</ion-button>
-      <ion-button class="buy-now" fill="solid" (click)="doCheckout()">Buy Now</ion-button>
+      <ion-button class="add-cart" fill="solid" (tap)="addCart()">Add Cart</ion-button>
+      <ion-button class="buy-now" fill="solid" (tap)="doCheckout()">Buy Now</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

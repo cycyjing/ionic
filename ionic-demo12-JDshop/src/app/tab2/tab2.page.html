@@ -9,8 +9,8 @@
     <!-- LEFT: category -->
     <div class="left">
       <ion-list lines="full">
-        <ion-item *ngFor="let item of categoryList" (click)="getSubcategoryData(item._id)"
-          (tap)="getSubcategoryData(item._id)" [ngClass]="{'active':item._id==categorySelectedid}">
+        <ion-item *ngFor="let item of categoryList" (tap)="getSubcategoryData(item._id)"
+          [ngClass]="{'active':item._id==categorySelectedid}">
           <ion-label>{{item.title}}</ion-label>
         </ion-item>
       </ion-list>
