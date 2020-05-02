@@ -59,7 +59,7 @@ export class RegisterStep2Component implements OnInit {
         this.doTimer();
         this.sendCodeBtn = false;
         this.timer = 5;
-        this.showToast('Code Send!');
+        this.showToast('Code Send! ' + response.code);
       } else {
         this.showToast('Send Fail' + response.message);
       }

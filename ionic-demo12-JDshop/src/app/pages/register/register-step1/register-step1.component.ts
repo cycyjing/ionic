@@ -27,6 +27,7 @@ export class RegisterStep1Component {
           this.storageService.set('tel', this.tel);
 
           this.navController.navigateForward('/register/step2');
+          this.showToast('Code Send! ' + response.code);
         } else {
           this.showToast('Send code fail ' + response.message);
         }
