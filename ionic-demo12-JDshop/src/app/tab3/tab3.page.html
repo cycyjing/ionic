@@ -25,7 +25,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-loading-indicator *ngIf="cartList.length==0"></app-loading-indicator>
+  <app-loading-indicator *ngIf="!cartList"></app-loading-indicator>
 
   <ion-list lines="full">
     <ion-item class="cart-content" *ngFor="let item of cartList">
