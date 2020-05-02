@@ -53,7 +53,7 @@ ol {
 
 @include phone {
   html {
-    font-size: 62.5%; // brower default font-size:16px   16*62.5%=10px
+    font-size: 0.75rem; // brower default font-size:16px   16*0.75=12px
   }
 }
 
