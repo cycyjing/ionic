@@ -36,6 +36,7 @@ ion-img {
   margin-right: 50px;
 
   &.active {
+    color: gray;
     text-decoration-line: line-through;
   }
 }
@@ -79,14 +80,14 @@ ion-img {
 
     span {
       display: inline-block;
-      height: 2rem;
-      width: 2rem;
+      height: 30px;
+      width: 30px;
       text-align: center;
-      line-height: 2rem;
+      line-height: 30px;
       background-color: lightgrey;
     }
     input {
-      width: 2rem;
+      width: 30px;
       border: none;
       outline: none;
       text-align: center;

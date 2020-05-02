@@ -26,7 +26,7 @@
         <ion-img *ngIf="result.pic" [src]="config.domain+result.pic"></ion-img>
         <h1 class="title">{{result.title}}</h1>
         <p class="subtitle">{{result.sub_title}}</p>
-        <span class="original"
+        <span class="price-red original"
           [ngClass]="{'active':result.old_price>result.price && result.old_price!=''}">${{result.old_price||0}}</span>
         <span class="price-red special"
           *ngIf="result.old_price>result.price && result.old_price!=''">${{result.price||0}}</span>
