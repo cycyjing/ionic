@@ -1,11 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Device
+      Tab 1
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   Device: {{myDevice.uuid+'---'+myDevice.version}}
+  
+  <ion-list>
+    <ion-item [routerLink]="['/qrscan']">
+      <ion-label>QR Scan</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

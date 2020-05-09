@@ -13,6 +13,7 @@ import { Device } from '@ionic-native/device/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
     Geolocation,
     Camera,
     FileTransfer,
+    QRScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
