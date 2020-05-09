@@ -14,6 +14,9 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+import { AppVersion } from '@ionic-native/app-version/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,11 +25,7 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
   providers: [
     StatusBar,
     SplashScreen,
-    Device,
-    Geolocation,
-    Camera,
-    FileTransfer,
-    QRScanner,
+    Device, Geolocation, Camera, FileTransfer, QRScanner, AppVersion, File, FileOpener,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
