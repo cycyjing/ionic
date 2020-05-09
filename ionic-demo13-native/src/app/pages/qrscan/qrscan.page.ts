@@ -50,7 +50,7 @@ export class QrscanPage {
     this.qrScanner.hide(); // close scan, otherwise the camera is always on
     this.qrScanner.destroy();
   }
-  /* Open/Close Light */
+  /* Open/Close Flashlight */
   toggleLight() {
     if (this.light) {
       this.qrScanner.disableLight();
