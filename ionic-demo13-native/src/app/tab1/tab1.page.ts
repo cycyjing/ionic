@@ -27,11 +27,13 @@ export class Tab1Page implements OnInit {
   ngOnInit(): void {
     this.isUpdate();
   }
+
   isUpdate() {
     // step 1
     this.appVersion.getVersionNumber().then((value: any) => {
       console.log(value);
       // step 2
+      this.showAlert();
     }).catch((err) => {
       console.log('getVersionNumber:' + err);
     });
