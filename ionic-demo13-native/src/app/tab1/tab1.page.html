@@ -8,10 +8,13 @@
 
 <ion-content [fullscreen]="true">
   Device: {{myDevice.uuid+'---'+myDevice.version}}
-  
+
   <ion-list>
     <ion-item [routerLink]="['/qrscan']">
       <ion-label>QR Scan</ion-label>
     </ion-item>
   </ion-list>
+
+  {{progressBarValue}} <span *ngIf="progressBarValue>0">%</span>
+  <ion-progress-bar [value]="progressBarValue"></ion-progress-bar>
 </ion-content>

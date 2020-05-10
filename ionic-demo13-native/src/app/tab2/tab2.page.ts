@@ -9,7 +9,9 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 export class Tab2Page {
   location: any = {};
 
-  constructor(private geolocation: Geolocation) {
+  constructor(private geolocation: Geolocation) { }
+
+  ionViewDidEnter() {
     this.geolocation.getCurrentPosition().then((resp) => {
       console.log(resp.coords);
       this.location = resp.coords;
