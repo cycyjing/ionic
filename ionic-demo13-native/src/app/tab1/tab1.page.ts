@@ -28,10 +28,6 @@ export class Tab1Page {
   ngAfterContentInit(): void {
     this.isUpdate();
   }
-  ionViewDidEnter() {
-    this.isUpdate();
-    console.log('did enter');
-  }
 
   isUpdate() {
     // step 1: get version number
